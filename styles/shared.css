@@ -3,7 +3,36 @@
 *::after {
   box-sizing: border-box;
 }
+html {
+  height: 100vh;
+}
 
 body {
+  min-height: 100%;
   font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  flex-grow: 1;
+}
+
+.main-content {
+  flex-grow: 1;
+  color: black;
+}
+
+.content-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.main-content-details {
+  margin: 8px;
+  padding: 0 8px;
+  border: 2px solid green;
+  border-radius: 10px;
 }
