@@ -2,8 +2,6 @@ Assignment 3 - Australia Zoo Team Grade
 
 Note: this is a group assignment, so the grades available are icke godkänt and godkänt only.
 
-Your knowledge of project design, SCRUM basics, JS basics and html/css are being examined. The design is somewhat up to you, but you must follow the structure of the pages is detailed below.:
-
 The local djurpark is hosting an exhibition of Australian animals and want to raise awareness by publishing a website.​ The exhibition will feature a minimum of 9 animals from 3 different groups of animals.
 
 The website will consist of:​
