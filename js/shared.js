@@ -1,4 +1,88 @@
 document.addEventListener("DOMContentLoaded", function () {
+    const animals = [
+        {
+            id: "Echidna",
+            src: "./images/echidna.png",
+            alt: "Echidna",
+            width: "30px"
+        },
+
+        {
+            id: "Tasmanian-Devil",
+            src: "./images/tasdevil.png",
+            alt: "Tasdevil",
+            width: "30px"
+        },
+
+        {
+            id: "Quokka",
+            src: "./images/quokka.png",
+            alt: "Quokka",
+            width: "30px"
+        },
+
+        {
+            id: "Frill-necked-lizard",
+            src: "./images/frill-lizard.png",
+            alt: "Frill-lizard",
+            width: "30px"
+        },
+
+        {
+            id: "Hawksbill-Turtle",
+            src: "./images/hawksbill-turtle.png",
+            alt: "Hawksbill-turtle",
+            width: "30px"
+        },
+
+        {
+            id: "Perentie",
+            src: "./images/Perentie.png",
+            alt: "Perentie",
+            width: "50px"
+        },
+
+        {
+            id: "Cassowary",
+            src: "./images/Cassowary.png",
+            alt: "Cassowary",
+            width: "30px"
+        },
+
+        {
+            id: "Kookaburra",
+            src: "./images/Kookaburra.png",
+            alt: "Kookaburra",
+            width: "30px"
+        },
+
+        {
+            id: "Cockatoo",
+            src: "./images/Cockatoo.png",
+            alt: "Cockatoo",
+            width: "30px"
+        }
+    ];
+
+    function appendAnimalImage(animal) {
+        const heading = document.querySelector(`#${animal.id} h3`);
+        if (!heading) return; 
+
+        const image = document.createElement('img');
+        image.src = animal.src;
+        image.alt = animal.alt;
+        image.style.width = animal.width;
+        image.style.height = "auto";
+
+        heading.style.display = "flex";
+        heading.style.alignItems = "center";
+        heading.style.gap = "10px";
+
+        heading.appendChild(image);
+    }
+
+    animals.forEach(appendAnimalImage);
+
     const animalHeadings = document.querySelectorAll('.animal h3'); 
     const descriptionContainer = document.querySelector('.animal-description');
     const sidebar = document.querySelector('.sidebar'); 
@@ -15,9 +99,8 @@ document.addEventListener("DOMContentLoaded", function () {
         const description = clickedHeading.nextElementSibling.textContent; 
 
         descriptionContainer.innerHTML = `
-            <h3 class="animal-name">${animalName}</h3>  <!-- Show the animal name as heading -->
-            <p>${description}</p>   <!-- Show the description -->
-        `;
+            <h3 class="animal-name">${animalName}</h3>  
+            <p>${description}</p>`;
 
         descriptionContainer.classList.add('show'); 
         const animalNameElement = descriptionContainer.querySelector('.animal-name');
@@ -38,6 +121,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function() {
     const sidebar = document.querySelector('.sidebar'); 
+
+    // sidebar.style.backgroundImage = "url('./images/zooimage.png')";
+    // sidebar.style.backgroundSize = "cover"; 
+    // sidebar.style.backgroundPosition = "left"; 
 
     sidebar.addEventListener('mouseenter', function() {
         sidebar.classList.add('expanded');
