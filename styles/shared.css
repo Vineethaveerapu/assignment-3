@@ -5,5 +5,529 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+    background-color: black;
 }
+
+h3 {
+    color: black;
+    border-radius: 16px;
+    border-color: black;
+    background-color: white;
+    width: 110px;
+    padding: 16px;
+    font-size: 13px;
+    cursor: pointer;
+    z-index: 1;
+    position: relative;
+    transition: width 2s ease;
+}
+
+h3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 15px;
+    border: 5px solid transparent;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 0.8),
+        rgba(7, 66, 214, 0.8),
+        rgba(234, 166, 7, 0.8),
+        rgba(227, 5, 168, 0.8),
+        rgba(14, 200, 203, 0.8)
+    );
+    background-size: 400% 400%; 
+    background-clip: border-box;
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0); 
+    mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0); 
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;/*The xor or exclude operation effectively means "remove where the mask is applied," leaving only the non-masked areas visible*/
+    animation: glowing-border 4s linear infinite;
+    z-index: -1;
+    display: none;
+}
+
+h3.active::before {
+    display: block; 
+    animation: glowing-border 4s linear infinite;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #494a4a;
+    padding: 20px;
+    height: 100vh;
+    position: fixed; 
+    overflow-y: auto;
+    transition: width 2s ease;
+    display: inline-block; 
+    vertical-align: top;
+}
+
+.sidebar .h2 {
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.sidebar.expanded {
+    width: 300px;
+}
+
+.sidebar.expanded h3 {
+    width: 170px;
+}
+
+.sidebar.expanded .h2 {
+   font-size: 25px;
+}
+
+.animal {
+    margin-bottom: 20px;
+}
+
+.animal p {
+    display: none;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 5px;
+    color: white;
+}
+
+.main-content {
+    margin-left: 320px; 
+    padding: 20px;
+    flex-grow: 1;
+}
+
+
+.animal-description, h3 .animal-name {
+    display: inline-block;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    margin-left: 50px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    opacity: 0; 
+    visibility: hidden; 
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.animal-description p {
+    font-size: 16px;
+    color: #333;
+}
+
+.animal-description h3 {
+    display: flex;
+    width: 300px;
+    font-size: 25px;
+    margin-right: 20px;
+    color: #333;
+}
+
+
+.animal-description.show {
+    display: block;
+    opacity: 1;
+    visibility: visible; 
+}
+
+.animal h3:hover {
+    background-color: #888585;
+    color: white
+}
+
+.active p {
+    display: block;
+}
+
+@keyframes glowing-border {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 20%; 
+        height: 100%;
+        position: relative;
+        padding: 20px;
+        transition: none; 
+    }
+
+    .sidebar.expanded {
+        width: 20%; 
+    }
+
+    .sidebar.expanded h3 {
+        width: 60%;
+    }
+
+    .sidebar .h2 {
+        font-size: 25px;
+        margin: 20px 0;
+        width: 100%;
+        padding-bottom: 20px;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    .animal h3 {
+        font-size: 16px;
+        width: 20%;
+        padding: 15px;
+        text-align: center;
+        width: 60%;
+    }
+
+    .animal-description {
+        width: 50%; 
+        margin-left: 20%;
+        position: fixed;
+        top: 100px;
+        left: 300px;
+        margin: 10px auto;
+        padding: 15px;
+    }
+}
+
+
+@media (max-width: 390px) {
+    .sidebar {
+        width: 20%; /* Set sidebar to 20% for smaller screens like iPad Mini */
+        height: 90%;
+        position: relative;
+        transition: none; /* Disable the expansion animation */
+    }
+
+    /* Remove expanded behavior */
+    .sidebar.expanded {
+        width: 20%; /* Ensure it doesn't expand */
+    }
+
+    .sidebar.expanded h3 {
+        width: 60%;
+    }
+
+    .sidebar .h2 {
+        font-size: 20px;
+        margin: 10px 0;
+        width: 100%;
+        padding-bottom: 15px;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    .animal h3 {
+        font-size: 12px;
+        width: 30%;
+        padding: 15px;
+        text-align: center;
+        width: 60%;
+    }
+    
+    .animal-name h3 {
+        font-size: 10px;
+        width: 20px;
+    }
+
+    .animal-description {
+        width: 50%; 
+        margin-left: 20%;
+        position: fixed;
+        top: 50px;
+        left: 150px;
+        margin: 10px auto;
+        padding: 15px;
+    }
+}
+ 
+
+body {
+    background-color: black;
+}
+
+h3 {
+    color: black;
+    border-radius: 16px;
+    border-color: black;
+    background-color: white;
+    width: 110px;
+    padding: 16px;
+    font-size: 13px;
+    cursor: pointer;
+    z-index: 1;
+    position: relative;
+    transition: width 2s ease;
+}
+
+h3::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 15px;
+    border: 5px solid transparent;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 0, 0, 0.8),
+        rgba(7, 66, 214, 0.8),
+        rgba(234, 166, 7, 0.8),
+        rgba(227, 5, 168, 0.8),
+        rgba(14, 200, 203, 0.8)
+    );
+    background-size: 400% 400%; 
+    background-clip: border-box;
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0); 
+    mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0); 
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;/*The xor or exclude operation effectively means "remove where the mask is applied," leaving only the non-masked areas visible*/
+    animation: glowing-border 4s linear infinite;
+    z-index: -1;
+    display: none;
+}
+
+h3.active::before {
+    display: block; 
+    animation: glowing-border 4s linear infinite;
+}
+
+.sidebar {
+    width: 200px;
+    background-color: #494a4a;
+    padding: 20px;
+    height: 100vh;
+    position: fixed;
+    overflow-y: auto;
+    transition: width 2s ease;
+    display: inline-block; /* Allow side-by-side with the main content */
+    vertical-align: top;
+}
+
+.sidebar .h2 {
+    font-size: 24px;
+    margin: 30px;
+    color: white;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.sidebar.expanded {
+    width: 300px;
+}
+
+.sidebar.expanded h3 {
+    width: 170px;
+}
+
+.sidebar.expanded .h2 {
+   font-size: 25px;
+}
+
+.animal {
+    margin-bottom: 20px;
+}
+
+.animal p {
+    display: none;
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 5px;
+    color: white;
+}
+
+.main-content {
+    margin-left: 320px; 
+    padding: 20px;
+    flex-grow: 1;
+}
+
+
+.animal-description, h3 .animal-name {
+    display: inline-block;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 500px;
+    margin-left: 50px;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: none;
+    opacity: 0; 
+    visibility: hidden; 
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.animal-description p {
+    font-size: 16px;
+    color: #333;
+}
+
+.animal-description h3 {
+    display: flex;
+    width: 300px;
+    font-size: 25px;
+    margin-right: 20px;
+    color: #333;
+}
+
+
+.animal-description.show {
+    display: block;
+    opacity: 1;
+    visibility: visible; 
+}
+
+.animal h3:hover {
+    background-color: #888585;
+    color: white
+}
+
+.active p {
+    display: block;
+}
+
+@keyframes glowing-border {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 100%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 20%; 
+        height: 100%;
+        position: relative;
+        padding: 20px;
+        transition: none; 
+    }
+
+    .sidebar.expanded {
+        width: 20%;
+    }
+
+    .sidebar.expanded h3 {
+        width: 60%;
+    }
+
+    .sidebar .h2 {
+        font-size: 25px;
+        margin: 20px 0;
+        width: 100%;
+        padding-bottom: 20px;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    .animal h3 {
+        font-size: 16px;
+        width: 20%;
+        padding: 15px;
+        text-align: center;
+        width: 60%;
+    }
+
+    .animal-description {
+        width: 50%; 
+        margin-left: 20%;
+        position: fixed;
+        top: 100px;
+        left: 300px;
+        margin: 10px auto;
+        padding: 15px;
+    }
+}
+
+
+@media (max-width: 390px) {
+    .sidebar {
+        width: 20%; 
+        height: 90%;
+        position: relative;
+        transition: none; 
+    }
+
+    .sidebar.expanded {
+        width: 20%; 
+    }
+
+    .sidebar.expanded h3 {
+        width: 60%;
+    }
+
+    .sidebar .h2 {
+        font-size: 20px;
+        margin: 10px 0;
+        width: 100%;
+        padding-bottom: 15px;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    .animal h3 {
+        font-size: 12px;
+        width: 30%;
+        padding: 15px;
+        text-align: center;
+        width: 60%;
+    }
+    
+    .animal-name h3 {
+        font-size: 10px;
+        width: 20px;
+    }
+
+    .animal-description {
+        width: 50%; 
+        margin-left: 20%;
+        position: fixed;
+        top: 50px;
+        left: 150px;
+        margin: 10px auto;
+        padding: 15px;
+    }
+}
+
