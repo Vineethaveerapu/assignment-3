@@ -122,10 +122,6 @@ document.addEventListener("DOMContentLoaded", function () {
 document.addEventListener("DOMContentLoaded", function() {
     const sidebar = document.querySelector('.sidebar'); 
 
-    // sidebar.style.backgroundImage = "url('./images/zooimage.png')";
-    // sidebar.style.backgroundSize = "cover"; 
-    // sidebar.style.backgroundPosition = "left"; 
-
     sidebar.addEventListener('mouseenter', function() {
         sidebar.classList.add('expanded');
     });
