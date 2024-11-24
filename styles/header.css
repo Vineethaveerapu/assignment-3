@@ -10,22 +10,31 @@ body {
   line-height: 1.6;
   background-color: #f4f4f4;
   color: #333;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+}
+
+video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: -1;
 }
 
 header {
-  background-color: #d7b783;
   color: #fff;
   padding: 1rem;
-  text-align: center;
-  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 header .logo {
   width: 50px;
   height: auto;
-  position: absolute;
-  left: 20px;
-  top: 10px;
 }
 
 nav ul {
@@ -46,10 +55,10 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-  color: rgb(212, 145, 232);
+  color: rgb(75, 16, 94);
   text-decoration: underline;
 }
 
 .active {
-  color: rgb(212, 145, 232);
+  color: rgb(75, 16, 94);
 }

@@ -6,9 +6,18 @@
     <title>Australian zoo</title>
     <link rel="stylesheet" href="./styles/shared.css" />
     <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/sidebar.css" />
     <script src="./js/shared.js" defer></script>
   </head>
   <body>
+    <video
+      autoplay="autoplay"
+      muted="muted"
+      playsinline="true"
+      loop="loop"
+      src="./videos/sample.mp4"
+      style="width: 100%; height: auto"
+    ></video>
     <!-- header starts -->
     <header>
       <img src="./images/logo.png" alt="Logo" />
@@ -23,6 +32,8 @@
       </nav>
     </header>
     <!-- header ends -->
+
+    <!-- sidebar starts -->
     <aside class="sidebar">
       <h2 class="h2">Mammals</h2>
       <div class="animal" id="Echidna">
@@ -125,9 +136,13 @@
         </p>
       </div>
     </aside>
+    <!-- sidebar ends -->
 
+    <!-- main content starts -->
     <main class="main-content">
+      <h1>Welcome to Australian Zoo</h1>
       <div class="animal-description"></div>
     </main>
+    <!-- main content ends -->
   </body>
 </html>
