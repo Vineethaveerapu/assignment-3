@@ -86,6 +86,20 @@ nav ul li a:hover {
   background-color: #fff;
 }
 
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 0.5rem; /* Adjust position */
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0; /* Hide the middle line */
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 0.5rem; /* Adjust position */
+}
+
 /* Responsive styling */
 @media (max-width: 768px) {
   .hamburger {
