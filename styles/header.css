@@ -8,11 +8,11 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   line-height: 1.6;
-  background-color: #f4f4f4;
-  color: #333;
   position: relative;
   min-height: 100vh;
   width: 100%;
+  color: #fff;
+  background-color: black;
 }
 
 video {
@@ -25,11 +25,10 @@ video {
 }
 
 header {
-  color: #fff;
   padding: 1rem;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 
 header .logo {
@@ -41,24 +40,75 @@ nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
+  margin: 0;
+  padding: 0;
 }
 
 nav ul li {
-  margin: 0;
+  margin-right: 20px;
 }
 
 nav ul li a {
-  color: white;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.5rem;
   padding: 15px 20px;
   text-decoration: none;
   display: block;
 }
 
 nav ul li a:hover {
-  color: rgb(75, 16, 94);
+  color: #fff;
   text-decoration: underline;
 }
 
 .active {
-  color: rgb(75, 16, 94);
+  color: #fff;
+  text-decoration: underline;
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 0.375rem;
+  width: 2rem;
+  padding: 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 5;
+}
+
+.hamburger span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #fff;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+  nav {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    width: 100%;
+    padding: 10px;
+    min-height: 100vh;
+    z-index: 1;
+  }
+  nav ul {
+    display: block;
+  }
+  nav ul li {
+    margin: 10px 0;
+  }
+  nav.active {
+    display: block;
+  }
 }

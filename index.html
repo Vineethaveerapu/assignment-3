@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="./styles/header.css" />
     <link rel="stylesheet" href="./styles/sidebar.css" />
     <script src="./js/shared.js" defer></script>
+    <script src="./js/header.js" defer></script>
   </head>
   <body>
     <video
@@ -21,7 +22,15 @@
     <!-- header starts -->
     <header>
       <img src="./images/logo.png" alt="Logo" />
-      <nav>
+
+      <!-- Hamburger icon -->
+      <button class="hamburger" id="hamburger" aria-label="Menu Toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="navbar">
         <ul>
           <li><a href="index.html" class="active">Home</a></li>
           <li><a href="birds.html">Birds</a></li>
@@ -31,6 +40,7 @@
         </ul>
       </nav>
     </header>
+
     <!-- header ends -->
 
     <!-- sidebar starts -->
@@ -140,7 +150,6 @@
 
     <!-- main content starts -->
     <main class="main-content">
-      <h1>Welcome to Australian Zoo</h1>
       <div class="animal-description"></div>
     </main>
     <!-- main content ends -->
