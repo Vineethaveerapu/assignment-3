@@ -8,7 +8,7 @@ body {
   font-family: "Poppins", sans-serif;
 }
 /* Footer */
-/* General Footer Styles */
+
 footer {
   background-color: #f8f8f8;
   color: #333;
@@ -24,7 +24,7 @@ footer {
   margin: auto;
 }
 
-/* Left Section */
+
 .footer-left {
   max-width: 60%;
 }
@@ -44,7 +44,7 @@ footer {
   text-decoration: none;
 }
 
-/* Right Section */
+
 .footer-right {
   max-width: 35%;
 }
@@ -67,7 +67,7 @@ footer {
   text-decoration: underline;
 }
 
-/* Social Media Icons */
+
 .social-icons {
   margin-top: 20px;
 }
@@ -81,10 +81,10 @@ footer {
 }
 
 .social-icon:hover {
-  color: #4267B2; /* Facebook blue hover effect */
+  color: #4267B2; 
 }
 
-/* Footer Bottom Section */
+
 .footer-bottom {
   text-align: center;
   margin-top: 20px;
