@@ -1,0 +1,160 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  color: #fff;
+  background-color: black;
+}
+
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  object-fit: cover;
+}
+
+header {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.logo {
+  width: auto;
+  height: 150px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2.5vw;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  margin-right: 20px;
+}
+
+nav ul li a {
+  max-width: fit-content;
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.5rem;
+  padding: 15px 20px;
+  text-decoration: none;
+  display: block;
+}
+
+nav ul li a {
+  position: relative;
+  padding: 0;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0px;
+  width: 100%;
+  height: 2px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+nav ul li a:hover::after,
+.active::after {
+  transform: scaleX(1);
+}
+
+.active,
+nav ul li a:hover {
+  color: #16e97f;
+}
+
+.hamburger,
+.close-button {
+  display: none;
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.close-button {
+  width: 2rem;
+  height: auto;
+}
+
+/* Responsive styling */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+  .close-button {
+    display: none;
+  }
+
+  nav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    padding: 10px;
+    z-index: 1;
+    overflow-y: auto;
+  }
+
+  nav ul {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  /* active class */
+  nav.active {
+    display: block;
+  }
+
+  .hamburger-container.active {
+    z-index: 100;
+    .hamburger {
+      display: none;
+    }
+    .close-button {
+      z-index: 100;
+      display: block;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .logo {
+    height: 100px;
+  }
+}

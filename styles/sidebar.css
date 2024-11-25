@@ -1,0 +1,7 @@
+.sidebar {
+  position: relative;
+  background-color: transparent;
+  backdrop-filter: blur(1px);
+  min-height: auto !important;
+  float: left;
+}

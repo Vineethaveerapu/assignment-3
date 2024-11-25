@@ -5,287 +5,282 @@
 }
 
 body {
-    background-color: black;
+  background-color: black;
 }
 
 h3 {
-    color: black;
-    border-radius: 16px;
-    border-color: black;
-    background-color: white;
-    width: 110px;
-    padding: 16px;
-    font-size: 13px;
-    cursor: pointer;
-    z-index: 1;
-    position: relative;
-    transition: width 2s ease;
+  color: black;
+  border-radius: 16px;
+  border-color: black;
+  background-color: white;
+  width: 110px;
+  padding: 16px;
+  font-size: 13px;
+  cursor: pointer;
+  z-index: 1;
+  position: relative;
+  transition: width 2s ease;
 }
 
 h3::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius: 15px;
-    border: 7px solid transparent;
-    background: linear-gradient(
-        90deg,
-        rgba(255, 0, 0, 0.8),
-        rgba(7, 66, 214, 0.8),
-        rgba(234, 166, 7, 0.8),
-        rgba(10, 230, 98, 0.8),
-        rgba(7, 223, 226, 0.8)
-    );
-    background-size: 400% 400%; 
-    background-clip: border-box;
-    -webkit-mask: 
-        linear-gradient(#fff 0 0) content-box, 
-        linear-gradient(#fff 0 0); 
-    mask: 
-        linear-gradient(#fff 0 0) content-box, 
-        linear-gradient(#fff 0 0); 
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;/*The xor or exclude operation effectively means "remove where the mask is applied," leaving only the non-masked areas visible*/
-    animation: glowing-border 4s linear infinite;
-    z-index: -1;
-    display: none;
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 15px;
+  border: 7px solid transparent;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 0, 0, 0.8),
+    rgba(7, 66, 214, 0.8),
+    rgba(234, 166, 7, 0.8),
+    rgba(10, 230, 98, 0.8),
+    rgba(7, 223, 226, 0.8)
+  );
+  background-size: 400% 400%;
+  background-clip: border-box;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude; /*The xor or exclude operation effectively means "remove where the mask is applied," leaving only the non-masked areas visible*/
+  animation: glowing-border 4s linear infinite;
+  z-index: -1;
+  display: none;
 }
 
 h3.active::before {
-    display: block; 
-    animation: glowing-border 4s linear infinite;
+  display: block;
+  animation: glowing-border 4s linear infinite;
 }
 
 .sidebar {
-    width: 200px;
-    background-color: #7f8a8a;
-    padding: 20px;
-    height: 100vh;
-    position: fixed;
-    overflow-y: auto;
-    transition: width 2s ease;
-    display: inline-block; 
-    vertical-align: top;
+  width: 200px;
+  background-color: #7f8a8a;
+  padding: 20px;
+  height: 100vh;
+  position: fixed;
+  overflow-y: auto;
+  transition: width 2s ease;
+  display: inline-block;
+  vertical-align: top;
 }
 
 .sidebar .h2 {
-    font-size: 24px;
-    margin: 30px;
-    color: white;
-    text-align: center;
-    text-decoration: underline;
+  font-size: 24px;
+  margin: 30px;
+  color: white;
+  text-align: center;
+  text-decoration: underline;
 }
 
 .animal h3 {
-    width: 150px;
+  width: 150px;
 }
 
 .sidebar.expanded {
-    width: 300px;
+  width: 300px;
 }
 
 .sidebar.expanded h3 {
-    width: 170px;
+  width: 170px;
 }
 
 .sidebar.expanded .h2 {
-   font-size: 25px;
+  font-size: 25px;
 }
 
 .animal {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .animal p {
-    display: none;
-    font-size: 16px;
-    line-height: 1.5;
-    margin-top: 5px;
-    color: white;
+  display: none;
+  font-size: 16px;
+  line-height: 1.5;
+  margin-top: 5px;
+  color: white;
 }
 
 .main-content {
-    margin-left: 320px; 
-    padding: 20px;
-    flex-grow: 1;
+  margin-left: 320px;
+  padding: 20px;
+  flex-grow: 1;
 }
 
-
-.animal-description, h3 .animal-name {
-    display: inline-block;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 500px;
-    margin-left: 50px;
-    background-color: white;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    display: none;
-    opacity: 0; 
-    visibility: hidden; 
-    transition: opacity 0.2s ease, visibility 0.2s ease;
+.animal-description,
+h3 .animal-name {
+  display: inline-block;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  margin-left: 50px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
 }
 
 .animal-description p {
-    font-size: 16px;
-    color: #333;
+  font-size: 16px;
+  color: #333;
 }
 
 .animal-description h3 {
-    display: flex;
-    width: 300px;
-    font-size: 25px;
-    margin-right: 20px;
-    color: #333;
+  display: flex;
+  width: 300px;
+  font-size: 25px;
+  margin-right: 20px;
+  color: #333;
 }
 
-
 .animal-description.show {
-    display: block;
-    opacity: 1;
-    visibility: visible; 
+  display: block;
+  opacity: 1;
+  visibility: visible;
 }
 
 .animal h3:hover {
-    background-color: #445b59;
-    color: white
+  background-color: #445b59;
+  color: white;
 }
 
 .active p {
-    display: block;
+  display: block;
 }
 
 .animal h3 img {
-    width: 30px; 
-    margin-right: 10px;
-    transition: transform 0.5s ease; 
+  width: 30px;
+  margin-right: 10px;
+  transition: transform 0.5s ease;
 }
 
 .animal h3.active img {
-    animation: moveImage 6s ease infinite; 
+  animation: moveImage 6s ease infinite;
 }
 
 @keyframes moveImage {
-    0% {
-        transform: translateX(0); 
-    }
-    50% {
-        transform: translateX(10px);  
-    }
-    100% {
-        transform: translateX(0); 
-    }
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
 }
 
 @keyframes glowing-border {
-    0% {
-        background-position: 0% 0%;
-    }
-    50% {
-        background-position: 100% 100%;
-    }
-    100% {
-        background-position: 0% 0%;
-    }
+  0% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 0%;
+  }
 }
 
 @media (max-width: 768px) {
-    .sidebar {
-        width: 20%; 
-        height: 100%;
-        position: relative;
-        padding: 20px;
-        transition: none; 
-    }
+  .sidebar {
+    width: 20%;
+    height: 100%;
+    position: relative;
+    padding: 20px;
+    transition: none;
+  }
 
-    .sidebar.expanded {
-        width: 20%; 
-    }
+  .sidebar.expanded {
+    width: 20%;
+  }
 
-    .sidebar.expanded h3 {
-        width: 70%;
-    }
+  .sidebar.expanded h3 {
+    width: 70%;
+  }
 
-    .sidebar .h2 {
-        font-size: 25px;
-        margin: 20px 0;
-        width: 100%;
-        padding-bottom: 20px;
-    }
+  .sidebar .h2 {
+    font-size: 25px;
+    margin: 20px 0;
+    width: 100%;
+    padding-bottom: 20px;
+  }
 
-    .main-content {
-        margin-left: 0;
-        padding: 10px;
-    }
+  .main-content {
+    margin-left: 0;
+    padding: 10px;
+  }
 
-    .animal h3 {
-        font-size: 16px;
-        width: 70%;
-        padding: 15px;
-        text-align: center;
-    }
+  .animal h3 {
+    font-size: 16px;
+    width: 70%;
+    padding: 15px;
+    text-align: center;
+  }
 
-    .animal-description {
-        width: 50%; 
-        margin-left: 20%;
-        position: fixed;
-        top: 100px;
-        left: 300px;
-        margin: 10px auto;
-        padding: 15px;
-    }
+  .animal-description {
+    width: 50%;
+    margin-left: 20%;
+    position: fixed;
+    top: 100px;
+    left: 300px;
+    margin: 10px auto;
+    padding: 15px;
+  }
 }
 
 @media (max-width: 390px) {
-    .sidebar {
-        width: 30%; 
-        height: 90%;
-        position: relative;
-        transition: none;
-    }
+  .sidebar {
+    width: 30%;
+    height: 90%;
+    position: relative;
+    transition: none;
+  }
 
-    .sidebar.expanded {
-        width: 30%; 
-    }
+  .sidebar.expanded {
+    width: 30%;
+  }
 
-    .sidebar.expanded h3 {
-        width: 80%;
-    }
+  .sidebar.expanded h3 {
+    width: 80%;
+  }
 
-    .sidebar .h2 {
-        font-size: 20px;
-        margin: 10px 0;
-        width: 100%;
-        padding-bottom: 15px;
-    }
+  .sidebar .h2 {
+    font-size: 20px;
+    margin: 10px 0;
+    width: 100%;
+    padding-bottom: 15px;
+  }
 
-    .main-content {
-        margin-left: 0;
-        padding: 10px;
-    }
+  .main-content {
+    margin-left: 0;
+    padding: 10px;
+  }
 
-    .animal h3 {
-        font-size: 12px;
-        padding: 15px;
-        text-align: center;
-        width: 70%;
-    }
-    
-    .animal-name h3 {
-        font-size: 10px;
-        width: 20%;
-    }
+  .animal h3 {
+    font-size: 12px;
+    padding: 15px;
+    text-align: center;
+    width: 70%;
+  }
 
-    .animal-description {
-        width: 45%; 
-        margin-left: 30%;
-        position: fixed;
-        top: 50px;
-        left: 180px;
-        margin: 10px auto;
-        padding: 15px;
-    }
+  .animal-name h3 {
+    font-size: 10px;
+    width: 20%;
+  }
+
+  .animal-description {
+    width: 45%;
+    margin-left: 30%;
+    position: fixed;
+    top: 50px;
+    left: 180px;
+    margin: 10px auto;
+    padding: 15px;
+  }
 }
