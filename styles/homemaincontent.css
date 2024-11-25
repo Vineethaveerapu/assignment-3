@@ -1,23 +1,5 @@
-body {
-  min-height: 100%;
-  font-family: "Poppins", sans-serif;
-  display: flex;
-  flex-direction: column;
-}
-
-.container {
-  display: flex;
-  flex-grow: 1;
-}
-
-.sidebar {
-  flex-basis: 25%;
-}
-
 .main-content {
-  flex-grow: 1;
-  color: black;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  --offset-menu: calc(150px + 32px);
 }
 
 .content-title {
@@ -111,7 +93,6 @@ body {
   display: grid;
   grid-template: repeat(6, 75px) / repeat(2, 1fr);
   color: white;
-  /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
   text-transform: uppercase;
   text-align: center;
 }
@@ -159,7 +140,6 @@ body {
     display: grid;
     grid-template: repeat(6, 75px) / repeat(2, 300px);
     color: white;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     text-transform: uppercase;
     text-align: center;
   }
@@ -192,7 +172,6 @@ body {
     margin: 32px;
     padding: 8px;
     color: white;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     text-transform: uppercase;
     text-align: center;
   }
