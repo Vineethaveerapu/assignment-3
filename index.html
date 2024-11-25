@@ -18,14 +18,6 @@
     <script src="./js/homemaincontent.js" defer></script>
   </head>
   <body>
-    <video
-      class="background-video"
-      autoplay="autoplay"
-      muted="muted"
-      playsinline="true"
-      loop="loop"
-      src="./videos/sample.mp4"
-    ></video>
     <!-- header starts -->
     <header>
       <img class="logo" src="./images/logo.png" alt="Logo" />
@@ -83,39 +75,55 @@
       </nav>
     </header>
     <!-- header ends -->
-    <aside class="sidebar">
-      <!-- mammals -->
-      <div class="animal" id="Echidna"></div>
-      <div class="animal" id="Tasmanian-Devil"></div>
-      <div class="animal" id="Quokka"></div>
-
-      <!-- Reptiles -->
-      <div class="animal" id="Frill-necked-lizard"></div>
-      <div class="animal" id="Hawksbill-Turtle"></div>
-      <div class="animal" id="Perentie"></div>
-
-      <!-- Birds -->
-      <div class="animal" id="Cassowary"></div>
-      <div class="animal" id="Kookaburra"></div>
-      <div class="animal" id="Cockatoo"></div>
-    </aside>
-
     <main class="main-content">
-      <div class="animal-description"></div>
-    </main>
-    <section>
-      <h3 class="sub-headings">EXPLORE NATURE'S ZOO</h3>
-      <div class="facilities"></div>
-    </section>
-    <section>
-      <h3 class="sub-headings">PLAN YOUR VISIT</h3>
-      <div class="ticket-background">
-        <div class="ticket">
-          <div class="ticket-details"></div>
+      <div class="video-background-container">
+        <video
+          class="background-video"
+          autoplay="autoplay"
+          muted="muted"
+          playsinline="true"
+          loop="loop"
+          src="./videos/sample.mp4"
+        ></video>
+
+        <div class="video-overlay">
+          <aside class="sidebar">
+            <!-- mammals -->
+            <div class="animal" id="Echidna"></div>
+            <div class="animal" id="Tasmanian-Devil"></div>
+            <div class="animal" id="Quokka"></div>
+
+            <!-- Reptiles -->
+            <div class="animal" id="Frill-necked-lizard"></div>
+            <div class="animal" id="Hawksbill-Turtle"></div>
+            <div class="animal" id="Perentie"></div>
+
+            <!-- Birds -->
+            <div class="animal" id="Cassowary"></div>
+            <div class="animal" id="Kookaburra"></div>
+            <div class="animal" id="Cockatoo"></div>
+          </aside>
+
+          <div class="container">
+            <div class="animal-description"></div>
+          </div>
         </div>
       </div>
-    </section>
 
+      <section>
+        <h3 class="sub-headings">EXPLORE NATURE'S ZOO</h3>
+        <div class="facilities"></div>
+      </section>
+
+      <section>
+        <h3 class="sub-headings">PLAN YOUR VISIT</h3>
+        <div class="ticket-background">
+          <div class="ticket">
+            <div class="ticket-details"></div>
+          </div>
+        </div>
+      </section>
+    </main>
     <!-- Footer -->
     <footer>
       <div class="footer-content">
