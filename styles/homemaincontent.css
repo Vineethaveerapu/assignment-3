@@ -57,29 +57,30 @@
 .facilities {
   display: grid;
   grid-template: 500px / repeat(3, 1fr);
-  gap: 16px;
+  gap: 2rem;
   border: 10px solid #1a9973;
+  padding: 2rem 1rem;
 }
 
 .facilities-grid {
   border: 1px solid #0f403d;
+  padding: 2rem;
   box-shadow: 2px 2px 2px;
 }
 
 .facilities-grid img {
   width: 100%;
-  height: auto;
 }
 
 .facilities-grid h4 {
-  margin: 8px;
-  padding: 8px;
+  margin: 1px;
+  padding: 1px;
   font-size: 16px;
 }
 
 .facilities-grid p {
-  margin: 8px;
-  padding: 8px;
+  margin: 1px;
+  padding: 1px;
   font-size: 14px;
 }
 
