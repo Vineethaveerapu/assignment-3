@@ -1,27 +1,9 @@
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  line-height: 1.6;
-  position: relative;
-  min-height: 100vh;
-  width: 100%;
-  color: #fff;
-  background-color: black;
-}
-
 .background-video {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1;
   object-fit: cover;
 }
 
@@ -30,7 +12,9 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: relative;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
 }
 
 .logo {
