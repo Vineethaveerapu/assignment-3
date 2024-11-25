@@ -1,0 +1,226 @@
+body {
+    min-height: 100%;
+    font-family: "Poppins", sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+  
+.container {
+    display: flex;
+    flex-grow: 1;
+}
+  
+.sidebar {
+    flex-basis: 25%;
+}
+  
+.main-content {   
+    flex-grow: 1;
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+  
+.content-title {
+    font-size: 2rem;
+    text-align: center;
+    text-transform: uppercase;
+}
+  
+.main-content-details {
+    margin: 8px;
+    padding: 0 8px;
+}
+  
+.main-content-details h5 {
+    margin: 8px;
+    padding: 8px;
+    font-size: 18px;
+}
+
+.main-content-details p {
+    margin: 8px;
+    padding: 8px;
+    font-size: 14px;
+}
+
+.sub-headings {
+    background-color: #0f403d;
+    clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+    color: white;
+    margin: 16px;
+    padding: 16px;
+    font-size: 24px;
+    text-align: center;
+}
+  
+.facilities {
+    display: grid;
+    grid-template: 500px / repeat(3 , 1fr);
+    gap: 16px;
+    border: 10px solid #1a9973;
+}
+  
+.facilities-grid {
+    border: 1px solid #0f403d;
+    box-shadow: 2px 2px 2px;
+}
+  
+.facilities-grid img {
+    width: 100%;
+    height: auto;
+}
+  
+.facilities-grid h4 {
+    margin: 8px;
+    padding: 8px;
+    font-size: 16px;
+}
+  
+.facilities-grid p { 
+    margin: 8px;
+    padding: 8px;
+    font-size: 14px;
+}
+  
+.highlight {
+    cursor: pointer; 
+    transform: scale(1.05);
+}
+  
+.ticket-background {
+    margin: 0;
+    background-image: url('../images/green.jpg');
+}
+  
+.ticket {
+    margin: 32px 10%;
+    display: flex;
+    border: 1px solid #0f403d;
+    box-shadow: 5px 5px 5px 5px;;
+}
+  
+.ticket img {
+    width: 50%;
+    height: auto;
+}
+  
+.ticket-details {
+    background-color: #1a9973;
+    margin: 0;
+    padding: 8px;
+    display: grid;
+    grid-template: repeat(6 , 75px) / repeat(2 , 1fr) ;   
+    color: white;
+    /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
+    text-transform: uppercase;
+    text-align: center;
+}
+  
+.details {
+    border-bottom: 1px dotted wheat;
+    font-weight: 800;
+}
+  
+.content {
+    display: flex;
+    border-bottom: 1px dotted wheat;
+    justify-content: space-evenly;
+}
+  
+.content img {
+    width: 30px;
+    height: auto;
+}
+  
+.content p {
+    flex-grow: 1;  
+}
+  
+.active {
+    cursor: pointer;
+    border-bottom: none;
+    transform: scale(1.2);
+}
+  
+@media screen and (max-width: 800px) {
+  
+    .ticket-background {
+        margin: 0;
+        background-image: none;
+    }
+  
+    .ticket img {
+        display: none;
+    }
+    
+    .ticket-details {
+        background-color: #1a9973;
+        margin: 0;
+        padding: 8px;
+        display: grid;
+        grid-template: repeat(6 , 75px) / repeat(2 , 300px) ;   
+        color: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-transform: uppercase;
+        text-align: center;
+    }
+    
+    .ticket {
+        margin: 32px;
+        display: flex;
+        border: none;
+        box-shadow: none;
+    }
+}
+  
+@media screen and (max-width: 700px) {
+  
+    .main-content {
+        animation: none;
+        background-image: none;
+    }
+  
+    .sub-headings {
+        font-size: 18px;
+    }
+
+    .facilities {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ticket-details {
+        background-color: #1a9973;
+        margin: 32px;
+        padding: 8px;
+        color: white;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-transform: uppercase;
+        text-align: center;
+    }
+
+    .highlight {
+        cursor: none;
+        transform: none;
+    }
+
+    .active {
+        cursor: none;
+        transform: none;
+        border-bottom: 1px dotted wheat;
+    }
+
+}
+
+@media screen and (max-width : 600px) {
+
+    .sub-headings {
+        font-size: 12px;
+    }
+  
+    .ticket-details {
+        display: flex;
+        flex-direction: column; 
+        margin:8px 32px;
+    }
+}
