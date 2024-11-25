@@ -100,6 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const sidebar = document.querySelector(".sidebar");
   const descriptionContainer = document.querySelector(".animal-description");
+  const container = document.querySelector(".container");
 
   animals.forEach((group) => {
     // create category heading
@@ -147,9 +148,11 @@ document.addEventListener("DOMContentLoaded", function () {
         if (heading.classList.contains("active")) {
           heading.classList.remove("active");
           descriptionContainer.classList.remove("show");
+          container.classList.remove("showing-animal-description");
         } else {
           heading.classList.add("active");
           descriptionContainer.classList.add("show");
+          container.classList.add("showing-animal-description");
         }
 
         descriptionContainer.innerHTML = `
@@ -160,10 +163,14 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // hide description when mouse leaves sidebar
   sidebar.addEventListener("mouseleave", function () {
     descriptionContainer.classList.remove("show");
     const activeHeading = document.querySelector(".animal-name.active");
-    if (activeHeading) activeHeading.classList.remove("active");
+    if (activeHeading) {
+      activeHeading.classList.remove("active");
+    }
+    container.classList.remove("showing-animal-description");
   });
 });
 

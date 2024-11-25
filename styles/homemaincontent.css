@@ -9,6 +9,12 @@
   padding-top: 1.2rem;
 }
 
+.container.showing-animal-description {
+  .sidebar-next-content {
+    display: none;
+  }
+}
+
 .content-title {
   font-size: 2rem;
   text-align: center;
