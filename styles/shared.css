@@ -1,9 +1,9 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;  
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -190,56 +190,56 @@ h3 .animal-name {
 }
 
 @media (max-width: 768px) {
-    .sidebar {
-        width: 40%; 
-        height: 100%;
-        position: relative;
-        padding: 20px;
-        transition: none; 
-    }
+  .sidebar {
+    width: 40%;
+    height: 100%;
+    position: relative;
+    padding: 20px;
+    transition: none;
+  }
 
-    .sidebar.expanded {
-        width: 40%; 
-    }
+  .sidebar.expanded {
+    width: 40%;
+  }
 
-    .sidebar.expanded h3 {
-        width: 67%;
-    } 
+  .sidebar.expanded h3 {
+    width: 67%;
+  }
 
-    .sidebar h2 {
-        font-size: 32px;
-        font-weight: bold;
-        margin: 20px 0;
-        width: 100%;
-        padding-bottom: 20px;
-    }
+  .sidebar h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin: 20px 0;
+    width: 100%;
+    padding-bottom: 20px;
+  }
 
-    .main-content {
-        margin-left: 0;
-        padding: 10px;
-    }
+  .main-content {
+    margin-left: 0;
+    padding: 10px;
+  }
 
-    .animal h3 {
-        font-size: 17px;
-        width: 70%;
-        padding: 15px;
-        text-align: center;
-    }
+  .animal h3 {
+    font-size: 17px;
+    width: 70%;
+    padding: 15px;
+    text-align: center;
+  }
 
-    .animal-description {
-        width: 55%; 
-        margin-left: 20%;
-        position: fixed;
-        top: 100px;
-        left: 325px;
-        margin: 10px auto;
-        padding: 15px;
-    }
-    
-    .animal-description h3{
-         font-size: 30px;
-         font-weight: bold;
-    }
+  .animal-description {
+    width: 55%;
+    margin-left: 20%;
+    position: fixed;
+    top: 100px;
+    left: 325px;
+    margin: 10px auto;
+    padding: 15px;
+  }
+
+  .animal-description h3 {
+    font-size: 30px;
+    font-weight: bold;
+  }
 }
 
 @media (max-width: 390px) {
