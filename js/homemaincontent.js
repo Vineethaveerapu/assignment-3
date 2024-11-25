@@ -90,24 +90,24 @@ function TicketDetails (className, icon, iconAlt , detail) {
 };
 
 let time = new TicketDetails("details","","","opening hours");
-let hours = new TicketDetails("time","./images/clock-three-svgrepo-com.svg","Clock-icon","09.00 - 18.00 All days")
+let hours = new TicketDetails("time","./images/clock.svg","Clock-icon","09.00 - 18.00 All days")
 let address = new TicketDetails("details","", "",  "Address");
-let addressDetails = new TicketDetails("address","./images/location-pin-svgrepo-com.svg","Map-icon", "Roskildevej 32, 2000 Frederiksberg.");
+let addressDetails = new TicketDetails("address","./images/location.svg","Map-icon", "Roskildevej 32, 2000 Frederiksberg.");
 let disabledOption = new TicketDetails("details","","","disablity conditions",);
-let disabledDetails = new TicketDetails("disabled" ,"./images/wheelchair-svgrepo-com (1).svg","Wheelchair-icon", "Wheelchair-friendly conditions.");
+let disabledDetails = new TicketDetails("disabled" ,"./images/wheelchair.svg","Wheelchair-icon", "Wheelchair-friendly conditions.");
 let lion = new TicketDetails("details","", "","Feeding the lion");
-let lionFeed = new TicketDetails("lion" ,"./images/lion-svgrepo-com.svg","Lion-icon", "12.00 - 12.30");
+let lionFeed = new TicketDetails("lion" ,"./images/lion.svg","Lion-icon", "12.00 - 12.30");
 let bear = new TicketDetails("details","","","Feeding the bear");
-let bearFeed = new TicketDetails("bear" ,"./images/bear-black-shape-svgrepo-com.svg","Bear-icon", "13.00 - 13.30");
+let bearFeed = new TicketDetails("bear" ,"./images/bear.svg","Bear-icon", "13.00 - 13.30");
 let dolphin = new TicketDetails("details","","","Dolphin Show",);
-let dolphinShow = new TicketDetails("dolphin" ,"./images/dolphin-svgrepo-com.svg","Dolphin-icon", "14.00 - 14.45");
+let dolphinShow = new TicketDetails("dolphin" ,"./images/dolphin.svg","Dolphin-icon", "14.00 - 14.45");
 
 
 let ticketSection = [time ,hours, address ,addressDetails , disabledOption , disabledDetails, lion , lionFeed, bear,bearFeed,dolphin,dolphinShow];
 ticketSection.forEach(options => options.description());
 
 let planYourVisitImage = document.createElement("img");
-planYourVisitImage.src = "./images/pexels-wolfgangflip.jpg";
+planYourVisitImage.src = "./images/wolfgangflip.jpg";
 planYourVisitImage.alt = "Wolf-gang";
 let planYourVisit = document.querySelector(".ticket");
 planYourVisit.appendChild(planYourVisitImage);

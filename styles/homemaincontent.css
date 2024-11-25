@@ -17,13 +17,13 @@ body {
 .main-content {   
     flex-grow: 1;
     color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
   
 .content-title {
     font-size: 2rem;
     text-align: center;
     text-transform: uppercase;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
   
 .main-content-details {
@@ -35,7 +35,6 @@ body {
     margin: 8px;
     padding: 8px;
     font-size: 18px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .main-content-details p {
@@ -52,7 +51,6 @@ body {
     padding: 16px;
     font-size: 24px;
     text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
   
 .facilities {
@@ -113,7 +111,7 @@ body {
     display: grid;
     grid-template: repeat(6 , 75px) / repeat(2 , 1fr) ;   
     color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
     text-transform: uppercase;
     text-align: center;
 }
@@ -141,7 +139,7 @@ body {
 .active {
     cursor: pointer;
     border-bottom: none;
-    transform: scale(1.2)
+    transform: scale(1.2);
 }
   
 @media screen and (max-width: 800px) {
