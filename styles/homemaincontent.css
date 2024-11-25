@@ -14,13 +14,9 @@ body {
     flex-basis: 25%;
 }
   
-.main-content {
-    background-image: url("../images/pexels-c-reiners-907786.jpg") ;
-    background-repeat: no-repeat;
-    background-size: cover;
+.main-content {   
     flex-grow: 1;
-    color: white;
-    animation: background-change 25s linear infinite;
+    color: black;
 }
   
 .content-title {
@@ -143,7 +139,8 @@ body {
 }
   
 .active {
-    background-color: #0f403d;
+    cursor: pointer;
+    border-bottom: none;
     transform: scale(1.2)
 }
   
@@ -183,7 +180,6 @@ body {
     .main-content {
         animation: none;
         background-image: none;
-        background-color: #1a9973;
     }
   
     .sub-headings {
@@ -205,6 +201,17 @@ body {
         text-align: center;
     }
 
+    .highlight {
+        cursor: none;
+        transform: none;
+    }
+
+    .active {
+        cursor: none;
+        transform: none;
+        border-bottom: 1px dotted wheat;
+    }
+
 }
 
 @media screen and (max-width : 600px) {
@@ -217,28 +224,5 @@ body {
         display: flex;
         flex-direction: column; 
         margin:8px 32px;
-    }
-}
-
-@keyframes background-change {
-    
-    25% {
-        background-image: url('../images/pexels-goldcircuits-3253094.jpg');
-        animation-delay: 5s;
-    }
-
-    50% {
-        background-image: url('../images/pexels-lucaspezeta.jpg');
-        animation-delay: 10s;
-    }
-
-    75%{
-        background-image: url('../images/pexels-matej.jpg');
-        animation-delay: 15s;
-    }
-
-    100% {
-        background-image: url('../images/elephant.jpg');
-        animation-delay: 20s;
     }
 }

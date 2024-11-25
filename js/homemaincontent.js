@@ -16,13 +16,13 @@ function MainContent(className ,heading , explanation) {
     };
 }
     
-let history = new MainContent("history","About Us" , "Nature's Zoo was founded in the year 1995 by a passionate wildlife enthusiast who envisioned a space where both animals and humans could interact in a natural, sustainable environment. Located in India, the zoo was initially asmall sanctuary focusing on local wildlife, aiming to educate the community about native species and conservation efforts");
 let mission = new MainContent("mission","Mission and Vision", "From its inception, Nature's Zoo has had a core mission: To foster a deeper understanding and appreciation of the natural world, promoting conservation and sustainability for future generations.The founders were committed to preserving the natural habitats of animals while providing an educational experience for visitors.");
 let conservation = new MainContent("conservation", "Focus on Conservation", "By the mid-2000s, Nature’s Zoo had established itself as a leader in conservation. The zoo launched multiple projects, aimed at reintroducing endangered species to the wild. Partnerships with wildlife organizations and local schools helped build a strong community support system, spreading awareness about conservation.");
 let innovation = new MainContent("innovations", "Innovation and Visitor's Experience" , "In recent Years, Nature’s Zoo has embraced technology and innovation, introducing features like interactive exhibits virtual reality tours, and educational workshops. The zoo is now home to over 25 species, with a special emphasis on animal welfare, conservation research, and sustainable practices.");
 let goal = new MainContent("goal","Present and Future", "Today, Nature’s Zoo continues to be a hub for conservation, research, and education. With future plans to expand exhibits and develop more breeding programs, the zoo remains dedicated to its mission of connecting people with nature and inspiring a global movement for wildlife conservation.");
+let history = new MainContent("history","About Us" , "Nature's Zoo was founded in the year 1995 by a passionate wildlife enthusiast who envisioned a space where both animals and humans could interact in a natural, sustainable environment. Located in India, the zoo was initially asmall sanctuary focusing on local wildlife, aiming to educate the community about native species and conservation efforts");
 
-let topics = [history, mission, conservation, innovation, goal];
+let topics = [mission, conservation, innovation, goal, history];
 topics.forEach(maincontent => maincontent.description());
 
 function Facilities(className,anchorLink,image,heading, explanation) {
@@ -72,7 +72,7 @@ function TicketDetails (className, icon, iconAlt , detail) {
         let ticketDiv = document.querySelector(".ticket-details");
         let ticketClass = document.createElement("div");
         if(className === "details"){
-            ticketClass.classList.add(className);
+            ticketClass.classList.add(className,"content");
             ticketDiv.appendChild(ticketClass);
         }else {
             ticketClass.classList.add(className ,"content");
@@ -95,9 +95,9 @@ let address = new TicketDetails("details","", "",  "Address");
 let addressDetails = new TicketDetails("address","./images/location-pin-svgrepo-com.svg","Map-icon", "Roskildevej 32, 2000 Frederiksberg.");
 let disabledOption = new TicketDetails("details","","","disablity conditions",);
 let disabledDetails = new TicketDetails("disabled" ,"./images/wheelchair-svgrepo-com (1).svg","Wheelchair-icon", "Wheelchair-friendly conditions.");
-let lion = new TicketDetails("details","", "","Feeding the lion. ");
+let lion = new TicketDetails("details","", "","Feeding the lion");
 let lionFeed = new TicketDetails("lion" ,"./images/lion-svgrepo-com.svg","Lion-icon", "12.00 - 12.30");
-let bear = new TicketDetails("details","","","Feeding the bear.");
+let bear = new TicketDetails("details","","","Feeding the bear");
 let bearFeed = new TicketDetails("bear" ,"./images/bear-black-shape-svgrepo-com.svg","Bear-icon", "13.00 - 13.30");
 let dolphin = new TicketDetails("details","","","Dolphin Show",);
 let dolphinShow = new TicketDetails("dolphin" ,"./images/dolphin-svgrepo-com.svg","Dolphin-icon", "14.00 - 14.45");
@@ -107,13 +107,11 @@ let ticketSection = [time ,hours, address ,addressDetails , disabledOption , dis
 ticketSection.forEach(options => options.description());
 
 let planYourVisitImage = document.createElement("img");
-planYourVisitImage.src = "./images/pexels-wolfgang-weiser-467045605-22491773.jpg";
+planYourVisitImage.src = "./images/pexels-wolfgangflip.jpg";
 planYourVisitImage.alt = "Wolf-gang";
 let planYourVisit = document.querySelector(".ticket");
 planYourVisit.appendChild(planYourVisitImage);
 
 let ticketArray = Array.from(document.querySelectorAll(".content"));
-console.log(ticketArray);
-
 ticketArray.forEach(ticket => ticket.addEventListener("mouseenter", () => ticket.classList.add("active")));
 ticketArray.forEach(ticket => ticket.addEventListener("mouseleave",()=> ticket.classList.remove("active")));
