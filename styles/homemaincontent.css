@@ -2,6 +2,12 @@
   --offset-menu: calc(150px + 32px);
 }
 
+.container {
+  align-self: baseline;
+  justify-self: center;
+  margin: 0rem auto;
+}
+
 .content-title {
   font-size: 2rem;
   text-align: center;
