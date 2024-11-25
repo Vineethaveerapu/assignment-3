@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Australian zoo</title>
+    <link rel="stylesheet" href="./styles/shared.css" />
+    <link rel="stylesheet" href="./styles/header.css" />
+    <link rel="stylesheet" href="./styles/sidebar.css" />
+    <script src="./js/shared.js" defer></script>
+    <script src="./js/header.js" defer></script>
+  </head>
+  <body>
+    <video
+      autoplay="autoplay"
+      muted="muted"
+      playsinline="true"
+      loop="loop"
+      src="./videos/sample.mp4"
+      style="width: 100%; height: auto"
+    ></video>
+    <!-- header starts -->
+    <header>
+      <img src="./images/logoedited2.png" alt="Logo" />
+
+      <!-- Hamburger icon -->
+      <button class="hamburger" id="hamburger" aria-label="Menu Toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav id="navbar">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="birds.html">Birds</a></li>
+          <li><a href="mammals.html" class="active">Mammals</a></li>
+          <li><a href="reptiles.html">Reptiles</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- header ends -->
+  </body>
+</html>
