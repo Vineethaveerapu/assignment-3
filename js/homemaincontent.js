@@ -5,7 +5,7 @@ function MainContent(className, heading, explanation) {
   this.description = () => {
     let newDiv = document.createElement("div");
     newDiv.classList.add(this.className, "main-content-details");
-    let main = document.querySelector(".main-content");
+    let main = document.querySelector(".sidebar-next-content");
     main.appendChild(newDiv);
     let subHeading = document.createElement("h5");
     subHeading.textContent = this.heading;

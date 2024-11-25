@@ -6,6 +6,7 @@
   align-self: baseline;
   justify-self: center;
   margin: 0rem auto;
+  padding-top: 1.2rem;
 }
 
 .content-title {
@@ -14,20 +15,26 @@
   text-transform: uppercase;
 }
 
-.main-content-details {
+.sidebar-next-content {
   margin: 8px;
   padding: 0 8px;
+  max-width: 90ch;
 }
 
-.main-content-details h5 {
+/* .main-content-details {
   margin: 8px;
-  padding: 8px;
+  padding: 0 8px;
+} */
+
+.main-content-details h5 {
+  /* margin: 8px;
+  padding: 8px; */
   font-size: 18px;
 }
 
 .main-content-details p {
-  margin: 8px;
-  padding: 8px;
+  /* margin: 8px;
+  padding: 8px; */
   font-size: 14px;
 }
 
