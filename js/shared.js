@@ -102,10 +102,12 @@ document.addEventListener("DOMContentLoaded", function () {
   const descriptionContainer = document.querySelector(".animal-description");
 
   animals.forEach((group) => {
+    // create category heading
     const categoryHeading = document.createElement("h2");
     categoryHeading.textContent = group.category;
     sidebar.appendChild(categoryHeading);
 
+    // create animal entries
     group.entries.forEach((animal) => {
       const animalDiv = document.createElement("div");
       animalDiv.classList.add("animal");
@@ -113,6 +115,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const heading = document.createElement("h3");
       heading.textContent = animal.name;
+      heading.classList.add("animal-name");
 
       const description = document.createElement("p");
       description.textContent = animal.description;
@@ -135,22 +138,31 @@ document.addEventListener("DOMContentLoaded", function () {
       heading.appendChild(image);
 
       heading.addEventListener("click", function () {
-        const activeHeading = document.querySelector(".animal h3.active");
-        if (activeHeading) activeHeading.classList.remove("active");
+        // remove active class from all headings
+        const activeHeading = document.querySelector(".animal-name.active");
+        if (activeHeading && activeHeading !== heading) {
+          activeHeading.classList.remove("active");
+        }
 
-        heading.classList.add("active");
+        if (heading.classList.contains("active")) {
+          heading.classList.remove("active");
+          descriptionContainer.classList.remove("show");
+        } else {
+          heading.classList.add("active");
+          descriptionContainer.classList.add("show");
+        }
+
         descriptionContainer.innerHTML = `
-                    <h3 class="animal-name">${animal.name}</h3>
-                    <p>${animal.description}</p>
-                `;
-        descriptionContainer.classList.add("show");
+        <h3>${animal.name}</h3>
+        <p>${animal.description}</p>
+      `;
       });
     });
   });
 
   sidebar.addEventListener("mouseleave", function () {
     descriptionContainer.classList.remove("show");
-    const activeHeading = document.querySelector(".animal h3.active");
+    const activeHeading = document.querySelector(".animal-name.active");
     if (activeHeading) activeHeading.classList.remove("active");
   });
 });
