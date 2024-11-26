@@ -1,0 +1,128 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #fff;
+    line-height: 1.6;
+  }
+  
+  /* Header Styles */
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+  }
+  
+  .logo {
+    height: 50px;
+  }
+  
+  .navbar {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .navbar li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  .navbar li a.active {
+    color: #00ff00;
+    font-weight: bold;
+  }
+  
+  .navbar li a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Logo Section */
+  .logo-container {
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  /* Team Section */
+  .team {
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  .team h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+  
+  .team p {
+    font-size: 1rem;
+    margin-bottom: 30px;
+    color: #ccc;
+  }
+  
+  .team-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    margin: 0 20px;
+  }
+  
+  /* Card Styles */
+  .card {
+    width: 250px;
+    height: 300px;
+    perspective: 1000px;
+  }
+  
+  .card .front,
+  .card .back {
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    position: absolute;
+    transition: transform 0.6s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #444;
+    border-radius: 10px;
+  }
+  
+  .card .front {
+    background: #222;
+    color: white;
+  }
+  
+  .card .front img {
+    max-width: 100%;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .card .back {
+    background: #00ff00;
+    color: black;
+    transform: rotateY(180deg);
+  }
+  
+  .card:hover .front {
+    transform: rotateY(180deg);
+  }
+  
+  .card:hover .back {
+    transform: rotateY(360deg);
+  }
+  
