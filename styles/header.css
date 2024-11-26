@@ -26,21 +26,19 @@ nav ul li {
   margin-right: 20px;
 }
 
+.learn-more,
 nav ul li a {
   max-width: fit-content;
   color: #fff;
   font-weight: bold;
   font-size: 1.5rem;
-  padding: 15px 20px;
   text-decoration: none;
   display: block;
-}
-
-nav ul li a {
   position: relative;
   padding: 0;
 }
 
+.learn-more::after,
 nav ul li a::after {
   content: "";
   position: absolute;
@@ -53,6 +51,7 @@ nav ul li a::after {
   transition: transform 0.3s ease;
 }
 
+.learn-more:hover::after,
 nav ul li a:hover::after,
 .active::after {
   transform: scaleX(1);
@@ -60,7 +59,7 @@ nav ul li a:hover::after,
 
 .active,
 nav ul li a:hover {
-  color: #16e97f;
+  color: var(--primary-color);
 }
 
 .hamburger,

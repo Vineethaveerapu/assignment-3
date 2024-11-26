@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary-color: #16e97f;
+  --secondary-color: #ece8e4;
+}
+
 body {
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;

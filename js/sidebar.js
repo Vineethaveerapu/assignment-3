@@ -6,8 +6,17 @@ document.addEventListener("DOMContentLoaded", function () {
         {
           id: "Echidna",
           name: "Echidna",
+          pageLink: "mammals.html",
+          details: {
+            lifespan: "50 years",
+            group: "Mammals",
+            food: "insects such as ants and termites, beetle larvae and worms",
+            length: "76cm",
+            weight: "10kg",
+            found: "Throughout Australia"
+          },
           description:
-            "The echidna is an egg-laying mammal found throughout Australia. It has spiny quills, a fleshy nose, and feeds on insects like ants and termites. It grows up to 76 cm long and weighs about 10 kg, with a lifespan of up to 50 years.",
+            "Echidnas, also called spiny anteaters, are walking contradictions. They are mammals, but they lay eggs. They are often classified as long- or sort-beaked, but don't have beaks at all, in the traditional sense; they have fleshy noses that can be either on the long side or rather short. They don't really look like true anteaters (Myrmecophaga tridactyla), either, and they are not closely related to them. They are spiny, though; their bodies are covered with hollow, barbless quills. Echidnas are monotremes, egg-laying mammals. The only other living monotreme is the platypus.",
           src: "./images/echidna.png",
           alt: "Echidna",
           width: "30px"
@@ -118,11 +127,11 @@ document.addEventListener("DOMContentLoaded", function () {
       heading.textContent = animal.name;
       heading.classList.add("animal-name");
 
-      const description = document.createElement("p");
-      description.textContent = animal.description;
+      // const description = document.createElement("p");
+      // description.textContent = animal.description;
 
       animalDiv.appendChild(heading);
-      animalDiv.appendChild(description);
+      // animalDiv.appendChild(description);
       sidebar.appendChild(animalDiv);
 
       // Add image to the heading
@@ -155,9 +164,32 @@ document.addEventListener("DOMContentLoaded", function () {
           container.classList.add("showing-animal-description");
         }
 
+        // display details
+        const details = animal.details;
+
+        // create temp variable to hold details
+        let detailsHTML = "";
+        if (details && Object.keys(details).length > 0) {
+          // loop through details and display them
+          Object.keys(details).forEach((key) => {
+            detailsHTML += `<li>${key}: ${details[key]}</li>`;
+          });
+        }
+
+        const pageLink = animal.pageLink ? animal.pageLink : "#";
+
         descriptionContainer.innerHTML = `
         <h3>${animal.name}</h3>
-        <p>${animal.description}</p>
+        <img class="animate-image" src="${animal.src}" alt="${
+          animal.alt
+        }" style="width:auto; height: 200px;">
+        <ul class="animal-details">${detailsHTML}</ul>
+        <p>${
+          animal.description.length > 200
+            ? animal.description.slice(0, 200) + "..."
+            : animal.description
+        }</p>
+        <a href="${pageLink}" class="learn-more">Learn more</a>
       `;
       });
     });
