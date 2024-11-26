@@ -1,102 +1,172 @@
-/* Footer */
-
-footer {
-  background-color: #f8f8f8;
-  color: #333;
+/* General Footer Styling */
+.footer {
+  background-color: #f8f9fa;
+  padding: 20px;
   font-family: Arial, sans-serif;
-  padding: 40px;
+  color: #333;
 }
 
 .footer-content {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  max-width: 1200px;
-  margin: auto;
 }
 
-.footer-left {
-  max-width: 60%;
+.about {
+  flex: 1 1 40%;
+  margin-right: 20px;
 }
 
-.footer-left h2 {
-  font-size: 24px;
+.about h2 {
   margin-bottom: 10px;
+  color: #078a35;
 }
 
-.footer-left p {
+.about p {
   line-height: 1.6;
-  margin-bottom: 20px;
 }
 
 .newsletter-link {
-  color: #007bff;
+  color: #078a35;
   text-decoration: none;
+  font-weight: bold;
 }
 
-.footer-right {
-  max-width: 35%;
+.newsletter-link:hover {
+  text-decoration: underline;
 }
 
-.footer-right ul {
+.footer-links {
   list-style: none;
   padding: 0;
 }
 
-.footer-right ul li {
-  margin-bottom: 10px;
+.footer-links li {
+  margin: 10px 0;
 }
 
-.footer-right ul li a {
-  color: #333;
+.footer-links a {
   text-decoration: none;
+  color: #078a35;
+  transition: color 0.3s;
 }
 
-.footer-right ul li a:hover {
+.footer-links a:hover {
+  color: #0056b3;
   text-decoration: underline;
+
 }
 
-.social-icons {
-  margin-top: 20px;
+.social-media {
+  display: flex;
+  align-items: center;
 }
 
 .social-icon {
-  text-decoration: none;
-  color: #333;
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background-color: #078a35;
+  color: white;
+  text-align: center;
+  line-height: 32px;
+  border-radius: 50%;
   margin-right: 10px;
-  font-size: 24px;
-  transition: color 0.3s ease;
+  transition: background-color 0.3s;
 }
 
 .social-icon:hover {
-  color: #4267b2;
+  background-color: #0056b3;
 }
 
 .footer-bottom {
-  text-align: center;
   margin-top: 20px;
-  font-size: 14px;
+  text-align: center;
   border-top: 1px solid #ddd;
   padding-top: 10px;
+  font-size: 14px;
 }
 
-.footer-bottom ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  margin-top: 10px;
-}
-
-.footer-bottom ul li {
-  margin: 0 10px;
-}
-
-.footer-bottom ul li a {
-  color: #333;
+.footer-bottom a {
+  color: #078a35;
   text-decoration: none;
 }
 
-.footer-bottom ul li a:hover {
+.footer-bottom a:hover {
   text-decoration: underline;
+}
+/* Modal overlay styling */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none; /* Hidden by default */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal content styling */
+.modal {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: center;
+}
+
+.modal h2 {
+  margin: 0 0 10px;
+  font-size: 24px;
+  color: #078a35;
+}
+
+.modal p {
+  margin: 10px 0 20px;
+  color: #333;
+  font-size: 16px;
+}
+
+.modal input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.modal-buttons button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#submitEmail {
+  background: #078a35;
+  color: white;
+}
+
+#submitEmail:hover {
+  background: #0056b3;
+}
+
+#cancelEmail {
+  background: #ccc;
+}
+
+#cancelEmail:hover {
+  background: #aaa;
 }
