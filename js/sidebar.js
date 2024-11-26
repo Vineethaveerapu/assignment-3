@@ -163,15 +163,15 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // hide description when mouse leaves sidebar
-  sidebar.addEventListener("mouseleave", function () {
-    descriptionContainer.classList.remove("show");
-    const activeHeading = document.querySelector(".animal-name.active");
-    if (activeHeading) {
-      activeHeading.classList.remove("active");
-    }
-    container.classList.remove("showing-animal-description");
-  });
+  // // hide description when mouse leaves sidebar
+  // sidebar.addEventListener("mouseleave", function () {
+  //   descriptionContainer.classList.remove("show");
+  //   const activeHeading = document.querySelector(".animal-name.active");
+  //   if (activeHeading) {
+  //     activeHeading.classList.remove("active");
+  //   }
+  //   container.classList.remove("showing-animal-description");
+  // });
 });
 
 document.addEventListener("DOMContentLoaded", function () {
