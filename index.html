@@ -8,20 +8,17 @@
     <link rel="stylesheet" href="./styles/header.css" />
     <link rel="stylesheet" href="./styles/sidebar.css" />
     <link rel="stylesheet" href="./styles/homemaincontent.css" />
-    <script src="js/shared.js" defer></script>
+    <link rel="stylesheet" href="./styles/footer.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <script src="js/sidebar.js" defer></script>
     <script src="./js/header.js" defer></script>
     <script src="./js/homemaincontent.js" defer></script>
-    <script src="./js/load-footer.js"></script>
+    <script src="./js/load-footer.js" defer></script>
   </head>
   <body>
-    <video
-      class="background-video"
-      autoplay="autoplay"
-      muted="muted"
-      playsinline="true"
-      loop="loop"
-      src="./videos/sample.mp4"
-    ></video>
     <!-- header starts -->
     <header>
       <img class="logo" src="./images/logo.png" alt="Logo" />
@@ -79,37 +76,57 @@
       </nav>
     </header>
     <!-- header ends -->
-    <aside class="sidebar">
-      <!-- mammals -->
-      <div class="animal" id="Echidna"></div>
-      <div class="animal" id="Tasmanian-Devil"></div>
-      <div class="animal" id="Quokka"></div>
-
-      <!-- Reptiles -->
-      <div class="animal" id="Frill-necked-lizard"></div>
-      <div class="animal" id="Hawksbill-Turtle"></div>
-      <div class="animal" id="Perentie"></div>
-
-      <!-- Birds -->
-      <div class="animal" id="Cassowary"></div>
-      <div class="animal" id="Kookaburra"></div>
-      <div class="animal" id="Cockatoo"></div>
-    </aside>
-
     <main class="main-content">
-      <div class="animal-description"></div>
-    </main>
-    <section>
-      <h3 class="sub-headings">EXPLORE NATURE'S ZOO</h3>
-      <div class="facilities"></div>
-    </section>
-    <section>
-      <h3 class="sub-headings">PLAN YOUR VISIT</h3>
-      <div class="ticket-background">
-        <div class="ticket">
-          <div class="ticket-details"></div>
+      <div class="video-background-container">
+        <video
+          class="background-video"
+          autoplay="autoplay"
+          muted="muted"
+          playsinline="true"
+          loop="loop"
+          src="./videos/sample.mp4"
+        ></video>
+
+        <div class="video-overlay">
+          <aside class="sidebar">
+            <!-- mammals -->
+            <div class="animal" id="Echidna"></div>
+            <div class="animal" id="Tasmanian-Devil"></div>
+            <div class="animal" id="Quokka"></div>
+
+            <!-- Reptiles -->
+            <div class="animal" id="Frill-necked-lizard"></div>
+            <div class="animal" id="Hawksbill-Turtle"></div>
+            <div class="animal" id="Perentie"></div>
+
+            <!-- Birds -->
+            <div class="animal" id="Cassowary"></div>
+            <div class="animal" id="Kookaburra"></div>
+            <div class="animal" id="Cockatoo"></div>
+          </aside>
+
+          <div class="container">
+            <div class="animal-description"></div>
+            <div class="sidebar-next-content">
+              <h1>Welcome to Nature's Zoo</h1>
+            </div>
+          </div>
         </div>
       </div>
-    </section>
-</body>
+
+      <section>
+        <h3 class="sub-headings">EXPLORE NATURE'S ZOO</h3>
+        <div class="facilities"></div>
+      </section>
+
+      <section>
+        <h3 class="sub-headings">PLAN YOUR VISIT</h3>
+        <div class="ticket-background">
+          <div class="ticket">
+            <div class="ticket-details"></div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
