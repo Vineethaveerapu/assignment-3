@@ -1,23 +1,18 @@
-body {
-  min-height: 100%;
-  font-family: "Poppins", sans-serif;
-  display: flex;
-  flex-direction: column;
+.main-content {
+  --offset-menu: calc(150px + 32px);
 }
 
 .container {
-  display: flex;
-  flex-grow: 1;
+  align-self: baseline;
+  justify-self: center;
+  margin: 0rem auto;
+  padding-top: 1.2rem;
 }
 
-.sidebar {
-  flex-basis: 25%;
-}
-
-.main-content {
-  flex-grow: 1;
-  color: black;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+.container.showing-animal-description {
+  .sidebar-next-content {
+    display: none;
+  }
 }
 
 .content-title {
@@ -26,20 +21,26 @@ body {
   text-transform: uppercase;
 }
 
-.main-content-details {
+.sidebar-next-content {
   margin: 8px;
   padding: 0 8px;
+  max-width: 90ch;
 }
 
-.main-content-details h5 {
+/* .main-content-details {
   margin: 8px;
-  padding: 8px;
+  padding: 0 8px;
+} */
+
+.main-content-details h5 {
+  /* margin: 8px;
+  padding: 8px; */
   font-size: 18px;
 }
 
 .main-content-details p {
-  margin: 8px;
-  padding: 8px;
+  /* margin: 8px;
+  padding: 8px; */
   font-size: 14px;
 }
 
@@ -56,29 +57,30 @@ body {
 .facilities {
   display: grid;
   grid-template: 500px / repeat(3, 1fr);
-  gap: 16px;
+  gap: 2rem;
   border: 10px solid #1a9973;
+  padding: 2rem 1rem;
 }
 
 .facilities-grid {
   border: 1px solid #0f403d;
+  padding: 2rem;
   box-shadow: 2px 2px 2px;
 }
 
 .facilities-grid img {
   width: 100%;
-  height: auto;
 }
 
 .facilities-grid h4 {
-  margin: 8px;
-  padding: 8px;
+  margin: 1px;
+  padding: 1px;
   font-size: 16px;
 }
 
 .facilities-grid p {
-  margin: 8px;
-  padding: 8px;
+  margin: 1px;
+  padding: 1px;
   font-size: 14px;
 }
 
@@ -111,7 +113,6 @@ body {
   display: grid;
   grid-template: repeat(6, 75px) / repeat(2, 1fr);
   color: white;
-  /*font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;*/
   text-transform: uppercase;
   text-align: center;
 }
@@ -159,7 +160,6 @@ body {
     display: grid;
     grid-template: repeat(6, 75px) / repeat(2, 300px);
     color: white;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     text-transform: uppercase;
     text-align: center;
   }
@@ -192,7 +192,6 @@ body {
     margin: 32px;
     padding: 8px;
     color: white;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
     text-transform: uppercase;
     text-align: center;
   }
