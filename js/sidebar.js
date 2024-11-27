@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
           id: "Tasmanian-Devil",
           name: "Tasmanian Devil",
           description:
-            "The Tasmanian Devil is a carnivorous marsupial found in Tasmania, with a small population reintroduced to mainland Australia. It has a stocky build, black fur, and is known for its loud screech and strong bite. Weighing around 10 kg and measuring up to 70 cm, it hunts prey like wallabies and scavenges carrion. It has a lifespan of about 5 years.",
+            "The Tasmanian devil (Sarcophilus harrisii) (palawa kani: purinina)[3] is a carnivorous marsupial of the family Dasyuridae. Until recently, it was only found on the island state of Tasmania, but it has been reintroduced to New South Wales in mainland Australia, with a small breeding population. The size of a small dog, the Tasmanian devil became the largest carnivorous marsupial in the world, following the extinction of the thylacine in 1936. It is related to quolls, and distantly related to the thylacine. It is characterised by its stocky and muscular build, black fur, pungent odour, extremely loud and disturbing screech, keen sense of smell, and ferocity when feeding. The Tasmanian devil's large head and neck allow it to generate among the strongest bites per unit body mass of any extant predatory land mammal. It hunts prey and scavenges on carrion.",
           src: "./images/tasdevil.png",
           alt: "Tasmanian Devil",
           width: "30px"
