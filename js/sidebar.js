@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const descriptionContainer = document.querySelector(".animal-description");
   const container = document.querySelector(".container");
 
-  // debugger;
+  debugger;
   animals.forEach(({ category, pageLink, entries }) => {
     // if page slug matchtes category we show more else we return for home page we show all
     const isCategoryPage = window.location.pathname.includes(
