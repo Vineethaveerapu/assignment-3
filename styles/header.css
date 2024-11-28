@@ -3,9 +3,16 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: absolute;
   width: 100%;
   z-index: 999;
+}
+/* absolute on home page */
+.home-page header {
+  position: absolute;
+}
+
+.flex {
+  display: flex;
 }
 
 .logo {

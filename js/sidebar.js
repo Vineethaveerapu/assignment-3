@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // NOTES: will work on pages with <aside class="sidebar"></aside>
+
   // get from url
   const isHomePage =
     window.location.pathname === "/" ||
@@ -127,79 +129,85 @@ document.addEventListener("DOMContentLoaded", function () {
   const container = document.querySelector(".container");
 
   animals.forEach(({ category, pageLink, entries }) => {
-    // create category heading
-    const categoryHeading = document.createElement("h2");
-    categoryHeading.textContent = category;
-    sidebar.appendChild(categoryHeading);
+    // if page slug matchtes category we show more else we return for home page we show all
+    const isCategoryPage = window.location.pathname.includes(
+      category.toLowerCase()
+    );
+    // This section generates the sidebar content based on the animal categories and entries.
+    // It checks if the current page matches the category and displays the relevant animals.
+    if (isCategoryPage || isHomePage) {
+      // create category heading
+      const categoryHeading = document.createElement("h2");
+      categoryHeading.textContent = category;
+      sidebar.appendChild(categoryHeading);
+      // create animal entries
+      entries.forEach((animal) => {
+        const animalDiv = document.createElement("div");
+        animalDiv.classList.add("animal");
+        animalDiv.id = animal.id;
 
-    // create animal entries
-    entries.forEach((animal) => {
-      const animalDiv = document.createElement("div");
-      animalDiv.classList.add("animal");
-      animalDiv.id = animal.id;
+        const heading = document.createElement("h3");
+        heading.textContent = animal.name;
+        heading.classList.add("animal-name");
 
-      const heading = document.createElement("h3");
-      heading.textContent = animal.name;
-      heading.classList.add("animal-name");
+        // const description = document.createElement("p");
+        // description.textContent = animal.description;
 
-      // const description = document.createElement("p");
-      // description.textContent = animal.description;
+        animalDiv.appendChild(heading);
+        // animalDiv.appendChild(description);
+        sidebar.appendChild(animalDiv);
 
-      animalDiv.appendChild(heading);
-      // animalDiv.appendChild(description);
-      sidebar.appendChild(animalDiv);
+        // Add image to the heading
+        const image = document.createElement("img");
+        image.src = animal.src;
+        image.alt = animal.alt;
+        image.style.width = animal.width;
+        image.style.height = "auto";
 
-      // Add image to the heading
-      const image = document.createElement("img");
-      image.src = animal.src;
-      image.alt = animal.alt;
-      image.style.width = animal.width;
-      image.style.height = "auto";
+        heading.style.display = "flex";
+        heading.style.alignItems = "center";
+        heading.style.gap = "10px";
 
-      heading.style.display = "flex";
-      heading.style.alignItems = "center";
-      heading.style.gap = "10px";
+        heading.appendChild(image);
 
-      heading.appendChild(image);
-
-      heading.addEventListener("click", function () {
-        // remove active class from all headings
-        const activeHeading = document.querySelector(".animal-name.active");
-        if (activeHeading && activeHeading !== heading) {
-          activeHeading.classList.remove("active");
-        }
-
-        if (heading.classList.contains("active")) {
-          heading.classList.remove("active");
-          descriptionContainer.classList.remove("show");
-          container.classList.remove("showing-animal-description");
-        } else {
-          heading.classList.add("active");
-          descriptionContainer.classList.add("show");
-          container.classList.add("showing-animal-description");
-        }
-
-        // display details
-        const details = animal.details;
-
-        // create temp variable to hold details
-        let detailsHTML = "";
-        if (!isHomePage) {
-          detailsHTML = "<ul class='animal-details'>";
-          if (details && Object.keys(details).length > 0) {
-            // loop through details and display them
-            Object.keys(details).forEach((key) => {
-              detailsHTML += `<li>${key}: ${details[key]}</li>`;
-            });
+        heading.addEventListener("click", function () {
+          // remove active class from all headings
+          const activeHeading = document.querySelector(".animal-name.active");
+          if (activeHeading && activeHeading !== heading) {
+            activeHeading.classList.remove("active");
           }
-          detailsHTML += "</ul>";
-        }
 
-        descriptionContainer.innerHTML = `
+          if (heading.classList.contains("active")) {
+            heading.classList.remove("active");
+            descriptionContainer.classList.remove("show");
+            container.classList.remove("showing-animal-description");
+          } else {
+            heading.classList.add("active");
+            descriptionContainer.classList.add("show");
+            container.classList.add("showing-animal-description");
+          }
+
+          // display details
+          const details = animal.details;
+
+          // create temp variable to hold details
+          let detailsHTML = "";
+          if (!isHomePage) {
+            detailsHTML = "<ul class='animal-details'>";
+            if (details && Object.keys(details).length > 0) {
+              // loop through details and display them
+              Object.keys(details).forEach((key) => {
+                detailsHTML += `<li>${key}: ${details[key]}</li>`;
+              });
+            }
+            detailsHTML += "</ul>";
+          }
+
+          descriptionContainer.innerHTML = `
         <h3>${animal.name}</h3>
         <img class="animate-image" src="${animal.src}" alt="${
-          animal.alt
-        }" style="width:auto; height: 200px;">
+            animal.alt
+          }" style="width:auto; height: 200px;">
         ${detailsHTML}
         <p>${
           animal.description.length > 200
@@ -208,8 +216,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }</p>
         <a href="${pageLink}" class="learn-more">Learn more</a>
       `;
+        });
       });
-    });
+    }
   });
 });
 
