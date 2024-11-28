@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Australian zoo</title>
-    <link rel="stylesheet" href="styles/shared.css" />
+    <link rel="stylesheet" href="./styles/shared.css" />
     <link rel="stylesheet" href="./styles/header.css" />
     <link rel="stylesheet" href="./styles/sidebar.css" />
     <link rel="stylesheet" href="./styles/homemaincontent.css" />
@@ -13,12 +13,12 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
-    <script src="js/sidebar.js" defer></script>
+    <script src="./js/sidebar.js" defer></script>
     <script src="./js/header.js" defer></script>
     <script src="./js/homemaincontent.js" defer></script>
     <script src="./js/load-footer.js" defer></script>
   </head>
-  <body>
+  <body class="home-page">
     <!-- header starts -->
     <header>
       <img class="logo" src="./images/logo.png" alt="Logo" />
@@ -88,22 +88,7 @@
         ></video>
 
         <div class="video-overlay">
-          <aside class="sidebar">
-            <!-- mammals -->
-            <div class="animal" id="Echidna"></div>
-            <div class="animal" id="Tasmanian-Devil"></div>
-            <div class="animal" id="Quokka"></div>
-
-            <!-- Reptiles -->
-            <div class="animal" id="Frill-necked-lizard"></div>
-            <div class="animal" id="Hawksbill-Turtle"></div>
-            <div class="animal" id="Perentie"></div>
-
-            <!-- Birds -->
-            <div class="animal" id="Cassowary"></div>
-            <div class="animal" id="Kookaburra"></div>
-            <div class="animal" id="Cockatoo"></div>
-          </aside>
+          <aside class="sidebar"></aside>
 
           <div class="container">
             <div class="animal-description"></div>
