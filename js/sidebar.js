@@ -212,7 +212,7 @@ document.addEventListener("DOMContentLoaded", function () {
             ? animal.description.slice(0, 200) + "..."
             : animal.description
         }</p>
-        <a href="${pageLink}" class="learn-more">Learn more</a>
+        <a href="${pageLink}" class="learn-more">Visit ${category} page</a>
       `;
         });
       });
