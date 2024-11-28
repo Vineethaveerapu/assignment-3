@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
   // Fetch footer.html and insert into the body
-  fetch("footer.html")
+  fetch("../footer.html")
     .then((response) => response.text())
     .then((html) => {
       document.body.insertAdjacentHTML("beforeend", html);
