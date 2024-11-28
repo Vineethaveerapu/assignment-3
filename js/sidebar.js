@@ -2,13 +2,10 @@ document.addEventListener("DOMContentLoaded", function () {
   // NOTES: will work on pages with <aside class="sidebar"></aside>
 
   // get from url
-  const isHomePage =
-    window.location.pathname === "/" ||
-    window.location.pathname === "/index.html";
-
-  const isAboutPage =
-    window.location.pathname === "/about.html" ||
-    window.location.pathname === "/about/";
+  var isHomePage =
+    window.location.pathname.includes("index") ||
+    window.location.pathname === "/";
+  var isAboutPage = window.location.pathname.includes("about");
 
   if (isAboutPage) {
     return;
@@ -128,11 +125,13 @@ document.addEventListener("DOMContentLoaded", function () {
   const descriptionContainer = document.querySelector(".animal-description");
   const container = document.querySelector(".container");
 
+  // debugger;
   animals.forEach(({ category, pageLink, entries }) => {
     // if page slug matchtes category we show more else we return for home page we show all
     const isCategoryPage = window.location.pathname.includes(
       category.toLowerCase()
     );
+
     // This section generates the sidebar content based on the animal categories and entries.
     // It checks if the current page matches the category and displays the relevant animals.
     if (isCategoryPage || isHomePage) {
