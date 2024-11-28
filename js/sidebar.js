@@ -126,7 +126,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const container = document.querySelector(".container");
 
   animals.forEach(({ category, pageLink, entries }) => {
-    // if page slug matchtes category we show more else we return for home page we show all
     const isCategoryPage = window.location.pathname.includes(
       category.toLowerCase()
     );
@@ -169,7 +168,15 @@ document.addEventListener("DOMContentLoaded", function () {
         heading.appendChild(image);
 
         heading.addEventListener("click", function () {
-          // remove active class from all headings
+          const animalDescriptionElement =
+            document.getElementById("animal-description");
+          if (animalDescriptionElement) {
+            animalDescriptionElement.scrollIntoView({
+              behavior: "smooth",
+              block: "start"
+            });
+          }
+
           const activeHeading = document.querySelector(".animal-name.active");
           if (activeHeading && activeHeading !== heading) {
             activeHeading.classList.remove("active");
