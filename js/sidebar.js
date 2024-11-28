@@ -1,12 +1,25 @@
 document.addEventListener("DOMContentLoaded", function () {
+  // get from url
+  const isHomePage =
+    window.location.pathname === "/" ||
+    window.location.pathname === "/index.html";
+
+  const isAboutPage =
+    window.location.pathname === "/about.html" ||
+    window.location.pathname === "/about/";
+
+  if (isAboutPage) {
+    return;
+  }
+
   const animals = [
     {
       category: "Mammals",
+      pageLink: "mammals.html",
       entries: [
         {
           id: "Echidna",
           name: "Echidna",
-          pageLink: "mammals.html",
           details: {
             lifespan: "50 years",
             group: "Mammals",
@@ -43,6 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     {
       category: "Reptiles",
+      pageLink: "reptiles.html",
       entries: [
         {
           id: "Frill-necked-lizard",
@@ -75,6 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
     },
     {
       category: "Birds",
+      pageLink: "birds.html",
       entries: [
         {
           id: "Cassowary",
@@ -111,19 +126,14 @@ document.addEventListener("DOMContentLoaded", function () {
   const descriptionContainer = document.querySelector(".animal-description");
   const container = document.querySelector(".container");
 
-  // get from url
-  const isHomePage =
-    window.location.pathname === "/" ||
-    window.location.pathname === "/index.html";
-
-  animals.forEach((group) => {
+  animals.forEach(({ category, pageLink, entries }) => {
     // create category heading
     const categoryHeading = document.createElement("h2");
-    categoryHeading.textContent = group.category;
+    categoryHeading.textContent = category;
     sidebar.appendChild(categoryHeading);
 
     // create animal entries
-    group.entries.forEach((animal) => {
+    entries.forEach((animal) => {
       const animalDiv = document.createElement("div");
       animalDiv.classList.add("animal");
       animalDiv.id = animal.id;
@@ -184,8 +194,6 @@ document.addEventListener("DOMContentLoaded", function () {
           }
           detailsHTML += "</ul>";
         }
-
-        const pageLink = animal.pageLink ? animal.pageLink : "#";
 
         descriptionContainer.innerHTML = `
         <h3>${animal.name}</h3>
