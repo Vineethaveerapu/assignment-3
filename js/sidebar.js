@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
           name: "Perentie",
           description:
             "The perentie is the largest monitor lizard in Australia, growing up to 2.5 meters long and weighing around 20 kg. A carnivore, it preys on animals like kangaroos, rabbits, and birds. Found in arid desert regions, it is a shy and rarely seen species. It has cultural significance in Aboriginal traditions and can live up to 20 years.",
-          src: "./images/Perentie.png",
+          src: "./images/perentie.png",
           alt: "Perentie",
           width: "50px"
         }
@@ -95,7 +95,7 @@ document.addEventListener("DOMContentLoaded", function () {
           name: "Cassowary",
           description:
             "The cassowary is a large, flightless bird found in the tropical forests of northern Australia. It is known for its bright blue and black coloration and helmet-like casques. The cassowary can grow up to 1.8 meters tall and weigh up to 75 kg. It feeds on fruits and small animals, and is one of the heaviest bird species. It can live up to 40 years.",
-          src: "./images/Cassowary.png",
+          src: "./images/cassowary.png",
           alt: "Cassowary",
           width: "30px"
         },
@@ -104,7 +104,7 @@ document.addEventListener("DOMContentLoaded", function () {
           name: "Kookaburra",
           description:
             "The kookaburra, native to Australia, is the largest kingfisher species, growing up to 43 cm and weighing 300 g. It feeds on insects, small animals, and occasionally small snakes. Known for its distinctive laugh-like call, it has dark brown wings, a white head, and a reddish tail. It can live up to 20 years.",
-          src: "./images/Kookaburra.png",
+          src: "./images/kookaburra.png",
           alt: "Kookaburra",
           width: "30px"
         },
@@ -113,7 +113,7 @@ document.addEventListener("DOMContentLoaded", function () {
           name: "Cockatoo",
           description:
             "The Yellow-tailed Black Cockatoo, found in southeastern Australia, has black plumage with yellow cheek patches and tail bands. It feeds on fruits, seeds, and plant material. Known for its loud, wailing call, it has a lifespan of up to 41 years and measures 65 cm in length, weighing around 900 grams.",
-          src: "./images/Cockatoo.png",
+          src: "./images/cockatoo.png",
           alt: "Cockatoo",
           width: "30px"
         }
