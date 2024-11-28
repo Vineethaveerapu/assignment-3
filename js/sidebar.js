@@ -2,10 +2,10 @@ document.addEventListener("DOMContentLoaded", function () {
   // NOTES: will work on pages with <aside class="sidebar"></aside>
 
   // get from url
-  var isHomePage =
+  const isHomePage =
     window.location.pathname.includes("index") ||
     window.location.pathname === "/";
-  var isAboutPage = window.location.pathname.includes("about");
+  const isAboutPage = window.location.pathname.includes("about");
 
   if (isAboutPage) {
     return;
@@ -125,7 +125,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const descriptionContainer = document.querySelector(".animal-description");
   const container = document.querySelector(".container");
 
-  debugger;
   animals.forEach(({ category, pageLink, entries }) => {
     // if page slug matchtes category we show more else we return for home page we show all
     const isCategoryPage = window.location.pathname.includes(
