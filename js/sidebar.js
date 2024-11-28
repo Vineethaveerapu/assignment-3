@@ -111,6 +111,11 @@ document.addEventListener("DOMContentLoaded", function () {
   const descriptionContainer = document.querySelector(".animal-description");
   const container = document.querySelector(".container");
 
+  // get from url
+  const isHomePage =
+    window.location.pathname === "/" ||
+    window.location.pathname === "/index.html";
+
   animals.forEach((group) => {
     // create category heading
     const categoryHeading = document.createElement("h2");
@@ -169,11 +174,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
         // create temp variable to hold details
         let detailsHTML = "";
-        if (details && Object.keys(details).length > 0) {
-          // loop through details and display them
-          Object.keys(details).forEach((key) => {
-            detailsHTML += `<li>${key}: ${details[key]}</li>`;
-          });
+        if (!isHomePage) {
+          detailsHTML = "<ul class='animal-details'>";
+          if (details && Object.keys(details).length > 0) {
+            // loop through details and display them
+            Object.keys(details).forEach((key) => {
+              detailsHTML += `<li>${key}: ${details[key]}</li>`;
+            });
+          }
+          detailsHTML += "</ul>";
         }
 
         const pageLink = animal.pageLink ? animal.pageLink : "#";
@@ -183,7 +192,7 @@ document.addEventListener("DOMContentLoaded", function () {
         <img class="animate-image" src="${animal.src}" alt="${
           animal.alt
         }" style="width:auto; height: 200px;">
-        <ul class="animal-details">${detailsHTML}</ul>
+        ${detailsHTML}
         <p>${
           animal.description.length > 200
             ? animal.description.slice(0, 200) + "..."
@@ -194,16 +203,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
   });
-
-  // // hide description when mouse leaves sidebar
-  // sidebar.addEventListener("mouseleave", function () {
-  //   descriptionContainer.classList.remove("show");
-  //   const activeHeading = document.querySelector(".animal-name.active");
-  //   if (activeHeading) {
-  //     activeHeading.classList.remove("active");
-  //   }
-  //   container.classList.remove("showing-animal-description");
-  // });
 });
 
 document.addEventListener("DOMContentLoaded", function () {
