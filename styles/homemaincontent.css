@@ -1,5 +1,5 @@
 .main-content {
-  --offset-menu: calc(150px + 32px);
+  --offset-menu: 20vh;
 }
 
 .container {
