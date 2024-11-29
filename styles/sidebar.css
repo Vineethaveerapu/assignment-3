@@ -25,6 +25,17 @@
   z-index: 99;
 }
 
+.sidebar-toggle-container {
+  position: relative;
+}
+
+.toggle-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
 .sidebar {
   width: 19rem;
   padding: 1rem 3rem;

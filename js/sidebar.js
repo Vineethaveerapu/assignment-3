@@ -11,6 +11,8 @@ document.addEventListener("DOMContentLoaded", function () {
     return;
   }
 
+  // use constructor
+  // array for birds, three separate arrays one for each group
   const animals = [
     {
       category: "Mammals",
