@@ -72,10 +72,14 @@ const createNavLinks = () => {
 };
 
 const createActiveLink = () => {
-  const navLinks = document.querySelectorAll("#navbar ul li a");
-  navLinks.forEach((link) => {
-    const currentPage = window.location.pathname;
-    if (link.href.includes(currentPage)) {
+  const navLinksElement = document.querySelectorAll("#navbar ul li a");
+
+  const currentPage = window.location.pathname.split("/").pop() || "index.html";
+
+  navLinksElement.forEach((link) => {
+    link.classList.remove("active");
+
+    if (link.getAttribute("href") === currentPage) {
       link.classList.add("active");
     }
   });
