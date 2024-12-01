@@ -170,15 +170,28 @@ document.addEventListener("DOMContentLoaded", function () {
         heading.appendChild(image);
 
         heading.addEventListener("click", function () {
+          const currentScroll = window.scrollY;
+
           const animalDescriptionElement =
             document.getElementById("animal-description");
           if (animalDescriptionElement) {
             animalDescriptionElement.style.scrollMarginTop =
               "var(--header-height)";
-            animalDescriptionElement.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-              inline: "nearest"
+
+            // Use requestAnimationFrame for smoother transitions
+            requestAnimationFrame(() => {
+              if (window.innerWidth <= 768) {
+                closeSidebar();
+              }
+
+              // Scroll to description after sidebar is closed
+              setTimeout(() => {
+                animalDescriptionElement.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                  inline: "nearest"
+                });
+              }, 100);
             });
           }
 
@@ -246,6 +259,8 @@ document.addEventListener("DOMContentLoaded", function () {
     icon.classList.toggle("fa-times");
     // Toggle active class on button
     toggleBtn.classList.toggle("active");
+    // Toggle body scroll
+    document.body.classList.toggle("sidebar-open");
   });
 });
 
@@ -261,25 +276,25 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-// Add smooth scroll behavior when closing sidebar
 function closeSidebar() {
   const sidebar = document.querySelector(".sidebar");
   const toggleBtn = document.querySelector(".toggle-btn");
   const icon = toggleBtn.querySelector("i");
 
-  sidebar.classList.remove("show");
-  toggleBtn.classList.remove("active");
-  icon.classList.remove("fa-times");
-  icon.classList.add("fa-bars");
-
-  // Smooth scroll to maintain current position
   const currentScroll = window.scrollY;
-  setTimeout(() => {
+
+  requestAnimationFrame(() => {
+    sidebar.classList.remove("show");
+    toggleBtn.classList.remove("active");
+    icon.classList.remove("fa-times");
+    icon.classList.add("fa-bars");
+    document.body.classList.remove("sidebar-open");
+
     window.scrollTo({
       top: currentScroll,
-      behavior: "smooth"
+      behavior: "instant"
     });
-  }, 50);
+  });
 }
 
 // Add escape key handler to close sidebar
