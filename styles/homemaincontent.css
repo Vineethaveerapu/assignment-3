@@ -201,7 +201,7 @@
     transform: none;
   }
 
-  .active {
+  .active-ticket {
     cursor: none;
     transform: none;
     border-bottom: 1px dotted wheat;
