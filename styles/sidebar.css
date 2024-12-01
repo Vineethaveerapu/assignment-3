@@ -14,9 +14,9 @@
 .video-overlay {
   padding-top: var(--header-height);
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 19rem 1fr;
   position: relative;
-  z-index: 99;
+  z-index: 1;
 }
 
 .sidebar-toggle-container {
@@ -24,27 +24,55 @@
 }
 
 .toggle-btn {
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: fixed;
+  top: var(--header-height);
+  left: 1rem;
   display: none;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  cursor: pointer;
+  z-index: 1000;
+  font-size: 1.5rem;
+  transform: translateX(0);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-btn.active {
+  transform: translateX(13rem);
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+}
+
+.toggle-btn:hover {
+  background-color: rgba(255, 255, 255, 1);
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.toggle-btn.active:hover {
+  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .sidebar {
-  position: relative;
-  background-color: transparent;
-  backdrop-filter: blur(1px);
-  min-height: auto !important;
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(8px);
   width: 19rem;
-  padding: 1rem 3rem;
-  display: inline-block;
-  vertical-align: top;
-  overflow-y: scroll;
-  transition: width 1s ease;
+  padding: 1rem;
+  overflow-y: auto;
+  transition: all 0.3s ease;
+  z-index: 99;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
 .sidebar.expanded {
-  width: 21rem;
+  width: 20rem;
 }
 
 .sidebar.expanded .h2 {
@@ -137,13 +165,14 @@
 }
 
 .animal-description {
+  margin-top: 2rem;
   color: white;
   padding: 20px;
   border-radius: 10px;
+  border: 1px solid white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 500px;
-  margin-left: 50px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 500px;
+  padding: 1rem 2.5rem 3rem;
   backdrop-filter: blur(2px);
   display: none;
   opacity: 0;
@@ -152,14 +181,11 @@
 }
 
 .animal-description p {
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .animal-description h3 {
-  display: flex;
-  width: 300px;
-  font-size: 25px;
-  margin-right: 20px;
+  font-size: 1.5625rem;
 }
 
 .animal-description.show {
@@ -228,91 +254,84 @@
 }
 
 @media (max-width: 768px) {
+  .video-overlay {
+    grid-template-columns: 1fr;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .sidebar {
-    width: 40%;
-    height: 100%;
-    position: relative;
-    padding: 20px;
-    transition: none;
-  }
-
-  .sidebar.expanded {
-    width: 40%;
-  }
-
-  .sidebar.expanded h3 {
-    width: 67%;
-  }
-
-  .sidebar h2 {
-    font-size: 32px;
-    font-weight: bold;
-    margin: 20px 0;
-    width: 100%;
-    padding-bottom: 20px;
-  }
-
-  .main-content {
-    margin-left: 0;
-    padding: 10px;
-  }
-
-  .animal h3 {
-    font-size: 17px;
-    width: 70%;
-    padding: 15px;
-    text-align: center;
-  }
-
-  .animal-description {
-    width: 55%;
-    margin: 10px auto;
-    padding: 15px;
-  }
-
-  .animal-description h3 {
-    font-size: 30px;
-    font-weight: bold;
-  }
-}
-
-@media (max-width: 390px) {
-  .sidebar {
-    width: 30%;
-    position: relative;
-    transition: none;
-  }
-
-  .sidebar.expanded {
-    width: 30%;
-  }
-
-  .sidebar.expanded h3 {
+    position: fixed;
+    left: -100%;
+    top: var(--header-height);
+    height: calc(100vh - var(--header-height));
+    background: rgba(0, 0, 0, 0.8);
+    transition: left 0.3s ease;
     width: 80%;
+    max-width: 300px;
+  }
+
+  /* Default collapsed state */
+  .sidebar {
+    width: 60px;
+    padding: 1rem 0;
   }
 
   .sidebar .h2 {
-    font-size: 20px;
-    margin: 10px 0;
-    width: 100%;
-    padding-bottom: 15px;
+    display: none;
   }
 
-  .main-content {
-    margin-left: 0;
-    padding: 10px;
+  .sidebar .animal-name {
+    padding: 8px;
+    margin: 0.5rem auto;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  .animal h3 {
-    font-size: 12px;
-    padding: 15px;
-    text-align: center;
-    width: 70%;
+  .sidebar .animal-name span {
+    display: none;
   }
 
-  .animal-description {
-    width: 45%;
-    margin: 10px auto;
-    padding: 15px;
+  .sidebar .animal-name img {
+    margin: 0;
+    width: 24px;
+  }
+
+  /* Expanded state */
+  .sidebar.show {
+    left: 0;
+    width: 80%;
+    max-width: 300px;
+    padding: 1rem;
+  }
+
+  .sidebar.show .h2 {
+    display: block;
+  }
+
+  .sidebar.show .animal-name {
+    width: auto;
+    height: auto;
+    padding: 16px;
+    margin: 0 0 1.25rem 0;
+  }
+
+  .sidebar.show .animal-name span {
+    display: inline;
+  }
+
+  .sidebar.show .animal-name img {
+    width: 30px;
+    margin-right: 10px;
   }
 }

@@ -173,9 +173,12 @@ document.addEventListener("DOMContentLoaded", function () {
           const animalDescriptionElement =
             document.getElementById("animal-description");
           if (animalDescriptionElement) {
+            animalDescriptionElement.style.scrollMarginTop =
+              "var(--header-height)";
             animalDescriptionElement.scrollIntoView({
               behavior: "smooth",
-              block: "start"
+              block: "start",
+              inline: "nearest"
             });
           }
 
@@ -223,9 +226,26 @@ document.addEventListener("DOMContentLoaded", function () {
         }</p>
         <a href="${pageLink}" class="learn-more">Visit ${category} page</a>
       `;
+
+          // Close sidebar on mobile when item is clicked
+          if (window.innerWidth <= 768) {
+            closeSidebar();
+          }
         });
       });
     }
+  });
+
+  const toggleBtn = document.querySelector(".toggle-btn");
+  const icon = toggleBtn.querySelector("i");
+
+  toggleBtn.addEventListener("click", function () {
+    sidebar.classList.toggle("show");
+    // Toggle icon between bars and times (x)
+    icon.classList.toggle("fa-bars");
+    icon.classList.toggle("fa-times");
+    // Toggle active class on button
+    toggleBtn.classList.toggle("active");
   });
 });
 
@@ -239,4 +259,47 @@ document.addEventListener("DOMContentLoaded", function () {
   sidebar.addEventListener("mouseleave", function () {
     sidebar.classList.remove("expanded");
   });
+});
+
+// Add smooth scroll behavior when closing sidebar
+function closeSidebar() {
+  const sidebar = document.querySelector(".sidebar");
+  const toggleBtn = document.querySelector(".toggle-btn");
+  const icon = toggleBtn.querySelector("i");
+
+  sidebar.classList.remove("show");
+  toggleBtn.classList.remove("active");
+  icon.classList.remove("fa-times");
+  icon.classList.add("fa-bars");
+
+  // Smooth scroll to maintain current position
+  const currentScroll = window.scrollY;
+  setTimeout(() => {
+    window.scrollTo({
+      top: currentScroll,
+      behavior: "smooth"
+    });
+  }, 50);
+}
+
+// Add escape key handler to close sidebar
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape" && window.innerWidth <= 768) {
+    closeSidebar();
+  }
+});
+
+// Add click outside sidebar to close
+document.addEventListener("click", function (e) {
+  const sidebar = document.querySelector(".sidebar");
+  const toggleBtn = document.querySelector(".toggle-btn");
+
+  if (
+    window.innerWidth <= 768 &&
+    sidebar.classList.contains("show") &&
+    !sidebar.contains(e.target) &&
+    !toggleBtn.contains(e.target)
+  ) {
+    closeSidebar();
+  }
 });
