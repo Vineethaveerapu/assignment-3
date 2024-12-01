@@ -25,12 +25,23 @@
   z-index: 99;
 }
 
+.sidebar-toggle-container {
+  position: relative;
+}
+
+.toggle-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
 .sidebar {
   width: 19rem;
   padding: 1rem 3rem;
   display: inline-block;
   vertical-align: top;
-  max-height: 80vh;
+  /* max-height: 80vh; */
   overflow-y: scroll;
   transition: width 1s ease;
 }
@@ -113,6 +124,21 @@
   color: white;
 }
 
+.animal-details {
+  padding: 0;
+  margin: 0;
+}
+
+.learn-more {
+  color: var(--secondary-color);
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.learn-more::after {
+  transform: scaleX(0.5);
+}
+
 .animal-description {
   color: white;
   padding: 20px;
@@ -164,12 +190,28 @@
   animation: moveImage 2.5s ease infinite;
 }
 
+.animate-image {
+  animation: animate-image 4s ease infinite;
+}
+
 @keyframes moveImage {
   0% {
     transform: translateX(0);
   }
   50% {
     transform: translateX(10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes animate-image {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(50%);
   }
   100% {
     transform: translateX(0);
