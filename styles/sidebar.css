@@ -19,7 +19,7 @@
 }
 
 .video-overlay {
-  padding-top: var(--offset-menu);
+  padding-top: var(--header-height);
   display: flex;
   position: relative;
   z-index: 99;

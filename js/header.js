@@ -105,6 +105,16 @@ const hamburgerButtonsLogic = () => {
   });
 };
 
+const updateHeaderHeight = () => {
+  const header = document.querySelector("header");
+  const headerHeight = header.offsetHeight;
+
+  document.documentElement.style.setProperty(
+    "--header-height",
+    `${headerHeight}px`
+  );
+};
+
 document.addEventListener("DOMContentLoaded", () => {
   // create the nav links
   createNavLinks();
@@ -112,4 +122,6 @@ document.addEventListener("DOMContentLoaded", () => {
   createActiveLink();
   // hamburger buttons logic
   hamburgerButtonsLogic();
+  // update header height
+  updateHeaderHeight();
 });
