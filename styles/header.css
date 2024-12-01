@@ -73,9 +73,10 @@ nav ul li a:hover {
 .close-button {
   display: none;
   padding: 0;
-  background-color: transparent;
+  background: transparent;
   border: none;
   cursor: pointer;
+  outline: none;
 }
 
 .close-button {
@@ -93,17 +94,16 @@ nav ul li a:hover {
   }
 
   nav {
-    /* display: none; */
     display: grid;
     grid-template-rows: 0fr;
     transition: grid-template-rows 0.3s ease;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
-    background-color: rgb(179, 29, 29);
+    background-color: rgba(14, 14, 14, 0.94);
     width: 100%;
-
     z-index: 1;
+    backdrop-filter: blur(10px);
   }
 
   nav ul {
