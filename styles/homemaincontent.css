@@ -137,7 +137,7 @@
   flex-grow: 1;
 }
 
-.active {
+.active-ticket {
   cursor: pointer;
   border-bottom: none;
   transform: scale(1.2);
