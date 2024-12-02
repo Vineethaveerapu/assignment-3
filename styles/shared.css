@@ -20,3 +20,16 @@ body {
   color: #fff;
   background-color: black;
 }
+
+.sidebar-content-container {
+  display: grid;
+  grid-template-columns: 19rem 1fr;
+  position: relative;
+  z-index: 1;
+  gap: 2rem;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+}
