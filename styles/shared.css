@@ -4,6 +4,12 @@
   box-sizing: border-box;
 }
 
+:root {
+  --primary-color: #16e97f;
+  --secondary-color: #ece8e4;
+  --header-height: 182px;
+}
+
 body {
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
@@ -13,4 +19,17 @@ body {
   width: 100%;
   color: #fff;
   background-color: black;
+}
+
+.sidebar-content-container {
+  display: grid;
+  grid-template-columns: 19rem 1fr;
+  position: relative;
+  z-index: 1;
+  gap: 2rem;
+}
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
 }

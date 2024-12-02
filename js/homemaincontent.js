@@ -204,8 +204,12 @@ planYourVisit.appendChild(planYourVisitImage);
 
 let ticketArray = Array.from(document.querySelectorAll(".content"));
 ticketArray.forEach((ticket) =>
-  ticket.addEventListener("mouseenter", () => ticket.classList.add("active"))
+  ticket.addEventListener("mouseenter", () =>
+    ticket.classList.add("active-ticket")
+  )
 );
 ticketArray.forEach((ticket) =>
-  ticket.addEventListener("mouseleave", () => ticket.classList.remove("active"))
+  ticket.addEventListener("mouseleave", () =>
+    ticket.classList.remove("active-ticket")
+  )
 );
