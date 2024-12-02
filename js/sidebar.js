@@ -120,6 +120,39 @@ document.addEventListener("DOMContentLoaded", function () {
           width: "30px"
         }
       ]
+    },
+    {
+      category: "Insects",
+      pageLink: "insects.html",
+      entries: [
+        {
+          id: "Butterfly",
+          name: "Butterfly",
+          description:
+            "Butterflies are colorful insects with large, scaly wings. They are found worldwide and are known for their metamorphic life cycle, which includes stages as an egg, larva (caterpillar), pupa (chrysalis), and adult. Butterflies are important pollinators and are often active during the day.",
+          src: "./images/butterfly.png",
+          alt: "Butterfly",
+          width: "30px"
+        },
+        {
+          id: "Dragonfly",
+          name: "Dragonfly",
+          description:
+            "Dragonflies are agile fliers with long, slender bodies and two pairs of transparent wings. Found near water bodies, they are skilled predators that hunt mosquitoes and other small insects. Dragonflies are known for their excellent vision and flying skills.",
+          src: "./images/dragonfly.png",
+          alt: "Dragonfly",
+          width: "30px"
+        },
+        {
+          id: "Firefly",
+          name: "Firefly",
+          description:
+            "Fireflies, also known as lightning bugs, are nocturnal beetles known for their bioluminescence. They emit light from their abdomens to communicate and attract mates. Found in warm and tropical regions, fireflies are a fascinating part of nature's light show.",
+          src: "./images/firefly.png",
+          alt: "Firefly",
+          width: "30px"
+        }
+      ]
     }
   ];
 

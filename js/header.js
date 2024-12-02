@@ -12,7 +12,8 @@ const navLinks = [
   { name: "Birds", href: "birds.html", class: "nav-link" },
   { name: "Mammals", href: "mammals.html", class: "nav-link" },
   { name: "Reptiles", href: "reptiles.html", class: "nav-link" },
-  { name: "About Us", href: "about.html", class: "nav-link" }
+  { name: "Insects", href: "insects.html", class: "nav-link" },
+  { name: "About Us", href: "about.html", class: "nav-link" },
 ];
 
 const hamburgerSvg = `
@@ -47,14 +48,14 @@ const hamburgerButtonsList = [
     label: "Menu",
     className: "hamburger",
     ariaLabel: "Menu Toggle",
-    svgIcon: hamburgerSvg
+    svgIcon: hamburgerSvg,
   },
   {
     label: "Close",
     className: "close-button",
     ariaLabel: "Close Menu",
-    svgIcon: closeButtonSvg
-  }
+    svgIcon: closeButtonSvg,
+  },
 ];
 
 const createNavLinks = () => {
