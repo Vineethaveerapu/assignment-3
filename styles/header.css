@@ -38,7 +38,7 @@ nav ul li a {
   max-width: fit-content;
   color: #fff;
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   text-decoration: none;
   display: block;
   position: relative;
@@ -73,9 +73,10 @@ nav ul li a:hover {
 .close-button {
   display: none;
   padding: 0;
-  background-color: transparent;
+  background: transparent;
   border: none;
   cursor: pointer;
+  outline: none;
 }
 
 .close-button {
@@ -93,33 +94,39 @@ nav ul li a:hover {
   }
 
   nav {
-    display: none;
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease;
     position: fixed;
     top: 0;
     left: 0;
-    background-color: black;
+    background-color: rgba(14, 14, 14, 0.94);
     width: 100%;
-    height: 100%;
-    padding: 10px;
     z-index: 1;
-    overflow-y: auto;
+    backdrop-filter: blur(10px);
   }
 
   nav ul {
-    padding: 2rem;
     display: flex;
     flex-direction: column;
+    width: 100%;
     height: 100%;
     align-items: center;
+    overflow: hidden !important;
   }
 
   nav ul li {
     margin: 10px 0;
+    a {
+      font-size: 2rem;
+    }
   }
 
   /* active class */
   nav.active {
-    display: block;
+    grid-template-rows: 1fr;
+    padding: 2rem;
+    min-height: 100vh;
   }
 
   .hamburger-container.active {

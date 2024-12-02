@@ -170,12 +170,28 @@ document.addEventListener("DOMContentLoaded", function () {
         heading.appendChild(image);
 
         heading.addEventListener("click", function () {
+          const currentScroll = window.scrollY;
+
           const animalDescriptionElement =
             document.getElementById("animal-description");
           if (animalDescriptionElement) {
-            animalDescriptionElement.scrollIntoView({
-              behavior: "smooth",
-              block: "start"
+            animalDescriptionElement.style.scrollMarginTop =
+              "var(--header-height)";
+
+            // Use requestAnimationFrame for smoother transitions
+            requestAnimationFrame(() => {
+              if (window.innerWidth <= 768) {
+                closeSidebar();
+              }
+
+              // Scroll to description after sidebar is closed
+              setTimeout(() => {
+                animalDescriptionElement.scrollIntoView({
+                  behavior: "smooth",
+                  block: "start",
+                  inline: "nearest"
+                });
+              }, 100);
             });
           }
 
@@ -223,9 +239,28 @@ document.addEventListener("DOMContentLoaded", function () {
         }</p>
         <a href="${pageLink}" class="learn-more">Visit ${category} page</a>
       `;
+
+          // Close sidebar on mobile when item is clicked
+          if (window.innerWidth <= 768) {
+            closeSidebar();
+          }
         });
       });
     }
+  });
+
+  const toggleBtn = document.querySelector(".toggle-btn");
+  const icon = toggleBtn.querySelector("i");
+
+  toggleBtn.addEventListener("click", function () {
+    sidebar.classList.toggle("show");
+    // Toggle icon between bars and times (x)
+    icon.classList.toggle("fa-bars");
+    icon.classList.toggle("fa-times");
+    // Toggle active class on button
+    toggleBtn.classList.toggle("active");
+    // Toggle body scroll
+    document.body.classList.toggle("sidebar-open");
   });
 });
 
@@ -239,4 +274,47 @@ document.addEventListener("DOMContentLoaded", function () {
   sidebar.addEventListener("mouseleave", function () {
     sidebar.classList.remove("expanded");
   });
+});
+
+function closeSidebar() {
+  const sidebar = document.querySelector(".sidebar");
+  const toggleBtn = document.querySelector(".toggle-btn");
+  const icon = toggleBtn.querySelector("i");
+
+  const currentScroll = window.scrollY;
+
+  requestAnimationFrame(() => {
+    sidebar.classList.remove("show");
+    toggleBtn.classList.remove("active");
+    icon.classList.remove("fa-times");
+    icon.classList.add("fa-bars");
+    document.body.classList.remove("sidebar-open");
+
+    window.scrollTo({
+      top: currentScroll,
+      behavior: "instant"
+    });
+  });
+}
+
+// Add escape key handler to close sidebar
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape" && window.innerWidth <= 768) {
+    closeSidebar();
+  }
+});
+
+// Add click outside sidebar to close
+document.addEventListener("click", function (e) {
+  const sidebar = document.querySelector(".sidebar");
+  const toggleBtn = document.querySelector(".toggle-btn");
+
+  if (
+    window.innerWidth <= 768 &&
+    sidebar.classList.contains("show") &&
+    !sidebar.contains(e.target) &&
+    !toggleBtn.contains(e.target)
+  ) {
+    closeSidebar();
+  }
 });
