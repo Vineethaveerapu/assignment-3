@@ -253,6 +253,7 @@
 }
 
 @media (max-width: 768px) {
+  .sidebar-content-container,
   .video-overlay {
     grid-template-columns: 1fr;
     padding-left: 1rem;
