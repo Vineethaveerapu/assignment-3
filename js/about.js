@@ -39,7 +39,6 @@ const teamMembers = [
   });
   const detailsCard = document.getElementById("details-card");
   const memberName = document.getElementById("member-name");
-  const memberRole = document.getElementById("member-role");
   const memberDescription = document.getElementById("member-description");
   const memberPhoto = document.getElementById("member-photo");
   sidebarList.addEventListener("click", (event) => {
@@ -47,7 +46,6 @@ const teamMembers = [
     if (index !== undefined) {
       const member = teamMembers[index];
       memberName.textContent = member.name;
-      memberRole.textContent = member.role;
       memberDescription.textContent = member.description;
       memberPhoto.src = member.photo;
       detailsCard.classList.remove("hidden");
