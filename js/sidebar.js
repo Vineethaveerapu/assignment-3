@@ -283,6 +283,9 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   const toggleBtn = document.querySelector(".toggle-btn");
+  if (!toggleBtn) {
+    return;
+  }
   const icon = toggleBtn.querySelector("i");
 
   toggleBtn.addEventListener("click", function () {
@@ -299,6 +302,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   const sidebar = document.querySelector(".sidebar");
+
+  if (!sidebar) {
+    return;
+  }
 
   sidebar.addEventListener("mouseenter", function () {
     sidebar.classList.add("expanded");
