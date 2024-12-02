@@ -1,5 +1,4 @@
-
-.background-video-container {
+  .background-video-container {
     position: absolute;
     top: 0;
     left: 0;
@@ -17,13 +16,11 @@
     top: 0;
     left: 0;
   }
-
   body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
     color: #24823a;
   }
- 
   .about-page {
     display: flex;
     padding: 20px;
@@ -86,9 +83,9 @@
   }
   
   .details-card img {
-    width: 300px; 
+    width: 300px; /* Adjust size of the photo */
     height: 300px;
-    object-fit: cover; 
+    object-fit: cover; /* Makes sure the image covers the area without distortion */
     border-radius: 8px;
     margin-bottom: 20px;
   }
@@ -111,7 +108,7 @@
     width: 30px;
     height: 30px;
     border: none;
-    border-radius: 50%; 
+    border-radius: 50%;
     background-color: red;
     color: white;
     font-size: 20px;
@@ -124,7 +121,7 @@
   
   .close-btn:hover {
     background-color: darkred; 
-  }
+}
 body {
     font-family: Arial, sans-serif;
     margin: 0;

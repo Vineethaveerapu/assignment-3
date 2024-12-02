@@ -58,7 +58,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Insert footer HTML into the body
   document.body.insertAdjacentHTML("beforeend", footerHTML);
-const newsletterLink = document.querySelector(".newsletter-link");
+
+  // Initialize modal functionality after footer is loaded
+  const newsletterLink = document.querySelector(".newsletter-link");
   const modalOverlay = document.getElementById("customPrompt");
   const emailInput = document.getElementById("emailInput");
   const submitButton = document.getElementById("submitEmail");
