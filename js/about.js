@@ -2,14 +2,14 @@ const teamMembers = [
     {
       name: "Vineetha",
       description:
-        "A true explorer,Vineetha loves discovering the unique traits of every animal in the zoo and enjoys learning fascinating facts about their habitats.",
+        "A true explorer, Vineetha loves discovering the unique traits of every animal in the zoo and enjoys learning fascinating facts about their habitats.",
       photo: "https://via.placeholder.com/150",
     },
     {
       name: "Priyadharshini",
       description:
         "Priyadharshini finds joy in connecting with animals, spending her time admiring their beauty and appreciating conservation efforts..",
-      photo: "https://via.placeholder.com/150",
+      photo: "./images/priyadharshini.jpg",
     },
     {
       name: "Megha",
