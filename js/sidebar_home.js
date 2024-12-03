@@ -253,7 +253,7 @@ document.addEventListener("DOMContentLoaded", function () {
               if (details && Object.keys(details).length > 0) {
                 // loop through details and display them
                 Object.keys(details).forEach((key) => {
-                  detailsHTML += `<li>${key}: ${details[key]}</li>`;
+                  detailsHTML += `<li class='${key}' >${key}: ${details[key]}</li>`;
                 });
               }
               detailsHTML += "</ul>";

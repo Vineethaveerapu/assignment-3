@@ -25,7 +25,7 @@ const characteristics = [
   "Three-part body structure: Head, thorax, abdomen.",
   "Six legs.",
   "Often one or two pairs of wings.",
-  "Found in nearly every habitat."
+  "Found in nearly every habitat.",
 ];
 
 const characteristicsList = new CreateList();
@@ -37,7 +37,7 @@ const whyInsectsImportant = [
   "Pollination: Many plants, including crops like fruits and vegetables, rely on insects such as bees and butterflies for pollination.",
   "Decomposition: Insects like beetles and flies help recycle nutrients by breaking down organic matter.",
   "Food Chain: Insects are a vital food source for birds, mammals, and amphibians.",
-  "Medicinal and Scientific Use: Some insects produce substances like honey and silk or are studied for advancements in science."
+  "Medicinal and Scientific Use: Some insects produce substances like honey and silk or are studied for advancements in science.",
 ];
 const whyInsectsImportantList = new CreateList();
 whyInsectsImportant.forEach((reason) => {
@@ -60,56 +60,12 @@ const displayPageContent = () => {
   pageContent.innerHTML = content;
 };
 
-const updateAnimalDescription = () => {
-  // get from url
-  const isInsectsPage =
-    window.location.pathname.includes("insects") ||
-    window.location.pathname === "/insects";
-
-  if (!isInsectsPage) {
-    return;
-  }
-
-  // need to wait until sidebar is loaded animal-name all
-  const animalNames = document.querySelectorAll(".animal-name");
-  animalNames.forEach((animalName) => {
-    animalName.addEventListener("click", () => {
-      console.log("animal name clicked");
-
-      //   learn-more
-      const learnMore = document.querySelector(".learn-more");
-      learnMore.textContent = "Read more";
-      learnMore.href = "#";
-
-      learnMore.addEventListener("click", (e) => {
-        e.preventDefault();
-        // animal-description-full
-        const animalDescriptionFull = document.querySelector(
-          ".animal-description-full"
-        );
-        animalDescriptionFull.style.display = "block";
-        // animal-details
-        const animalDetails = document.querySelector(".animal-details");
-        animalDetails.style.display = "block";
-
-        // animal-description-short
-        const animalDescriptionShort = document.querySelector(
-          ".animal-description-short"
-        );
-        animalDescriptionShort.style.display = "none";
-
-        learnMore.style.display = "none";
-      });
-    });
-  });
-};
-
 const addBackgroundImage = () => {
   const main = document.querySelector(".container");
 
   const insects = ["butterfly", "dragonfly", "firefly"];
 
-  const multipleInsects = [...insects, ...insects];
+  const multipleInsects = [...insects];
 
   multipleInsects.forEach((insect, i) => {
     const img = document.createElement("img");
@@ -155,6 +111,43 @@ const addBackgroundImage = () => {
 
     // Add the insect image to the page
     main.appendChild(img);
+  });
+};
+
+const updateAnimalDescription = () => {
+  // get all elements from sidebar
+  const animalNames = document.querySelectorAll(".animal-name");
+
+  // loop
+  animalNames.forEach((animalName) => {
+    animalName.addEventListener("click", () => {
+      console.log("animal name clicked");
+
+      // learn-more
+      const learnMore = document.querySelector(".learn-more");
+      learnMore.textContent = "Read more";
+      learnMore.href = "#";
+
+      learnMore.addEventListener("click", (e) => {
+        e.preventDefault();
+        // animal-description-full
+        const animalDescriptionFull = document.querySelector(
+          ".animal-description-full"
+        );
+        animalDescriptionFull.style.display = "block";
+        // animal-details
+        const animalDetails = document.querySelector(".animal-details");
+        animalDetails.style.display = "block";
+
+        // animal-description-short
+        const animalDescriptionShort = document.querySelector(
+          ".animal-description-short"
+        );
+        animalDescriptionShort.style.display = "none";
+
+        learnMore.style.display = "none";
+      });
+    });
   });
 };
 
