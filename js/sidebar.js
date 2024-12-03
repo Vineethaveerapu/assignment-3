@@ -132,7 +132,16 @@ document.addEventListener("DOMContentLoaded", function () {
             "Butterflies are colorful insects with large, scaly wings. They are found worldwide and are known for their metamorphic life cycle, which includes stages as an egg, larva (caterpillar), pupa (chrysalis), and adult. Butterflies are important pollinators and are often active during the day.",
           src: "./images/butterfly.png",
           alt: "Butterfly",
-          width: "30px"
+          width: "30px",
+          details: {
+            lifespan: "1 month (as an adult butterfly)",
+            group: "Insects",
+            food: "Nectar from flowers, rotting fruit, and tree sap",
+            length: "2cm to 30cm (wingspan)",
+            weight: "0.5g to 3g",
+            found:
+              "Worldwide, in diverse habitats such as forests, grasslands, and gardens"
+          }
         },
         {
           id: "Dragonfly",
@@ -141,7 +150,15 @@ document.addEventListener("DOMContentLoaded", function () {
             "Dragonflies are agile fliers with long, slender bodies and two pairs of transparent wings. Found near water bodies, they are skilled predators that hunt mosquitoes and other small insects. Dragonflies are known for their excellent vision and flying skills.",
           src: "./images/dragonfly.png",
           alt: "Dragonfly",
-          width: "30px"
+          width: "30px",
+          details: {
+            lifespan: "6 months to 7 years (including larval stage)",
+            group: "Insects",
+            food: "Mosquitoes, flies, and other small insects",
+            length: "3cm to 15cm",
+            weight: "1g to 5g",
+            found: "Near freshwater habitats like lakes, ponds, and rivers"
+          }
         },
         {
           id: "Firefly",
@@ -150,7 +167,16 @@ document.addEventListener("DOMContentLoaded", function () {
             "Fireflies, also known as lightning bugs, are nocturnal beetles known for their bioluminescence. They emit light from their abdomens to communicate and attract mates. Found in warm and tropical regions, fireflies are a fascinating part of nature's light show.",
           src: "./images/firefly.png",
           alt: "Firefly",
-          width: "30px"
+          width: "30px",
+          details: {
+            lifespan: "2 months (as an adult firefly)",
+            group: "Insects",
+            food: "Nectar, pollen, and sometimes other insects (larvae are predatory)",
+            length: "1cm to 2.5cm",
+            weight: "0.1g to 0.5g",
+            found:
+              "Tropical and temperate regions, in forests, meadows, and wetlands"
+          }
         }
       ]
     }
@@ -246,12 +272,10 @@ document.addEventListener("DOMContentLoaded", function () {
           // display details
           const details = animal.details;
 
-          // create temp variable to hold details
           let detailsHTML = "";
           if (!isHomePage) {
-            detailsHTML = "<ul class='animal-details'>";
+            detailsHTML = "<ul class='animal-details' style='display: none;'>";
             if (details && Object.keys(details).length > 0) {
-              // loop through details and display them
               Object.keys(details).forEach((key) => {
                 detailsHTML += `<li>${key}: ${details[key]}</li>`;
               });
@@ -264,12 +288,16 @@ document.addEventListener("DOMContentLoaded", function () {
         <img class="animate-image" src="${animal.src}" alt="${
             animal.alt
           }" style="width:auto; height: 200px;">
-        ${detailsHTML}
-        <p>${
+
+        <p class="animal-description-short">${
           animal.description.length > 200
             ? animal.description.slice(0, 200) + "..."
             : animal.description
         }</p>
+        <p class="animal-description-full" style="display: none;">${
+          animal.description
+        }</p>
+          ${detailsHTML}
         <a href="${pageLink}" class="learn-more">Visit ${category} page</a>
       `;
 
