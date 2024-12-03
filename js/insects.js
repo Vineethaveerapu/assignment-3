@@ -65,7 +65,7 @@ const addBackgroundImage = () => {
 
   const insects = ["butterfly", "dragonfly", "firefly"];
 
-  const multipleInsects = [...insects, ...insects];
+  const multipleInsects = [...insects];
 
   multipleInsects.forEach((insect, i) => {
     const img = document.createElement("img");
