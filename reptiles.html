@@ -4,17 +4,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Australian zoo</title>
-    <link rel="stylesheet" href="./styles/shared.css" />
+    <!-- <link rel="stylesheet" href="./styles/shared.css" /> -->
     <link rel="stylesheet" href="./styles/header.css" />
     
     <link rel="stylesheet" href="./styles/footer.css" />
     
+    <link rel="stylesheet" href="./styles/sidebar.css" />
+    <link rel="stylesheet" href="./styles/reptiles.css">
+    <script src="./js/sidebar.js" defer></script>
     <script src="./js/header.js" defer></script>
     <script src="./js/load-footer.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
+    <script src="./js/reptiles.js" defer></script>
   </head>
   <body>
     <!-- header starts -->
@@ -28,6 +32,11 @@
     <!-- header ends -->
     <main class="main-content flex">
       <h1>Welcome to Nature's Zoo</h1>
+    <main id="main-reptile-content" class="main-content flex main-reptile-content">
+      <aside class="sidebar"></aside>
+      <div class="container">
+        <div class="animal-description"></div>
+      </div>
     </main>
   </body>
 </html>
