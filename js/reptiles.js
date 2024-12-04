@@ -34,12 +34,12 @@ const reptilesData = [
 function createMainReptileContent() {
     const mainReptileContent = document.getElementById("main-reptile-content");
 
-    const introSection = `
-        <h1 class="reptile-h1">Discover the Wonders of the Reptile Kingdom</h1>
-        <h2>Reptiles</h2>
-        <p>Reptiles are highly adaptable and live in diverse habitats, including forests, deserts, wetlands, grasslands, and even urban areas. They are found on every continent except Antarctica. Reptiles face threats like habitat destruction, climate change, poaching, and pollution. Conservation efforts, including protected areas and breeding programs, are crucial to their survival. Reptiles are a diverse and intriguing group of animals, showcasing remarkable adaptations that have allowed them to thrive for millions of years.</p>
-    `;
-    mainReptileContent.innerHTML = introSection;
+    // const introSection = `
+    //     <h1 class="reptile-h1">Discover the Wonders of the Reptile Kingdom</h1>
+    //     <h2>Reptiles</h2>
+    //     <p>Reptiles are highly adaptable and live in diverse habitats, including forests, deserts, wetlands, grasslands, and even urban areas. They are found on every continent except Antarctica. Reptiles face threats like habitat destruction, climate change, poaching, and pollution. Conservation efforts, including protected areas and breeding programs, are crucial to their survival. Reptiles are a diverse and intriguing group of animals, showcasing remarkable adaptations that have allowed them to thrive for millions of years.</p>
+    // `;
+    // mainReptileContent.innerHTML = introSection;
 
     const section = document.createElement("section");
     section.classList.add("reptile-section");

@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function () {
       window.location.pathname.includes("index") ||
       window.location.pathname === "/";
     const isAboutPage = window.location.pathname.includes("about");
-    const isReptilePage = window.location.pathname.includes("reptiles");
+    const isReptilePage = window.location.pathname.includes("Reptiles");
 
     if (isReptilePage) {
       return; 
