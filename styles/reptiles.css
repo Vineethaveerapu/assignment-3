@@ -26,7 +26,7 @@ body {
 .main-reptile-content h2 {
     font-size: 1.5rem;
     margin: 20px;
-    color: #373535;
+    color: white;
 }
 
 .main-reptile-content h2:nth-child(1) {
@@ -37,7 +37,7 @@ body {
     font-size: 1.3rem;
     line-height: 1.8;
     text-indent: 70px;
-    color: #312f2f;
+    color: white;
     margin-bottom: 20px;
 }
 
