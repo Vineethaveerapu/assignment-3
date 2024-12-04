@@ -1,16 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
     // NOTES: will work on pages with <aside class="sidebar"></aside>
-  
+
     // get from url
     const isHomePage =
       window.location.pathname.includes("index") ||
       window.location.pathname === "/";
     const isAboutPage = window.location.pathname.includes("about");
-  
+
     if (isAboutPage) {
       return;
     }
-  
+
     // use constructor
     // array for birds, three separate arrays one for each group
     const animals = [
@@ -132,7 +132,16 @@ document.addEventListener("DOMContentLoaded", function () {
               "Butterflies are colorful insects with large, scaly wings. They are found worldwide and are known for their metamorphic life cycle, which includes stages as an egg, larva (caterpillar), pupa (chrysalis), and adult. Butterflies are important pollinators and are often active during the day.",
             src: "./images/butterfly.png",
             alt: "Butterfly",
-            width: "30px"
+            width: "30px",
+            details: {
+              lifespan: "1 month (as an adult butterfly)",
+              group: "Insects",
+              food: "Nectar from flowers, rotting fruit, and tree sap",
+              length: "2cm to 30cm (wingspan)",
+              weight: "0.5g to 3g",
+              found:
+                "Worldwide, in diverse habitats such as forests, grasslands, and gardens"
+            }
           },
           {
             id: "Dragonfly",
@@ -141,7 +150,15 @@ document.addEventListener("DOMContentLoaded", function () {
               "Dragonflies are agile fliers with long, slender bodies and two pairs of transparent wings. Found near water bodies, they are skilled predators that hunt mosquitoes and other small insects. Dragonflies are known for their excellent vision and flying skills.",
             src: "./images/dragonfly.png",
             alt: "Dragonfly",
-            width: "30px"
+            width: "30px",
+            details: {
+              lifespan: "6 months to 7 years (including larval stage)",
+              group: "Insects",
+              food: "Mosquitoes, flies, and other small insects",
+              length: "3cm to 15cm",
+              weight: "1g to 5g",
+              found: "Near freshwater habitats like lakes, ponds, and rivers"
+            }
           },
           {
             id: "Firefly",
@@ -150,21 +167,30 @@ document.addEventListener("DOMContentLoaded", function () {
               "Fireflies, also known as lightning bugs, are nocturnal beetles known for their bioluminescence. They emit light from their abdomens to communicate and attract mates. Found in warm and tropical regions, fireflies are a fascinating part of nature's light show.",
             src: "./images/firefly.png",
             alt: "Firefly",
-            width: "30px"
+            width: "30px",
+            details: {
+              lifespan: "2 months (as an adult firefly)",
+              group: "Insects",
+              food: "Nectar, pollen, and sometimes other insects (larvae are predatory)",
+              length: "1cm to 2.5cm",
+              weight: "0.1g to 0.5g",
+              found:
+                "Tropical and temperate regions, in forests, meadows, and wetlands"
+            }
           }
         ]
       }
     ];
-  
+
     const sidebar = document.querySelector(".sidebar");
     const descriptionContainer = document.querySelector(".animal-description");
     const container = document.querySelector(".container");
-  
+
     animals.forEach(({ category, pageLink, entries }) => {
       const isCategoryPage = window.location.pathname.includes(
         category.toLowerCase()
       );
-  
+
       // This section generates the sidebar content based on the animal categories and entries.
       // It checks if the current page matches the category and displays the relevant animals.
       if (isCategoryPage || isHomePage) {
@@ -177,46 +203,46 @@ document.addEventListener("DOMContentLoaded", function () {
           const animalDiv = document.createElement("div");
           animalDiv.classList.add("animal");
           animalDiv.id = animal.id;
-  
+
           const heading = document.createElement("h3");
           heading.textContent = animal.name;
           heading.classList.add("animal-name");
-  
+
           // const description = document.createElement("p");
           // description.textContent = animal.description;
-  
+
           animalDiv.appendChild(heading);
           // animalDiv.appendChild(description);
           sidebar.appendChild(animalDiv);
-  
+
           // Add image to the heading
           const image = document.createElement("img");
           image.src = animal.src;
           image.alt = animal.alt;
           image.style.width = animal.width;
           image.style.height = "auto";
-  
+
           heading.style.display = "flex";
           heading.style.alignItems = "center";
           heading.style.gap = "10px";
-  
+
           heading.appendChild(image);
-  
+
           heading.addEventListener("click", function () {
             const currentScroll = window.scrollY;
-  
+
             const animalDescriptionElement =
               document.getElementById("animal-description");
             if (animalDescriptionElement) {
               animalDescriptionElement.style.scrollMarginTop =
                 "var(--header-height)";
-  
+
               // Use requestAnimationFrame for smoother transitions
               requestAnimationFrame(() => {
                 if (window.innerWidth <= 768) {
                   closeSidebar();
                 }
-  
+
                 // Scroll to description after sidebar is closed
                 setTimeout(() => {
                   animalDescriptionElement.scrollIntoView({
@@ -227,12 +253,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 }, 100);
               });
             }
-  
+
             const activeHeading = document.querySelector(".animal-name.active");
             if (activeHeading && activeHeading !== heading) {
               activeHeading.classList.remove("active");
             }
-  
+
             if (heading.classList.contains("active")) {
               heading.classList.remove("active");
               descriptionContainer.classList.remove("show");
@@ -242,10 +268,10 @@ document.addEventListener("DOMContentLoaded", function () {
               descriptionContainer.classList.add("show");
               container.classList.add("showing-animal-description");
             }
-  
+
             // display details
             const details = animal.details;
-  
+
             // create temp variable to hold details
             let detailsHTML = "";
             if (!isHomePage) {
@@ -258,7 +284,7 @@ document.addEventListener("DOMContentLoaded", function () {
               }
               detailsHTML += "</ul>";
             }
-  
+
             descriptionContainer.innerHTML = `
           <h3>${animal.name}</h3>
           <img class="animate-image" src="${animal.src}" alt="${
@@ -272,7 +298,7 @@ document.addEventListener("DOMContentLoaded", function () {
           }</p>
           <a href="${pageLink}" class="learn-more">Visit ${category} page</a>
         `;
-  
+
             // Close sidebar on mobile when item is clicked
             if (window.innerWidth <= 768) {
               closeSidebar();
@@ -281,13 +307,13 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       }
     });
-  
+
     const toggleBtn = document.querySelector(".toggle-btn");
     if (!toggleBtn) {
       return;
     }
     const icon = toggleBtn.querySelector("i");
-  
+
     toggleBtn.addEventListener("click", function () {
       sidebar.classList.toggle("show");
       // Toggle icon between bars and times (x)
@@ -299,56 +325,56 @@ document.addEventListener("DOMContentLoaded", function () {
       document.body.classList.toggle("sidebar-open");
     });
   });
-  
+
   document.addEventListener("DOMContentLoaded", function () {
     const sidebar = document.querySelector(".sidebar");
-  
+
     if (!sidebar) {
       return;
     }
-  
+
     sidebar.addEventListener("mouseenter", function () {
       sidebar.classList.add("expanded");
     });
-  
+
     sidebar.addEventListener("mouseleave", function () {
       sidebar.classList.remove("expanded");
     });
   });
-  
+
   function closeSidebar() {
     const sidebar = document.querySelector(".sidebar");
     const toggleBtn = document.querySelector(".toggle-btn");
     const icon = toggleBtn.querySelector("i");
-  
+
     const currentScroll = window.scrollY;
-  
+
     requestAnimationFrame(() => {
       sidebar.classList.remove("show");
       toggleBtn.classList.remove("active");
       icon.classList.remove("fa-times");
       icon.classList.add("fa-bars");
       document.body.classList.remove("sidebar-open");
-  
+
       window.scrollTo({
         top: currentScroll,
         behavior: "instant"
       });
     });
   }
-  
+
   // Add escape key handler to close sidebar
   document.addEventListener("keydown", function (e) {
     if (e.key === "Escape" && window.innerWidth <= 768) {
       closeSidebar();
     }
   });
-  
+
   // Add click outside sidebar to close
   document.addEventListener("click", function (e) {
     const sidebar = document.querySelector(".sidebar");
     const toggleBtn = document.querySelector(".toggle-btn");
-  
+
     if (
       window.innerWidth <= 768 &&
       sidebar.classList.contains("show") &&
@@ -358,4 +384,3 @@ document.addEventListener("DOMContentLoaded", function () {
       closeSidebar();
     }
   });
-  

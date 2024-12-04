@@ -121,7 +121,7 @@ const updateAnimalDescription = () => {
   // loop
   animalNames.forEach((animalName) => {
     animalName.addEventListener("click", () => {
-      console.log("animal name clicked");
+
 
       // learn-more
       const learnMore = document.querySelector(".learn-more");
@@ -129,6 +129,7 @@ const updateAnimalDescription = () => {
       learnMore.href = "#";
 
       learnMore.addEventListener("click", (e) => {
+
         e.preventDefault();
         // animal-description-full
         const animalDescriptionFull = document.querySelector(
