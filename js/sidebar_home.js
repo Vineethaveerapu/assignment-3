@@ -275,7 +275,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // create temp variable to hold details
             let detailsHTML = "";
             if (!isHomePage) {
-              detailsHTML = "<ul class='animal-details'>";
+              detailsHTML = "<ul class='animal-details' style='display: none;'>";
               if (details && Object.keys(details).length > 0) {
                 // loop through details and display them
                 Object.keys(details).forEach((key) => {
@@ -286,17 +286,20 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
             descriptionContainer.innerHTML = `
-          <h3>${animal.name}</h3>
-          <img class="animate-image" src="${animal.src}" alt="${
-              animal.alt
-            }" style="width:auto; height: 200px;">
+        <h3>${animal.name}</h3>
+        <img class="animate-image" src="${animal.src}" alt="${
+            animal.alt
+          }" style="width:auto; height: 200px;">
+        <p class="animal-description-short">${
+          animal.description.length > 200
+            ? animal.description.slice(0, 200) + "..."
+            : animal.description
+        }</p>
+        <p class="animal-description-full" style="display: none;">${
+          animal.description
+        }</p>
           ${detailsHTML}
-          <p>${
-            animal.description.length > 200
-              ? animal.description.slice(0, 200) + "..."
-              : animal.description
-          }</p>
-          <a href="${pageLink}" class="learn-more">Visit ${category} page</a>
+        <a href="${pageLink}" class="learn-more">Visit ${category} page</a>
         `;
 
             // Close sidebar on mobile when item is clicked
