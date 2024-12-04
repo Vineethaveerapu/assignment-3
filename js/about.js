@@ -3,7 +3,7 @@ const teamMembers = [
       name: "Vineetha",
       description:
         "A true explorer, Vineetha loves discovering the unique traits of every animal in the zoo and enjoys learning fascinating facts about their habitats.",
-      photo: "https://via.placeholder.com/150",
+      photo: "./images/vineetha.jpg",
     },
     {
       name: "Priyadharshini",
@@ -21,7 +21,7 @@ const teamMembers = [
       name: "Kavitha",
       description:
         "Kavitha with a passion for nature, Kavitha enjoys the peaceful environment of the zoo and cherishes moments with the animals.",
-      photo: "https://via.placeholder.com/150",
+      photo: "./images/kavitha.jpg",
     },
     {
       name: "Maedeh",
@@ -41,23 +41,32 @@ const teamMembers = [
   const memberName = document.getElementById("member-name");
   const memberDescription = document.getElementById("member-description");
   const memberPhoto = document.getElementById("member-photo");
-  sidebarList.addEventListener("click", (event) => {
-    const index = event.target.dataset.index;
-    if (index !== undefined) {
-      const member = teamMembers[index];
+
+const mainContent = document.querySelector(".main-content");
+
+sidebarList.addEventListener("click", (event) => {
+  const index = event.target.dataset.index;
+  if (index !== undefined) {
+    const member = teamMembers[index];
+    const isCurrentlyActive = event.target.classList.contains("active");
+
+    const activeItem = document.querySelector("#sidebar-list .active");
+    if (activeItem) {
+      activeItem.classList.remove("active");
+    }
+
+    if (!isCurrentlyActive) {
+      
       memberName.textContent = member.name;
       memberDescription.textContent = member.description;
       memberPhoto.src = member.photo;
       detailsCard.classList.remove("hidden");
-      const activeItem = document.querySelector("#sidebar-list .active");
-      if (activeItem) {
-        activeItem.classList.remove("active");
-      }
       event.target.classList.add("active");
+      mainContent.style.display = "none"; 
+    } else {
+      
+      detailsCard.classList.add("hidden");
+      mainContent.style.display = "block"; 
     }
-  });
-  const closeButton = document.querySelector(".close-btn");
-  closeButton.addEventListener("click", () => {
-    detailsCard.classList.add("hidden");
-  });
-  
+  }
+});
