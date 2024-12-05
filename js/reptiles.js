@@ -140,65 +140,45 @@ const addBackgroundVideo = () => {
 addBackgroundVideo();
 
 const updateAnimalDescription = () => {
-    const animalNames = document.querySelectorAll(".animal-name");
-  
-    animalNames.forEach((animalName) => {
-      animalName.addEventListener("click", (e) => {
-        const mainReptileContent = document.getElementById("main-reptile-content");
-        const animalTitle = animalName.textContent;
-        const reptile = reptilesData.find((r) => r.title === animalTitle);
-        const sidebar = document.querySelector('.sidebar');
-        const factsContainer = document.querySelector('.facts-container');
-  
-        mainReptileContent.style.visibility = "hidden"; 
-        factsContainer.style.visibility = "hidden"; 
-        mainReptileContent.style.position = "absolute";
-        factsContainer.style.position = "absolute";
-  
-        const animalDescription = document.getElementById("animal-description");
-        animalDescription.style.visibility = "visible";
-        animalDescription.style.position = "relative"; 
-  
-        sidebar.style.visibility = "visible";
-        sidebar.style.position = "relative"; 
-        sidebar.style.zIndex = "10";
-  
-        const shortDescription = reptile.description.slice(0, 200);
-        const fullDescription = reptile.description;
-  
-        animalDescription.innerHTML = `
-          <h3>${reptile.title}</h3>
-          <img src="${reptile.img}" alt="${reptile.title}" />
-          <p class="animal-short-description">${shortDescription}...</p>
-          <button class="read-more-btn">Read More</button>
-          <button id="back-btn">Back to Reptiles</button>
-        `;
-  
-        const readMoreButton = document.querySelector('.read-more-btn');
-        const shortDescriptionElement = document.querySelector('.animal-short-description');
-  
-        readMoreButton.style.display = "inline-block"; 
-        readMoreButton.addEventListener("click", () => {
-          shortDescriptionElement.textContent = fullDescription; 
-          readMoreButton.style.display = "none"; 
-        });
-  
-        const backButton = document.getElementById("back-btn");
-        backButton.addEventListener("click", () => {
-          animalDescription.innerHTML = "";
-          animalDescription.style.visibility = "hidden"; 
-          mainReptileContent.style.visibility = "visible"; 
-          mainReptileContent.style.position = "relative";
-          factsContainer.style.visibility = "visible"; 
-          factsContainer.style.position = "relative"; 
-          sidebar.style.visibility = "visible"; 
-          sidebar.style.position = "relative"; 
-        });
+  // get all elements from sidebar
+  const animalNames = document.querySelectorAll(".animal-name");
+
+  // loop
+  animalNames.forEach((animalName) => {
+    animalName.addEventListener("click", () => {
+
+
+      // learn-more
+      const learnMore = document.querySelector(".learn-more");
+      learnMore.textContent = "Read more";
+      learnMore.href = "#";
+
+      learnMore.addEventListener("click", (e) => {
+
+        e.preventDefault();
+        // animal-description-full
+        const animalDescriptionFull = document.querySelector(
+          ".animal-description-full"
+        );
+        animalDescriptionFull.style.display = "block";
+        // animal-details
+        const animalDetails = document.querySelector(".animal-details");
+        animalDetails.style.display = "block";
+
+        // animal-description-short
+        const animalDescriptionShort = document.querySelector(
+          ".animal-description-short"
+        );
+        animalDescriptionShort.style.display = "none";
+
+        learnMore.style.display = "none";
       });
     });
-  };
-  
-  document.addEventListener("DOMContentLoaded", function () {
-    updateAnimalDescription();
   });
-  
+};
+
+document.addEventListener("DOMContentLoaded", function () {
+  displayPageContent();
+  updateAnimalDescription();
+  addBackgroundImage();
+});
