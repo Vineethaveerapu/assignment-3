@@ -11,6 +11,10 @@ body {
     font-family: Arial, sans-serif;
 }
 
+:root {
+    --primary-color: #16e97f;
+}
+
 .reptile-h1 {
     color: white;
     font-size: 2rem;
