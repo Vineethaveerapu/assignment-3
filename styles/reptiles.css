@@ -109,6 +109,10 @@ body {
     margin: 10px;
 }
 
+.animal-container {
+    margin: auto;
+}
+
 @media screen and (max-width: 768px) {
     .reptile-container {
         grid-template-columns: 1fr;

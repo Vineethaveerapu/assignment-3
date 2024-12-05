@@ -153,6 +153,13 @@ const updateAnimalDescription = () => {
       learnMore.textContent = "Read more";
       learnMore.href = "#";
 
+      const reptileSection = document.querySelector(".reptile-section");
+      if(animalName.classList.contains("active")) {
+        reptileSection.style.display = "none";
+      }else {
+        reptileSection.style.display = "block";
+      }
+
       learnMore.addEventListener("click", (e) => {
 
         e.preventDefault();
@@ -178,7 +185,5 @@ const updateAnimalDescription = () => {
 };
 
 document.addEventListener("DOMContentLoaded", function () {
-  displayPageContent();
   updateAnimalDescription();
-  addBackgroundImage();
 });
