@@ -12,10 +12,10 @@ function MammalsName(className,name,imagesrc) {
     this.imagesrc = imagesrc,
     this.description = () => {
         let animalDiv = document.createElement("div");
-        animalDiv.classList.add(className,"animal");//mammals-name
+        animalDiv.classList.add(className,"animal");
         sideBar.append(animalDiv);
         let animalName = document.createElement("h3");
-        animalName.classList.add("animal-name"); //to be removed
+        animalName.classList.add("animal-name"); 
         animalName.textContent=name;
         animalDiv.appendChild(animalName);
         let animalNameImg = document.createElement("img");
@@ -225,11 +225,11 @@ content.forEach(content => content.description());
 
 /****************************Seeting Active Tab***********************************/
 let mammalContent = document.querySelector(".mammals-content");
-let activeArray = Array.from(document.querySelectorAll(".animal-name"));//mammals-name
+let activeArray = Array.from(document.querySelectorAll(".animal-name"));
 console.log(activeArray);
 
 
-const setActive = (mammalname) => { //active to be changed as clickedname
+const setActive = (mammalname) => { 
     if(mammalname.classList.contains("active")){
         mammalname.classList.remove("active");
     }else{
@@ -261,9 +261,6 @@ const displayContent = (mammal) => {
             }
             }
             content.classList.remove("showcontent");
-            /*remainingDetails.classList.add("hidden");
-            remainingList.classList.add("hidden");
-            button.textContent = "Read More";*/
             });
 
             if(alreadyshow){
@@ -368,6 +365,9 @@ const facts = ["The Tasmanian devil is the largest carnivorous marsupial in the 
 let randomFacts;
 
  let factSection = document.querySelector(".facts");
+ let factsHeading = document.createElement("h5");
+ factsHeading.textContent = "DID YOU KNOW ?";
+ factSection.appendChild(factsHeading);
  let factsPara = document.createElement("p");
  factSection.appendChild(factsPara);
 
@@ -378,4 +378,9 @@ let randomFacts;
   }
   getRandomNumber();
   setInterval(getRandomNumber, 5000);
-  
+
+  let factsImage = document.querySelector(".facts-image");
+  let factsImageimg = document.createElement("img");
+  factsImageimg.src = "./images/pandablack.jpg";
+  factsImageimg.alt = "Panda-image";
+  factsImage.appendChild(factsImageimg);
