@@ -22,9 +22,9 @@ body {
     color: white;
     text-align: center;
     text-decoration: underline;
-  }
-  
-  .animal-name {
+}
+    
+.animal-name {
     color: black;
     border-radius: 16px;
     border-color: black;
@@ -35,9 +35,9 @@ body {
     z-index: 1;
     position: relative;
     transition: width 2s ease;
-  }
+}
   
-  .animal-name::before {
+.animal-name::before {
     content: "";
     position: absolute;
     top: 0;
@@ -63,28 +63,27 @@ body {
     animation: glowing-border 4s linear infinite;
     z-index: -1;
     display: none;
-  }
+}
   
-  .animal-name.active::before {
+.animal-name.active::before {
     display: block;
     animation: glowing-border 4s linear infinite;
-  }
+}
 
-  .animal h3 img {
+.animal h3 img {
     width: 30px;
     margin-right: 10px;
     transition: transform 0.5s ease;
-  }
+}
 
-  .animal h3:hover {
+.animal h3:hover {
     background-color: #445b59;
     color: white;
-  }
+}
   
-  .animal .animal-name.active img {
+.animal .animal-name.active img {
     animation: moveImage 2.5s ease infinite;
-  }
-  
+}
 
 .main-content {
     flex-grow: 1;
@@ -110,10 +109,10 @@ body {
     background-image: url("../images/lionmammal.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    /*filter: grayscale(80%);*/
+    background-position: center;
     flex-grow: 1;
     color: blanchedalmond;
-    /*animation: mammals-change 20s infinite;*/
+    
 }
 
 .mammals-content h1 {
@@ -186,12 +185,10 @@ body {
 }
 
 .animal-image img {
-   /* position: absolute;*/
     animation: move 5s infinite alternate ease-in-out;
     width: 50%;
     height: auto;
-    margin-left: 20%;
-    
+    margin-left: 20%;   
 }
 
 .content a {
@@ -214,7 +211,7 @@ body {
     box-shadow: 10px 10px 10px 10px;
 }
 
- h3 {
+h3 {
     text-align: center;
 }
 
@@ -253,17 +250,9 @@ body {
     height: auto;
 }
 
-.footer {
-    background-color: #0f403d;
-}
-
 @media screen and (max-width: 900px) {
 
     .main-container {
-        margin: 16px;
-    }
-
-    .mammals-info {
         margin: 16px;
     }
 
@@ -271,12 +260,17 @@ body {
         margin: 8px;
         padding: 8px;
     }
+    
+    .mammals-info {
+        background-image: none;
+        background-color: black;
+    }
 
     .mammals-content p {
         margin: 8px;
         text-indent: 30px; 
     }
-
+    
     .facts {
         clip-path: none;
     }
@@ -307,21 +301,6 @@ body {
     .animal-name img {
         display: none;
     }*/
-
-    .mammals-info {
-        background-image: none;
-        background-color: black;
-    }
-
-    .mammals-features {
-        margin: 8px;
-        padding: 8px;
-    }
-
-    .mammals-content p {
-        margin: 8px;
-        text-indent: 30px; 
-    }
 
     .showcontent {
         /*margin-left: 8px;*/
