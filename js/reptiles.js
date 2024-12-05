@@ -140,60 +140,65 @@ const addBackgroundVideo = () => {
 addBackgroundVideo();
 
 const updateAnimalDescription = () => {
-  const animalNames = document.querySelectorAll(".animal-name");
-
-  animalNames.forEach((animalName) => {
+    const animalNames = document.querySelectorAll(".animal-name");
+  
+    animalNames.forEach((animalName) => {
       animalName.addEventListener("click", (e) => {
-          const reptileSection = document.getElementById("reptile-section");
-          const animalTitle = animalName.textContent;
-          const reptile = reptilesData.find((r) => r.title === animalTitle);
-          const sidebar = document.querySelector('.sidebar-content-container');
-          const animalDescription = document.getElementById("animal-description");
-
-          reptileSection.style.visibility = "hidden";
-          reptileSection.style.position = "absolute";
-
-          animalDescription.style.visibility = "visible";
-          animalDescription.style.position = "relative";
-
-          sidebar.style.visibility = "visible";
-          sidebar.style.position = "relative";
-
-          const shortDescription = reptile.description.slice(0, 200);
-          const fullDescription = reptile.description;
-
-          animalDescription.innerHTML = `
-              <h3>${reptile.title}</h3>
-              <img src="${reptile.img}" alt="${reptile.title}" />
-              <p class="animal-short-description">${shortDescription}...</p>
-              <button class="read-more-btn">Read More</button>
-              <button id="back-btn">Back to Reptiles</button>
-          `;
-
-          // Read more functionality
-          const readMoreButton = document.querySelector('.read-more-btn');
-          const shortDescriptionElement = document.querySelector('.animal-short-description');
-          readMoreButton.style.display = "inline-block";
-
-          readMoreButton.addEventListener("click", () => {
-              shortDescriptionElement.textContent = fullDescription;
-              readMoreButton.style.display = "none";
-          });
-
-          // Back to reptiles functionality
-          const backButton = document.getElementById("back-btn");
-          backButton.addEventListener("click", () => {
-              animalDescription.innerHTML = "";
-              animalDescription.style.visibility = "hidden";
-
-              // Show the reptile section again
-              reptileSection.style.visibility = "visible";
-              reptileSection.style.position = "relative";
-          });
+        const mainReptileContent = document.getElementById("main-reptile-content");
+        const animalTitle = animalName.textContent;
+        const reptile = reptilesData.find((r) => r.title === animalTitle);
+        const sidebar = document.querySelector('.sidebar');
+        const factsContainer = document.querySelector('.facts-container');
+  
+        mainReptileContent.style.visibility = "hidden"; 
+        factsContainer.style.visibility = "hidden"; 
+        mainReptileContent.style.position = "absolute";
+        factsContainer.style.position = "absolute";
+  
+        const animalDescription = document.getElementById("animal-description");
+        animalDescription.style.visibility = "visible";
+        animalDescription.style.position = "relative"; 
+  
+        sidebar.style.visibility = "visible";
+        sidebar.style.position = "relative"; 
+        sidebar.style.zIndex = "10";
+  
+        const shortDescription = reptile.description.slice(0, 200);
+        const fullDescription = reptile.description;
+  
+        animalDescription.innerHTML = `
+          <h3>${reptile.title}</h3>
+          <img src="${reptile.img}" alt="${reptile.title}" />
+          <p class="animal-short-description">${shortDescription}...</p>
+          <button class="read-more-btn">Read More</button>
+          <button id="back-btn">Back to Reptiles</button>
+        `;
+  
+        const readMoreButton = document.querySelector('.read-more-btn');
+        const shortDescriptionElement = document.querySelector('.animal-short-description');
+  
+        readMoreButton.style.display = "inline-block"; 
+        readMoreButton.addEventListener("click", () => {
+          shortDescriptionElement.textContent = fullDescription; 
+          readMoreButton.style.display = "none"; 
+        });
+  
+        const backButton = document.getElementById("back-btn");
+        backButton.addEventListener("click", () => {
+          animalDescription.innerHTML = "";
+          animalDescription.style.visibility = "hidden"; 
+          mainReptileContent.style.visibility = "visible"; 
+          mainReptileContent.style.position = "relative";
+          factsContainer.style.visibility = "visible"; 
+          factsContainer.style.position = "relative"; 
+          sidebar.style.visibility = "visible"; 
+          sidebar.style.position = "relative"; 
+        });
       });
+    });
+  };
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    updateAnimalDescription();
   });
-};
-
-document.addEventListener("DOMContentLoaded", function () {
-  updateAnimalDescription();
-});
+  
