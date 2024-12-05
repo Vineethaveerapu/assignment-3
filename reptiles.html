@@ -6,18 +6,13 @@
     <title>Australian zoo</title>
     <!-- <link rel="stylesheet" href="./styles/shared.css" /> -->
     <link rel="stylesheet" href="./styles/header.css" />
-    
     <link rel="stylesheet" href="./styles/footer.css" />
-    
     <link rel="stylesheet" href="./styles/sidebar.css" />
-    <link rel="stylesheet" href="./styles/reptiles.css">
-    <script src="./js/sidebar.js" defer></script>
+    <link rel="stylesheet" href="./styles/reptiles.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <script src="./js/sidebar_home.js" defer></script>
     <script src="./js/header.js" defer></script>
     <script src="./js/load-footer.js" defer></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
     <script src="./js/reptiles.js" defer></script>
   </head>
   <body>
@@ -29,14 +24,29 @@
       <div class="hamburger-container"></div>
       <nav id="navbar"></nav>
     </header>
-    <!-- header ends -->
-    <main class="main-content flex">
-      <h1>Welcome to Nature's Zoo</h1>
+    <!-- header ends --> 
+
+
     <main id="main-reptile-content" class="main-content flex main-reptile-content">
-      <aside class="sidebar"></aside>
-      <div class="container">
-        <div class="animal-description"></div>
-      </div>
+      <div class="sidebar-content-container">
+        <div class="sidebar-toggle-container">
+        </div>
+          <button class="toggle-btn" aria-label="Toggle Sidebar">
+            <i class="fa-solid fa-angles-right"></i>
+          </button>
+          <aside class="sidebar"></aside>
+        </div>
+        <section class="animal-container">
+          <div class="container">
+            <div class="animal-description" id="animal-description"></div>
+            <div class="sidebar-next-content"></div>
+           </div>
+        </section>
     </main>
+    
+    <section id="reptile-section" class="reptile-section">
+      <h2>Featured Reptiles</h2>
+      <div id="reptile-container" class="reptile-container"></div>  
+    </section>
   </body>
 </html>
