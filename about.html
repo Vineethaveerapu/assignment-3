@@ -1,23 +1,30 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Australian zoo</title>
+    <title>Australian Zoo</title>
     <link rel="stylesheet" href="./styles/shared.css" />
     <link rel="stylesheet" href="./styles/header.css" />
-    
     <link rel="stylesheet" href="./styles/footer.css" />
-    
+    <link rel="stylesheet" href="./styles/about.css" />
     <script src="./js/header.js" defer></script>
     <script src="./js/load-footer.js" defer></script>
+    <script src="./js/about.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
   </head>
   <body>
-    <!-- header starts -->
+    <div class="background-video-container">
+      <video autoplay muted loop id="background-video">
+        <source src="./videos/about.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <!-- Header -->
     <header>
       <a href="index.html">
         <img class="logo" src="./images/logo.png" alt="Logo" />
@@ -25,6 +32,19 @@
       <div class="hamburger-container"></div>
       <nav id="navbar"></nav>
     </header>
-    <!-- header ends -->
+
+    <main class="about-page">
+      <div class="sidebar">
+        <h2>Meet Our Team</h2>
+        <ul id="sidebar-list">
+        </ul>
+      </div>
+
+      <div class="details-card hidden" id="details-card">
+        <img id="member-photo" src="" alt="Team Member" />
+        <h2 id="member-name">Select a Team Member</h2>
+        <p id="member-description"></p>
+      </div>
+    </main>
   </body>
 </html>
