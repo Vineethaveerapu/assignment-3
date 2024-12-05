@@ -1,30 +1,54 @@
 /*******Creating animals name in sidebar********* */
 
 let sideBar = document.querySelector(".sidebar");
-let sideBarHeading = document.createElement("h3");
+let sideBarHeading = document.createElement("h2");
 sideBarHeading.classList.add("sub-heading");
 sideBarHeading.textContent = "MAMMMALS";
 sideBar.appendChild(sideBarHeading);
 
-function MammalsName(className,name) {
+function MammalsName(className,name,imagesrc) {
     this.className = className,
     this.name = name,
+    this.imagesrc = imagesrc,
     this.description = () => {
         let animalDiv = document.createElement("div");
-        animalDiv.classList.add(className,"mammals-name");
+        animalDiv.classList.add(className,"animal");//mammals-name
         sideBar.append(animalDiv);
-        let animalName = document.createElement("h5");
+        let animalName = document.createElement("h3");
+        animalName.classList.add("animal-name"); //to be removed
         animalName.textContent=name;
         animalDiv.appendChild(animalName);
+        let animalNameImg = document.createElement("img");
+        animalNameImg.src = imagesrc;
+        animalNameImg.alt = name + " icon";
+        animalName.appendChild(animalNameImg);
+       
     }
 }
 
-let animal1 = new MammalsName("echidna","Echidna");
-let animal2 = new MammalsName("tasmaniandevil","TasmanianDevil");
-let animal3 = new MammalsName("quokka","Quokka");
+
+let animal1 = new MammalsName("echidna","Echidna","./images/echidna.png");
+let animal2 = new MammalsName("tasmaniandevil","TasmanianDevil", "./images/tasdevil.png");
+let animal3 = new MammalsName("quokka","Quokka","./images/quokka.png");
 
 let animals = [animal1 , animal2 , animal3];
 animals.forEach(animals => animals.description());
+
+document.addEventListener("DOMContentLoaded", function () {
+    const sidebar = document.querySelector(".sidebar");
+
+    if (!sidebar) {
+      return;
+    }
+
+    sidebar.addEventListener("mouseenter", function () {
+      sidebar.classList.add("expanded");
+    });
+
+    sidebar.addEventListener("mouseleave", function () {
+      sidebar.classList.remove("expanded");
+    });
+  });
 
 /****************************Objects for animal Content******************************/
 
@@ -201,16 +225,16 @@ content.forEach(content => content.description());
 
 /****************************Seeting Active Tab***********************************/
 let mammalContent = document.querySelector(".mammals-content");
-let activeArray = Array.from(document.querySelectorAll(".mammals-name"));
+let activeArray = Array.from(document.querySelectorAll(".animal-name"));//mammals-name
 console.log(activeArray);
 
 
-const setActive = (mammalname) => {
-    if(mammalname.classList.contains("clickedname")){
-        mammalname.classList.remove("clickedname");
+const setActive = (mammalname) => { //active to be changed as clickedname
+    if(mammalname.classList.contains("active")){
+        mammalname.classList.remove("active");
     }else{
-        activeArray.forEach(mammal => mammal.classList.remove("clickedname"));
-        mammalname.classList.add("clickedname");
+        activeArray.forEach(mammal => mammal.classList.remove("active"));
+        mammalname.classList.add("active");
     }  
 };
 
@@ -286,8 +310,8 @@ contentArray.forEach(content => {
 /***********Creating Introduction content for mammals************** */
 
 
-let mammalTitle = document.createElement("h2");
-mammalTitle.textContent = "Mammals: Diverse and Remarkable Creatures";
+let mammalTitle = document.createElement("h1");
+mammalTitle.textContent = "Nature's Zoo Mammals";
 mammalContent.appendChild(mammalTitle);
 let mammalIntro = document.createElement("p");
 mammalIntro.textContent = 

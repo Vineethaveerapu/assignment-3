@@ -16,15 +16,75 @@ body {
     flex-direction: column;
 }
 
-.header {
-    background-color: #0f403d;
-}
-
-.title {
-    font-size: 3rem;
-    text-align: center;
+.sidebar .h2 {
+    font-size: 24px;
+    margin: 30px;
     color: white;
-}
+    text-align: center;
+    text-decoration: underline;
+  }
+  
+  .animal-name {
+    color: black;
+    border-radius: 16px;
+    border-color: black;
+    background-color: white;
+    padding: 16px;
+    font-size: 13px;
+    cursor: pointer;
+    z-index: 1;
+    position: relative;
+    transition: width 2s ease;
+  }
+  
+  .animal-name::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 15px;
+    border: 7px solid transparent;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 0, 0, 0.8),
+      rgba(7, 66, 214, 0.8),
+      rgba(234, 166, 7, 0.8),
+      rgba(10, 230, 98, 0.8),
+      rgba(7, 223, 226, 0.8)
+    );
+    background-size: 400% 400%;
+    background-clip: border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    animation: glowing-border 4s linear infinite;
+    z-index: -1;
+    display: none;
+  }
+  
+  .animal-name.active::before {
+    display: block;
+    animation: glowing-border 4s linear infinite;
+  }
+
+  .animal h3 img {
+    width: 30px;
+    margin-right: 10px;
+    transition: transform 0.5s ease;
+  }
+
+  .animal h3:hover {
+    background-color: #445b59;
+    color: white;
+  }
+  
+  .animal .animal-name.active img {
+    animation: moveImage 2.5s ease infinite;
+  }
+  
 
 .main-content {
     flex-grow: 1;
@@ -41,12 +101,9 @@ body {
     color: white;
 }
 
-.mammals-name {
-    margin: 32px; 
-    padding: 8px;
-    text-align: center;
-    font-size: 18px;
-    border: 2px solid rgb(255, 255, 255);
+.animal-name {
+    display: flex;
+    gap: 16px;
 }
 
 .mammals-info {
@@ -55,29 +112,31 @@ body {
     background-repeat: no-repeat;
     /*filter: grayscale(80%);*/
     flex-grow: 1;
-    background-color: aqua;
     color: blanchedalmond;
     /*animation: mammals-change 20s infinite;*/
 }
 
-.mammals-content h2 {
+.mammals-content h1 {
     text-align: center;
-    font-style: italic;
+    font-size: 2rem;
 }
 
 .mammals-content p {
     margin: 8px;
     margin-right: 32px;
     padding-right: 32px;
-    text-indent: 30px;
-    
+    text-indent: 30px; 
+}
+
+.mammals-features h5{
+    text-decoration: underline;
 }
 
 .mammals-features {
     margin: 8px;
     padding: 8px;
     margin-right: 20%;
-    padding-right: 15%;
+    padding-right: 10%;
 }
 
 .content {
@@ -116,16 +175,11 @@ body {
     display: none;
 }
 
-.clickedname {
-    color: red;
-    background-color: beige;
-}
-
 .showcontent {
     display: block;
     color: white;
     margin-left: 32px;
-    height: 1200px;
+    height: 1000px;
     background-color: black;
     border-radius: 10px;
     position: relative;
@@ -154,21 +208,29 @@ body {
 
 .facts-container {
     display: flex;
-    flex-direction: column;
-    margin: 8px;
+    justify-content: space-evenly;
+    margin:32px 15%;
     padding: 0;
+    box-shadow: 10px 10px 10px 10px;
+}
+
+ h3 {
+    text-align: center;
 }
 
 .facts {
-    background-color: black;
+    background-color: rgb(253, 252, 252);
+    margin: 8px;
+    padding: 8px;
     margin-top: 32px;
     clip-path: polygon(50% 0%, 80% 10%, 100% 35%, 100% 70%, 80% 90%, 50% 100%, 20% 90%, 0% 70%, 0% 35%, 20% 10%);
     text-align: center;
     color: azure;
     height:400px;
-    width: 400px;
+    width: 1000px;
+    color: black;
     border: 1px solid #0f403d;
-    box-shadow: 10px 10px 10px 10px;
+    
     position: relative;
 }
 
@@ -190,6 +252,35 @@ body {
     background-color: #0f403d;
 }
 
+@media screen and (max-width: 900px) {
+
+    .main-container {
+        margin: 16px;
+    }
+
+    .mammals-info {
+        margin: 16px;
+    }
+
+    .mammals-features {
+        margin: 8px;
+        padding: 8px;
+    }
+
+    .mammals-content p {
+        margin: 8px;
+        text-indent: 30px; 
+    }
+
+    .facts {
+        clip-path: none;
+    }
+
+    .clip {
+        display: none;
+    }
+}
+
 @media screen and (max-width: 768px) {
     .main-container {
         display: flex;
@@ -204,12 +295,31 @@ body {
         margin: 0;
     }
 
-    .sidebar h3 {
+    .sub-heading {
         display: none;
     }
 
+    .animal-name img {
+        display: none;
+    }
+
+    .mammals-info {
+        background-image: none;
+        background-color: black;
+    }
+
+    .mammals-features {
+        margin: 8px;
+        padding: 8px;
+    }
+
+    .mammals-content p {
+        margin: 8px;
+        text-indent: 30px; 
+    }
+
     .showcontent {
-        margin-left: 8px;
+        /*margin-left: 8px;*/
         height: 1200px;
     }
 
@@ -230,3 +340,27 @@ body {
         transform: translateX(200px);
     }
 }
+
+@keyframes glowing-border {
+    0% {
+      background-position: 0% 0%;
+    }
+    50% {
+      background-position: 100% 100%;
+    }
+    100% {
+      background-position: 0% 0%;
+    }
+  }
+
+@keyframes moveImage {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(10px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
