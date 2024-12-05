@@ -21,7 +21,7 @@ const teamMembers = [
       name: "Kavitha",
       description:
         "Kavitha with a passion for nature, Kavitha enjoys the peaceful environment of the zoo and cherishes moments with the animals.",
-      photo: "./images/kavitha.jpg",
+      photo: "./images/kavi.jpg",
     },
     {
       name: "Maedeh",
