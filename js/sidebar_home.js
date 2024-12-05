@@ -6,11 +6,6 @@ document.addEventListener("DOMContentLoaded", function () {
       window.location.pathname.includes("index") ||
       window.location.pathname === "/";
     const isAboutPage = window.location.pathname.includes("about");
-    const isReptilePage = window.location.pathname.includes("Reptiles");
-
-    if (isReptilePage) {
-      return; 
-    }
   
     if (isAboutPage) {
       return;
@@ -197,7 +192,6 @@ document.addEventListener("DOMContentLoaded", function () {
       // This section generates the sidebar content based on the animal categories and entries.
       // It checks if the current page matches the category and displays the relevant animals.
       if (isCategoryPage || isHomePage) {
-        if (category === "Reptiles" || isHomePage) {
         // create category heading
         const categoryHeading = document.createElement("h2");
         categoryHeading.textContent = category;
@@ -279,7 +273,7 @@ document.addEventListener("DOMContentLoaded", function () {
             // create temp variable to hold details
             let detailsHTML = "";
             if (!isHomePage) {
-              detailsHTML = "<ul class='animal-details'>";
+              detailsHTML = "<ul class='animal-details' style = 'display: none;' >";
               if (details && Object.keys(details).length > 0) {
                 // loop through details and display them
                 Object.keys(details).forEach((key) => {
@@ -311,7 +305,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
       }
      }
-    });
+    );
   
     const toggleBtn = document.querySelector(".toggle-btn");
     if (!toggleBtn) {
