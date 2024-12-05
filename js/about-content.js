@@ -52,15 +52,37 @@ function makeSidebarResponsive() {
   const sidebarContainer = document.querySelector(".sidebar-container");
   const sidebar = document.querySelector(".sidebar");
 
-  const showSidebarBtn = document.createElement("button");
-  showSidebarBtn.innerHTML = '<i class="fa-solid fa-angles-right"></i>';
-  showSidebarBtn.classList.add("show-sidebar-btn");
-  document.body.appendChild(showSidebarBtn);
+  // Only create buttons if we're on mobile
+  let showSidebarBtn, closeSidebarBtn;
 
-  const closeSidebarBtn = document.createElement("button");
-  closeSidebarBtn.innerHTML = '<i class="fas fa-times"></i>';
-  closeSidebarBtn.classList.add("close-sidebar-btn");
-  sidebar.prepend(closeSidebarBtn);
+  function createMobileButtons() {
+    if (window.innerWidth <= 768 && !showSidebarBtn) {
+      showSidebarBtn = document.createElement("button");
+      showSidebarBtn.innerHTML = '<i class="fa-solid fa-angles-right"></i>';
+      showSidebarBtn.classList.add("show-sidebar-btn");
+      document.body.appendChild(showSidebarBtn);
+
+      closeSidebarBtn = document.createElement("button");
+      closeSidebarBtn.innerHTML = '<i class="fas fa-times"></i>';
+      closeSidebarBtn.classList.add("close-sidebar-btn");
+      sidebar.prepend(closeSidebarBtn);
+
+      // Add mobile event listeners
+      showSidebarBtn.addEventListener("click", showSidebar);
+      closeSidebarBtn.addEventListener("click", hideSidebar);
+    }
+  }
+
+  function removeMobileButtons() {
+    if (showSidebarBtn) {
+      showSidebarBtn.remove();
+      showSidebarBtn = null;
+    }
+    if (closeSidebarBtn) {
+      closeSidebarBtn.remove();
+      closeSidebarBtn = null;
+    }
+  }
 
   function showSidebar() {
     sidebarContainer.classList.add("show");
@@ -74,23 +96,23 @@ function makeSidebarResponsive() {
 
   function updateSidebarForScreenSize() {
     if (window.innerWidth <= 768) {
+      createMobileButtons();
       hideSidebar();
-      showSidebarBtn.style.display = "block";
     } else {
-      showSidebar();
-      showSidebarBtn.style.display = "none";
+      removeMobileButtons();
+      document.body.style.overflow = "";
+      sidebarContainer.classList.remove("show");
     }
   }
 
-  showSidebarBtn.addEventListener("click", showSidebar);
-  closeSidebarBtn.addEventListener("click", hideSidebar);
-
+  // Handle clicking outside sidebar on mobile
   sidebarContainer.addEventListener("click", (event) => {
-    if (event.target === sidebarContainer) {
+    if (event.target === sidebarContainer && window.innerWidth <= 768) {
       hideSidebar();
     }
   });
 
+  // Handle clicking sidebar items on mobile
   document.querySelector("#sidebar-list").addEventListener("click", () => {
     if (window.innerWidth <= 768) {
       hideSidebar();
