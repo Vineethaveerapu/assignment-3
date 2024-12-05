@@ -145,7 +145,7 @@ p {
 }
 
 .sidebar {
-  background: rgba(255, 255, 255, 1);
+  background: transparent;
   padding: 20px;
   width: 300px;
   height: 100%;
@@ -155,7 +155,6 @@ p {
 }
 
 .sidebar h2 {
-  color: #333;
   margin-bottom: 20px;
   text-align: center;
 }
@@ -167,7 +166,7 @@ p {
 
 .sidebar li {
   padding: 10px 15px;
-  margin: 5px 0;
+  margin: 1rem 0;
   cursor: pointer;
   border-radius: 5px;
 }
@@ -197,6 +196,7 @@ p {
   }
 
   .sidebar {
+    background: black;
     max-width: 80%;
     width: 300px;
     position: relative;
@@ -208,7 +208,7 @@ p {
     display: block;
     position: fixed;
     left: 0;
-    top: calc(var(--header-height) + 1.5rem);
+    top: calc(var(--header-height) + 1.4rem);
     transform: translateY(-50%);
     z-index: 99;
     background: #078a35;
@@ -227,7 +227,7 @@ p {
     font-size: 1.8rem;
     cursor: pointer;
     z-index: 101;
-    color: #333;
+    color: white;
     padding: 8px;
     border-radius: 50%;
   }
