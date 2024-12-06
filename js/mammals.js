@@ -450,6 +450,19 @@ let randomFacts;
       }
     });
 
+    // Handle clicking sidebar items on mobile
+    const sidebarAnimals = document.querySelectorAll(".sidebar .animal");
+    sidebarAnimals.forEach(animal => {
+      if(!animal){
+        return;
+      }
+      animal.addEventListener("click", () => {
+        if (window.innerWidth <= 768) {
+          hideSidebar();
+        }
+      });
+    });
+
     window.addEventListener("resize", updateSidebarForScreenSize);
     updateSidebarForScreenSize();
   }
