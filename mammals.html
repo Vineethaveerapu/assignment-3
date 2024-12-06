@@ -4,28 +4,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Australian zoo</title>
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
     <link rel="stylesheet" href="./styles/shared.css" />
     <link rel="stylesheet" href="./styles/header.css" />
+    <!-- <link rel="stylesheet" href="./styles/sidebar.css" /> -->
+    <link rel="stylesheet" href="./styles/mammals.css" />
     <link rel="stylesheet" href="./styles/footer.css" />
     <script src="./js/header.js" defer></script>
+    <script src="./js/mammals.js" defer></script>
     <script src="./js/load-footer.js" defer></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
   </head>
   <body>
     <!-- header starts -->
-    <header>
-      <a href="index.html">
-        <img class="logo" src="./images/logo.png" alt="Logo" />
-      </a>
-      <div class="hamburger-container"></div>
-      <nav id="navbar"></nav>
-    </header>
+  <header>
+    <a href="index.html">
+      <img class="logo" src="./images/logo.png" alt="Logo" />
+    </a>
+    <div class="hamburger-container"></div>
+    <nav id="navbar"></nav>
+  </header>
     <!-- header ends -->
-    <main class="main-content flex">
-      <h1>Welcome to Nature's Zoo</h1>
-    </main>
-  </body>
+
+  <div class="main-container">
+    <div class="sidebar-container">
+      <div class="sidebar"></div>
+    </div>
+    <div class="mammals-info">
+      <div class="mammals-content">
+      </div>
+    </div>
+</div>
+
+<section >
+  <h3 class="facts-heading">MAMMAL FACTS</h3>
+    <div class="facts-container">
+      <div class="facts">
+      </div>
+      <div class="facts-image">
+      </div>
+    </div>
+</section>
+</body>
 </html>

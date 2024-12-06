@@ -62,6 +62,14 @@ document.addEventListener("DOMContentLoaded", function () {
           {
             id: "Frill-necked-lizard",
             name: "Frill-necked Lizard",
+            details: {
+              lifespan: "20 years",
+              group: "Reptiles",
+              food: "insects, small animals, and plants",
+              length: "85 cm",
+              weight: "500-700 g",
+              found: "Northern Australia and parts of Papua New Guinea"
+            },
             description:
               "The frill-necked lizard, found in Northern Australia, is known for its unique defense mechanism, where it raises its frill, opens its mouth, and hisses when threatened. It feeds on small insects and spiders, grows up to 90 cm, weighs around 1 kg, and can live up to 20 years.",
             src: "./images/frill-lizard.png",
@@ -71,6 +79,14 @@ document.addEventListener("DOMContentLoaded", function () {
           {
             id: "Hawksbill-Turtle",
             name: "Hawksbill Turtle",
+            details: {
+              lifespan: "30-50 years",
+              group: "Reptiles",
+              food: "sponges, sea anemones, jellyfish, and other marine invertebrates",
+              length: "70-90 cm",
+              weight: "60-80 kg",
+              found: "Tropical coral reefs in the Indian and Pacific Oceans"
+            },            
             description:
               "The Hawksbill turtle is a marine reptile found in tropical coasts of Australia. It has a distinctive beak-like mouth and a serrated shell, growing up to 80 cm long and weighing around 50 kg. It feeds on sponges, jellyfish, and sea plants, and can live up to 50 years.",
             src: "./images/hawksbill-turtle.png",
@@ -80,6 +96,14 @@ document.addEventListener("DOMContentLoaded", function () {
           {
             id: "Perentie",
             name: "Perentie",
+            details: {
+              lifespan: "20-30 years",
+              group: "Birds",
+              food: "fruits, seeds, and small invertebrates",
+              length: "45-60 cm",
+              weight: "0.5-1.2 kg",
+              found: "Central and South America (especially tropical rainforests)"
+            },           
             description:
               "The perentie is the largest monitor lizard in Australia, growing up to 2.5 meters long and weighing around 20 kg. A carnivore, it preys on animals like kangaroos, rabbits, and birds. Found in arid desert regions, it is a shy and rarely seen species. It has cultural significance in Aboriginal traditions and can live up to 20 years.",
             src: "./images/perentie.png",
