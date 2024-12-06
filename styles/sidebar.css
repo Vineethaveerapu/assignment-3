@@ -240,6 +240,12 @@
   }
 }
 
+@media (max-width: 768px) {
+  .animate-image {
+    animation: none;
+  }
+}
+
 @keyframes glowing-border {
   0% {
     background-position: 0% 0%;

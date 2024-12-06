@@ -191,7 +191,11 @@ body {
     height: auto;
     margin-left: 20%;
 }
-
+@media (max-width: 768px) {
+    .animal-image img {
+        animation: none;
+    }
+}
 .content a {
     position: absolute;
     left: 30%;
