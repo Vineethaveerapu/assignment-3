@@ -3,62 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Australian zoo</title>
-    <link rel="stylesheet" href="./styles/shared.css" />
-    <link rel="stylesheet" href="./styles/header.css" />
-    <link rel="stylesheet" href="./styles/sidebar.css" />
-    <script src="./js/sidebar.js" defer></script>
-    <script src="./js/header.js" defer></script>
+    <title>Australian Zoo</title>
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="../assignment-3/styles/shared.css" />
+    <link rel="stylesheet" href="../assignment-3/styles/footer.css">
+    <link rel="stylesheet" href="../assignment-3/styles/header.css"/>
+    <link rel="stylesheet" href="../assignment-3/styles/sidebar.css"/>
+    <link rel="stylesheet" href="../assignment-3/styles/homemaincontent.css"/>
+    <link rel="stylesheet" href="../assignment-3/styles/birds.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <!-- JavaScript Files -->
+    <script src="../assignment-3/js/shared.js" defer></script>
+    <script src="../assignment-3/js/header.js" defer></script>
+    <script src="../assignment-3/js/homemaincontent.js" defer></script>
+    <script src="../assignment-3/js/birds.js" defer></script>
+    <script src="../assignment-3/js/slider.js" defer></script>
   </head>
   <body>
-    <!-- header starts -->
+    <!-- Background Video -->
+    <video
+      class="background-video"
+      autoplay
+      muted
+      playsinline
+      loop
+      src="videos/sample.mp4"
+    ></video>
+
+    <!-- Header -->
     <header>
-      <img class="logo" src="./images/logo.png" alt="Logo" />
-
-      <!-- hamburger starts -->
-      <div class="hamburger-container">
-        <button class="hamburger" aria-label="Menu Toggle">
-          <svg
-            width="100%"
-            height="50"
-            viewBox="0 0 50 50"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-label="Menu"
-          >
-            <rect width="50" height="5" fill="white" />
-            <rect y="22" width="50" height="5" fill="white" />
-            <rect y="44" width="50" height="5" fill="white" />
-          </svg>
-        </button>
-        <button class="close-button" aria-label="Close Menu">
-          <svg
-            width="100%"
-            height="100%"
-            viewBox="0 0 50 50"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="transparent"
-          >
-            <line
-              x1="0"
-              y1="50"
-              x2="50"
-              y2="0"
-              stroke="white"
-              stroke-width="5"
-            />
-            <line
-              x1="0"
-              y1="0"
-              x2="50"
-              y2="50"
-              stroke="white"
-              stroke-width="5"
-            />
-          </svg>
-        </button>
-      </div>
-      <!-- hamburger ends -->
-
+      <img class="logo" src="images/logo.png" alt="Nature Zoo Logo" />
+      <!-- Navigation -->
       <nav id="navbar">
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -70,6 +48,92 @@
       </nav>
     </header>
 
-    <!-- header ends -->
+    <!-- Main Container -->
+    <div class="container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="animal" id="Echidna"></div>
+        <div class="animal" id="Tasmanian-Devil"></div>
+        <div class="animal" id="Quokka"></div>
+        <div class="animal" id="Frill-necked-lizard"></div>
+        <div class="animal" id="Hawksbill-Turtle"></div>
+        <div class="animal" id="Perentie"></div>
+        <div class="animal" id="Cassowary"></div>
+        <div class="animal" id="Kookaburra"></div>
+        <div class="animal" id="Cockatoo"></div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+   
+        <!-- Bird Profiles -->
+        <section class="bird-profile">
+          <h1>Kookaburra</h1>
+          <img
+            src="../assignment-3/images/Kookaburra.png"
+            alt="Kookaburra"
+            class="bird-image"
+          />
+          <div class="audio-controls">
+            <button class="play-sound" src="../assignment-3/sounds/Kookaburra-sound.mp3">
+              Play Sound
+            </button>
+          </div>
+        </section>
+        <section class="bird-profile">
+          <h1>Cassowary</h1>
+          <img
+            src="images/Cassowary.png"
+            alt="Cassowary"
+            class="bird-image"
+          />
+          <div class="audio-controls">
+            <button class="play-sound" data-sound="Cassowary.mp3">
+              Play Sound
+            </button>
+          </div>
+        </section>
+        <section class="bird-profile">
+          <h1>Cockatoo</h1>
+          <img src="images/Cockatoo.png" alt="Cockatoo" class="bird-image" />
+          <div class="audio-controls">
+            <button class="play-sound" data-sound="Yellow-tailed-Black-Cockatoo.mp3">
+              Play Sound
+            </button>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-content">
+        <div class="footer-left">
+          <h2>Nature Zoo</h2>
+          <a href="#" class="newsletter-link">Join our newsletter →</a>
+        </div>
+        <div class="footer-right">
+          <ul>
+            <li><a href="#">About the Zoo</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Volunteers</a></li>
+          </ul>
+          <div class="social-icons">
+            <a href="https://facebook.com" target="_blank"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="https://x.com" target="_blank"
+              ><i class="fab fa-x"></i
+            ></a>
+            <a href="https://instagram.com" target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright ©2023 Nature Zoo</p>
+      </div>
+    </footer>
   </body>
 </html>
