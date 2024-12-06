@@ -115,6 +115,12 @@
 }
 
 @media screen and (max-width: 800px) {
+  .facilities-grid {
+    border: 1px solid #0f403d;
+    padding: 8px;
+    box-shadow: 2px 2px 2px;
+  }
+  
   .ticket-background {
     margin: 0;
     background-image: none;
@@ -140,6 +146,18 @@
     display: flex;
     border: none;
     box-shadow: none;
+  }
+
+  
+  .highlight {
+    cursor: none;
+    transform: none;
+  }
+
+  .active-ticket {
+    cursor: none;
+    transform: none;
+    border-bottom: 1px dotted wheat;
   }
 }
 
@@ -167,16 +185,6 @@
     text-align: center;
   }
 
-  .highlight {
-    cursor: none;
-    transform: none;
-  }
-
-  .active-ticket {
-    cursor: none;
-    transform: none;
-    border-bottom: 1px dotted wheat;
-  }
 }
 
 @media screen and (max-width: 600px) {
