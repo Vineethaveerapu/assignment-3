@@ -15,14 +15,14 @@ function MammalsName(className,name,imagesrc) {
         animalDiv.classList.add(className,"animal");
         sideBar.append(animalDiv);
         let animalName = document.createElement("h3");
-        animalName.classList.add("animal-name"); 
+        animalName.classList.add("animal-name");
         animalName.textContent=name;
         animalDiv.appendChild(animalName);
         let animalNameImg = document.createElement("img");
         animalNameImg.src = imagesrc;
         animalNameImg.alt = name + " icon";
         animalName.appendChild(animalNameImg);
-       
+
     }
 }
 
@@ -84,8 +84,8 @@ function AnimalDescription (className,content,image,lifespan , group , food, len
             fullcontent = content.slice(200);
         }else {
              content = content;
-        }      
-        
+        }
+
         let description = document.createElement("h4");
         description.textContent = "ABOUT " + className.toUpperCase();;
         let animalPara = document.createElement("p");
@@ -93,13 +93,13 @@ function AnimalDescription (className,content,image,lifespan , group , food, len
         animalDescription.appendChild(description);
         animalPara.classList.add(className,"fullcontent")
         animalDescription.appendChild(animalPara);
-        
+
         let remainingPart = document.createElement("span");
         remainingPart.textContent = fullcontent;
         remainingPart.classList.add("hidden","fulldetails",className);
         animalPara.appendChild(remainingPart);
 
-        let details = document.createElement("ul");  
+        let details = document.createElement("ul");
         let image1 = document.createElement("div");
         let image1img = document.createElement("img");
         image1img.src = "./images/lifespan-icon.svg";
@@ -108,7 +108,7 @@ function AnimalDescription (className,content,image,lifespan , group , food, len
         image1.appendChild(image1img);
         let detail1 = document.createElement("li");
         detail1.classList.add("details-text");
-        
+
         let image2 = document.createElement("div");
         let image2img = document.createElement("img");
         image2img.src = "./images/group-icon.svg";
@@ -117,7 +117,7 @@ function AnimalDescription (className,content,image,lifespan , group , food, len
         image2.appendChild(image2img);
         let detail2 = document.createElement("li");
         detail2.classList.add("details-text");
-        
+
         let image3 = document.createElement("div");
         let image3img = document.createElement("img")
         image3img.src = "./images/food-icon.svg";
@@ -126,7 +126,7 @@ function AnimalDescription (className,content,image,lifespan , group , food, len
         image3.appendChild(image3img);
         let detail3 = document.createElement("li");
         detail3.classList.add("details-text");
-        
+
         let image4 = document.createElement("div");
         let image4img = document.createElement("img");
         image4img.src = "./images/length-icon.svg";
@@ -175,7 +175,7 @@ function AnimalDescription (className,content,image,lifespan , group , food, len
         detail5.appendChild(image5);
         details.appendChild(detail6);
         detail6.appendChild(image6);
-           
+
         let readMore = document.createElement("a");
         readMore.classList.add("button","hidden",className);
         readMore.textContent = "Read More";
@@ -196,7 +196,7 @@ let enchidaContent = new AnimalDescription("echidna",
 );
 
 let tasmanianContent = new AnimalDescription(
-    "tasmaniandevil",  
+    "tasmaniandevil",
     "The Tasmanian devil is a carnivorous marsupial of the family Dasyuridae. Until recently, it was only found on the island state of Tasmania, but it has been reintroduced to New South Wales in mainland Australia, with a small breeding population. The size of a small dog, the Tasmanian devil became the largest carnivorous marsupial in the world, following the extinction of the thylacine in 1936. It is related to quolls, and distantly related to the thylacine. It is characterised by its stocky and muscular build, black fur, pungent odour, extremely loud and disturbing screech, keen sense of smell, and ferocity when feeding. The Tasmanian devil's large head and neck allow it to generate among the strongest bites per unit body mass of any extant predatory land mammal. It hunts prey and scavenges on carrion.",
     "./images/tasmanianmammal.jpg",
     "5 Years",
@@ -217,7 +217,7 @@ let quokkaContent = new AnimalDescription(
     "50 cm",
     "3 kg",
     "Rottnest Island and a few places on mainland Western Australia."
-    
+
 );
 
 let content = [enchidaContent , tasmanianContent , quokkaContent];
@@ -226,16 +226,16 @@ content.forEach(content => content.description());
 /****************************Seeting Active Tab***********************************/
 let mammalContent = document.querySelector(".mammals-content");
 let activeArray = Array.from(document.querySelectorAll(".animal-name"));
-console.log(activeArray);
+// console.log(activeArray);
 
 
-const setActive = (mammalname) => { 
+const setActive = (mammalname) => {
     if(mammalname.classList.contains("active")){
         mammalname.classList.remove("active");
     }else{
         activeArray.forEach(mammal => mammal.classList.remove("active"));
         mammalname.classList.add("active");
-    }  
+    }
 };
 
 
@@ -247,8 +247,8 @@ let contentArray = Array.from(document.querySelectorAll(".content"));
 
 const displayContent = (mammal) => {
     let alreadyshow = false;
-    contentArray.forEach(content => { 
-        
+    contentArray.forEach(content => {
+
         if(content.classList.contains(mammal) ){
             if(content.classList.contains("showcontent")){
                 let button = content.querySelector(".button");
@@ -278,10 +278,10 @@ const displayContent = (mammal) => {
                 }
             });
             mammalContent.classList.add("removemain");
-            
+
 }
 };
-    
+
 activeArray.forEach(mammal => mammal.addEventListener("click", () => displayContent(mammal.textContent.toLowerCase())));
 
 contentArray.forEach(content => {
@@ -311,7 +311,7 @@ let mammalTitle = document.createElement("h1");
 mammalTitle.textContent = "Nature's Zoo Mammals";
 mammalContent.appendChild(mammalTitle);
 let mammalIntro = document.createElement("p");
-mammalIntro.textContent = 
+mammalIntro.textContent =
 "Mammals are a unique group of animals defined by their warm-blooded nature,fur or hair, and the ability to nurse their young with milk. They are incredibly diverse,ranging from tiny rodents to massive whales, and are found in nearly every habitat on Earth.Known for their intelligence and adaptability, mammals play vital roles in ecosystems and captivate us with their behavior and beauty."
 mammalContent.appendChild(mammalIntro);
 
@@ -384,3 +384,90 @@ let randomFacts;
   factsImageimg.src = "./images/pandablack.jpg";
   factsImageimg.alt = "Panda-image";
   factsImage.appendChild(factsImageimg);
+
+/* **************Responsive Sidebar************** */
+  function makeSidebarResponsive() {
+    const sidebarContainer = document.querySelector(".sidebar-container");
+    const sidebar = document.querySelector(".sidebar");
+
+    // Only create buttons if we're on mobile
+    let showSidebarBtn, closeSidebarBtn;
+
+    function createMobileButtons() {
+      if (window.innerWidth <= 768 && !showSidebarBtn) {
+        showSidebarBtn = document.createElement("button");
+        showSidebarBtn.innerHTML = '<i class="fa-solid fa-angles-right"></i>';
+        showSidebarBtn.classList.add("show-sidebar-btn");
+        document.body.appendChild(showSidebarBtn);
+
+        closeSidebarBtn = document.createElement("button");
+        closeSidebarBtn.innerHTML = '<i class="fas fa-times"></i>';
+        closeSidebarBtn.classList.add("close-sidebar-btn");
+        sidebar.prepend(closeSidebarBtn);
+
+        // Add mobile event listeners
+        showSidebarBtn.addEventListener("click", showSidebar);
+        closeSidebarBtn.addEventListener("click", hideSidebar);
+      }
+    }
+
+    function removeMobileButtons() {
+      if (showSidebarBtn) {
+        showSidebarBtn.remove();
+        showSidebarBtn = null;
+      }
+      if (closeSidebarBtn) {
+        closeSidebarBtn.remove();
+        closeSidebarBtn = null;
+      }
+    }
+
+    function showSidebar() {
+      sidebarContainer.classList.add("show");
+      document.body.style.overflow = "hidden";
+    }
+
+    function hideSidebar() {
+      sidebarContainer.classList.remove("show");
+      document.body.style.overflow = "";
+    }
+
+    function updateSidebarForScreenSize() {
+      if (window.innerWidth <= 768) {
+        createMobileButtons();
+        hideSidebar();
+      } else {
+        removeMobileButtons();
+        document.body.style.overflow = "";
+        sidebarContainer.classList.remove("show");
+      }
+    }
+
+    // Handle clicking outside sidebar on mobile
+    sidebarContainer.addEventListener("click", (event) => {
+      if (event.target === sidebarContainer && window.innerWidth <= 768) {
+        hideSidebar();
+      }
+    });
+
+    // Handle clicking sidebar items on mobile
+    const sidebarAnimals = document.querySelectorAll(".sidebar .animal");
+    sidebarAnimals.forEach(animal => {
+      if(!animal){
+        return;
+      }
+      animal.addEventListener("click", () => {
+        if (window.innerWidth <= 768) {
+          hideSidebar();
+        }
+      });
+    });
+
+    window.addEventListener("resize", updateSidebarForScreenSize);
+    updateSidebarForScreenSize();
+  }
+
+  // Update the DOMContentLoaded event handler
+  document.addEventListener("DOMContentLoaded", function () {
+    makeSidebarResponsive();
+  });
