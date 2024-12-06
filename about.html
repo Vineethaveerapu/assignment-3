@@ -8,10 +8,10 @@
     <link rel="stylesheet" href="./styles/header.css" />
     <link rel="stylesheet" href="./styles/footer.css" />
     <link rel="stylesheet" href="./styles/about.css" />
-    <script src="./js/sidebar.js" defer></script>
     <script src="./js/header.js" defer></script>
     <script src="./js/load-footer.js" defer></script>
     <script src="./js/about.js" defer></script>
+    <script src="./js/about-content.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -35,10 +35,11 @@
     </header>
 
     <main class="about-page">
-      <div class="sidebar">
+      <div class="sidebar-container">
+       <div class="sidebar">
         <h2>Meet Our Team</h2>
-        <ul id="sidebar-list">
-        </ul>
+        <ul id="sidebar-list"></ul>
+       </div>
       </div>
 
       <div class="details-card hidden" id="details-card">
@@ -46,6 +47,8 @@
         <h2 id="member-name">Select a Team Member</h2>
         <p id="member-description"></p>
       </div>
+
+      <div class="container main-content"></div>
     </main>
   </body>
-</html> 
+</html>
