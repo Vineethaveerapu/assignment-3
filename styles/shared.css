@@ -19,6 +19,8 @@ body {
   width: 100%;
   color: #fff;
   background-color: black;
+  overflow-x: hidden;
+  /* prevent horizontal scroll for some windows browsers */
 }
 
 main {
