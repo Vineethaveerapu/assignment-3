@@ -20,48 +20,7 @@
 }
 
 .sidebar-toggle-container {
-  padding-top: var(--header-height);
-  display: grid;
-  grid-template-columns: 19rem 1fr;
   position: relative;
-  z-index: 1;
-}
-
-.sidebar-toggle-container {
-  position: relative;
-}
-
-.toggle-btn {
-  position: fixed;
-  top: var(--header-height);
-  left: 1rem;
-  display: none;
-  background: rgba(255, 255, 255, 0.9);
-  border: none;
-  border-radius: 50%;
-  width: 45px;
-  height: 45px;
-  cursor: pointer;
-  z-index: 1000;
-  font-size: 1.5rem;
-  transform: translateX(0);
-  transition: all 0.3s ease;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.toggle-btn.active {
-  transform: translateX(13rem);
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-}
-
-.toggle-btn:hover {
-  background-color: rgba(255, 255, 255, 1);
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
-}
-
-.toggle-btn.active:hover {
-  background-color: rgba(0, 0, 0, 0.9);
 }
 
 .toggle-btn {
@@ -103,17 +62,7 @@
   left: 0;
   /* background-color: rgba(0, 0, 0, 0.85);
   backdrop-filter: blur(8px); */
-  position: relative;
-  top: 0;
-  left: 0;
-  /* background-color: rgba(0, 0, 0, 0.85);
-  backdrop-filter: blur(8px); */
   width: 19rem;
-  padding: 1rem;
-  overflow-y: auto;
-  transition: all 0.3s ease;
-  z-index: 99;
-  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
   padding: 1rem;
   overflow-y: auto;
   transition: all 0.3s ease;
@@ -122,7 +71,6 @@
 }
 
 .sidebar.expanded {
-  width: 20rem;
   width: 20rem;
 }
 
@@ -215,32 +163,13 @@
   transform: scaleX(0.5);
 }
 
-.animal-details {
-  padding: 0;
-  margin: 0;
-}
-
-.learn-more {
-  color: var(--secondary-color);
-  font-weight: bold;
-  font-size: 1.5rem;
-}
-
-.learn-more::after {
-  transform: scaleX(0.5);
-}
-
 .animal-description {
-  margin-top: 2rem;
   margin-top: 2rem;
   color: white;
   padding: 20px;
   border-radius: 10px;
   border: 1px solid white;
-  border: 1px solid white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  max-width: 500px;
-  padding: 1rem 2.5rem 3rem;
   max-width: 500px;
   padding: 1rem 2.5rem 3rem;
   backdrop-filter: blur(2px);
@@ -252,11 +181,9 @@
 
 .animal-description p {
   font-size: 1rem;
-  font-size: 1rem;
 }
 
 .animal-description h3 {
-  font-size: 1.5625rem;
   font-size: 1.5625rem;
 }
 
@@ -289,10 +216,6 @@
   animation: animate-image 4s ease infinite;
 }
 
-.animate-image {
-  animation: animate-image 4s ease infinite;
-}
-
 @keyframes moveImage {
   0% {
     transform: translateX(0);
@@ -302,24 +225,6 @@
   }
   100% {
     transform: translateX(0);
-  }
-}
-
-@keyframes animate-image {
-  0% {
-    transform: translateX(0);
-  }
-  50% {
-    transform: translateX(40%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-@media (max-width: 768px) {
-  .animate-image {
-    animation: none;
   }
 }
 
@@ -360,34 +265,14 @@
     padding-left: 1rem;
     padding-right: 1rem;
     padding-bottom: 1rem;
-  .sidebar-content-container,
-  .video-overlay {
-    grid-template-columns: 1fr;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    padding-bottom: 1rem;
   }
 
   .toggle-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-  .toggle-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
-  .sidebar {
-    position: fixed;
-    top: var(--header-height);
-    left: -100%;
-    height: calc(100vh - var(--header-height));
-    width: 60px;
-    padding: 1rem 0;
-    overflow-y: auto;
-    background-color: rgba(0, 0, 0, 0.85);
-    backdrop-filter: blur(8px);
   .sidebar {
     position: fixed;
     top: var(--header-height);
@@ -405,19 +290,8 @@
     width: 80%;
     max-width: 300px;
     padding: 1rem;
-  .sidebar.show {
-    left: 0;
-    width: 80%;
-    max-width: 300px;
-    padding: 1rem;
   }
 
-  body.sidebar-open {
-    overflow: hidden;
-  }
-
-  .sidebar .h2 {
-    display: none;
   body.sidebar-open {
     overflow: hidden;
   }
@@ -434,25 +308,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
-  .sidebar .animal-name {
-    padding: 8px;
-    margin: 0.5rem auto;
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
   }
 
   .sidebar .animal-name span {
     display: none;
-  .sidebar .animal-name span {
-    display: none;
   }
 
-  .sidebar .animal-name img {
-    margin: 0;
-    width: 24px;
   .sidebar .animal-name img {
     margin: 0;
     width: 24px;
@@ -467,24 +328,8 @@
     height: auto;
     padding: 16px;
     margin: 0 0 1.25rem 0;
-  .sidebar.show .h2 {
-    display: block;
   }
 
-  .sidebar.show .animal-name {
-    width: auto;
-    height: auto;
-    padding: 16px;
-    margin: 0 0 1.25rem 0;
-  }
-
-  .sidebar.show .animal-name span {
-    display: inline;
-  }
-
-  .sidebar.show .animal-name img {
-    width: 30px;
-    margin-right: 10px;
   .sidebar.show .animal-name span {
     display: inline;
   }
