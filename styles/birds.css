@@ -16,6 +16,7 @@ body {
   background-color: #000;
 }
 
+/* Background Video */
 .background-video {
   position: fixed;
   top: 0;
@@ -50,169 +51,121 @@ nav ul {
   padding: 0;
 }
 
-nav ul li {
-  margin-right: 20px;
-}
-
 nav ul li a {
-  max-width: fit-content;
   color: #fff;
   font-weight: bold;
   font-size: 1.5rem;
-  padding: 15px 20px;
   text-decoration: none;
-  display: block;
 }
 
-nav ul li a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0px;
-  width: 100%;
-  height: 2px;
-  background-color: currentColor;
-  transform: scaleX(0);
-  transition: transform 0.3s ease;
-}
-
-nav ul li a:hover::after,
-.active::after {
-  transform: scaleX(1);
-}
-
-.active,
-nav ul li a:hover {
+nav ul li a:hover,
+nav ul li .active {
   color: #16e97f;
 }
 
-/* Sidebar Styles */
-.sidebar {
-  width: 300px;
-  flex-shrink: 0;
+/* Bird Profile Container */
+.bird-profile-container {
   padding: 20px;
-
+  width: 80%;
+  margin: 20px auto;
+  border: 2px solid;
+  border-radius: 5px;
+  background-color: transparent;
 }
 
-.container {
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  min-height: 100vh;
-  box-sizing: border-box;
+/* Individual Bird Sections */
+#cassowary,
+#kookaburra,
+#cockatoo {
+  margin-bottom: 40px;
 }
 
-@media screen and (max-width: 800px) {
-  .container {
-    flex-direction: column;
-  }
-  .sidebar {
-    width: 100%;
-  }
-  .main-content {
-    width: 100%;
-  }
-}
-
-/* Main Content */
-.main-content {
-  flex-grow: 1;
+/* Bird Profile Layout */
+.bird-profile {
+  text-align: center;
   padding: 20px;
 }
-/* Slider Container */
+
 .slider-container {
-  position: relative;
   width: 100%;
   max-width: 600px;
   margin: 20px auto;
-}
-
-.slider {
   position: relative;
-  overflow: hidden;
 }
 
-.slides {
-  display: flex;
-  transition: transform 0.5s ease;
+.mySlides {
+  display: none;
 }
 
-.slides img {
+.slider-container img {
   width: 100%;
-  max-width: 100%;
   height: auto;
+  border-radius: 10px;
 }
 
-/* Navigation Buttons */
-.prev, .next {
+/* Tabbed Content */
+.tab {
+  overflow: hidden;
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+}
+
+.tab button {
+  background-color: inherit;
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.tab button:hover {
+  background-color: #444;
+}
+
+.tabcontent {
+  display: none;
+  padding: 20px;
+}
+
+.tabcontent.active {
+  display: block;
+}
+
+/* Navigation for Slider */
+.prev,
+.next {
+  cursor: pointer;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  font-size: 24px;
+  color: #fff;
   border: none;
-  cursor: pointer;
   padding: 10px;
-  z-index: 10;
+  font-size: 18px;
+  border-radius: 3px;
 }
 
 .prev {
-  left: 0;
+  left: 10px;
 }
 
 .next {
-  right: 0;
+  right: 10px;
 }
 
-.prev:hover, .next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-.bird-profile {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  margin: 20px auto;
-  max-width: 600px;
-  background: rgba(255, 255, 255, 0.1);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-}
-
-.bird-image {
-  display: block;
-  margin: 0 auto 20px;
-  width: 100%;
-  max-width: 300px;
-  height: auto;
-  border-radius: 10px;
-}
-
-button {
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 10px;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
-}
-
-button:hover {
-  background-color: #45a049;
-}
-
+/* Audio Buttons */
 button#play-sound,
 button#stop-sound {
-  margin: 10px;
   background-color: #333;
   color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 button#play-sound:hover,
@@ -220,104 +173,11 @@ button#stop-sound:hover {
   background-color: #555;
 }
 
-/* Responsive Header */
-.hamburger,
-.close-button {
-  display: none;
-  padding: 0;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-}
-
-.close-button {
-  width: 2rem;
-  height: auto;
-}
-
-@media (max-width: 768px) {
-  .hamburger {
-    display: block;
-  }
-  .close-button {
-    display: none;
-  }
-
-  nav {
-    display: none;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.9);
-    width: 100%;
-    height: 100%;
-    padding: 10px;
-    z-index: 1;
-    overflow-y: auto;
-  }
-
-  nav ul {
-    padding: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  nav ul li {
-    margin: 10px 0;
-  }
-
-  nav.active {
-    display: block;
-  }
-
-  .hamburger-container.active {
-    z-index: 100;
-    .hamburger {
-      display: none;
-    }
-    .close-button {
-      display: block;
-    }
-  }
-}
-
 /* Footer */
 footer {
   background-color: rgba(0, 0, 0, 0.9);
   color: #fff;
-  padding: 20px 0;
-}
-
-.footer-content {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 0 20px;
-}
-
-.footer-left h2 {
-  font-size: 1.8rem;
-  margin-bottom: 10px;
-}
-
-.footer-right ul {
-  list-style: none;
-  padding: 0;
-}
-
-.footer-right ul li a {
-  color: #fff;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.footer-right ul li a:hover {
-  color: #16e97f;
-}
-
-.footer-bottom {
+  padding: 20px;
   text-align: center;
-  margin-top: 20px;
   font-size: 0.9rem;
 }
