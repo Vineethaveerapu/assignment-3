@@ -1,0 +1,217 @@
+/* General Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  color: #fff;
+  background-color: #000;
+}
+
+/* Background Video */
+.background-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  object-fit: cover;
+}
+
+/* Header Styles */
+header {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+.logo {
+  width: auto;
+  height: 100px;
+}
+/* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+/* Add some content at the bottom of the video/page */
+.content {
+  position: fixed;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  color: #f1f1f1;
+  width: 100%;
+  padding: 20px;
+}
+
+/* Style the button used to pause/play the video */
+#myBtn {
+  width: 200px;
+  font-size: 18px;
+  padding: 10px;
+  border: none;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+#myBtn:hover {
+  background: #ddd;
+  color: black;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 2.5vw;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  color: #fff;
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-decoration: none;
+}
+
+nav ul li a:hover,
+nav ul li .active {
+  color: #16e97f;
+}
+
+/* Bird Profile Container */
+.bird-profile-container {
+  padding: 20px;
+  width: 80%;
+  margin: 20px auto;
+  border: 2px solid;
+  border-radius: 5px;
+  background-color: transparent;
+}
+
+/* Individual Bird Sections */
+#cassowary,
+#kookaburra,
+#cockatoo {
+  margin-bottom: 40px;
+}
+
+/* Bird Profile Layout */
+.bird-profile {
+  text-align: center;
+  padding: 20px;
+}
+
+.slider-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 20px auto;
+  position: relative;
+}
+
+.mySlides {
+  display: none;
+}
+
+.slider-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+/* Tabbed Content */
+.tab {
+  overflow: hidden;
+  background-color: #333;
+  display: flex;
+  justify-content: center;
+}
+
+.tab button {
+  background-color: inherit;
+  color: white;
+  padding: 14px 20px;
+  border: none;
+  cursor: pointer;
+  text-align: center;
+}
+
+.tab button:hover {
+  background-color: #444;
+}
+
+.tabcontent {
+  display: none;
+  padding: 20px;
+}
+
+.tabcontent.active {
+  display: block;
+}
+
+/* Navigation for Slider */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  font-size: 18px;
+  border-radius: 3px;
+}
+
+.prev {
+  left: 10px;
+}
+
+.next {
+  right: 10px;
+}
+
+/* Audio Buttons */
+button#play-sound,
+button#stop-sound {
+  background-color: #333;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button#play-sound:hover,
+button#stop-sound:hover {
+  background-color: #555;
+}
+
+/* Footer */
+footer {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Australian Zoo</title>
+  
+    <link rel="stylesheet" href="../assignment-3/styles/shared.css" />
+    <link rel="stylesheet" href="../assignment-3/styles/footer.css">
+    <link rel="stylesheet" href="../assignment-3/styles/header.css"/>
+    <link rel="stylesheet" href="../assignment-3/styles/sidebar.css"/>
+    <link rel="stylesheet" href="../assignment-3/styles/homemaincontent.css"/>
+    <link rel="stylesheet" href="../assignment-3/styles/birds.css"/>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+   
+    <script src="../assignment-3/js/shared.js" defer></script>
+    <script src="../assignment-3/js/header.js" defer></script>
+    <script src="../assignment-3/js/homemaincontent.js" defer></script>
+    <script src="../assignment-3/js/birds.js" defer></script>
+    <script src="../assignment-3/js/slider.js" defer></script>
+  </head>
+  <body>
+    <!-- Background Video -->
+    <video
+      class="background-video"
+      autoplay
+      muted
+      playsinline
+      loop
+      src="videos/sample.mp4"
+    ></video>
+
+    <!-- Header -->
+    <header>
+      <img class="logo" src="images/logo.png" alt="Nature Zoo Logo" />
+      <!-- Navigation -->
+      <nav id="navbar">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="birds.html" class="active">Birds</a></li>
+          <li><a href="mammals.html">Mammals</a></li>
+          <li><a href="reptiles.html">Reptiles</a></li>
+          <li><a href="about.html">About Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Main Container -->
+    <div class="container">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="animal" id="Echidna"></div>
+        <div class="animal" id="Tasmanian-Devil"></div>
+        <div class="animal" id="Quokka"></div>
+        <div class="animal" id="Frill-necked-lizard"></div>
+        <div class="animal" id="Hawksbill-Turtle"></div>
+        <div class="animal" id="Perentie"></div>
+        <div class="animal" id="Cassowary"></div>
+        <div class="animal" id="Kookaburra"></div>
+        <div class="animal" id="Cockatoo"></div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="main-content">
+   
+        <!-- Bird Profiles -->
+
+        <section class="bird-profile">
+
+          <h1>Cassowary</h1>
+
+          <!-- Container for the image gallery -->
+<div class="container">
+
+    <!-- Full-width images with number text -->
+    <div class="mySlides">
+      <div class="numbertext">1 / 5</div>
+        <img src="./images/2021-Cassowary-Membership-Poster-front.jpg" style="width:100%">
+    </div>
+  
+    <div class="mySlides">
+      <div class="numbertext">2 / 5</div>
+        <img src="./images/2021-Cassowary-Membership-Poster-back.jpg" style="width:100%">
+    </div>
+  
+    <div class="mySlides">
+      <div class="numbertext">3 / 5</div>
+        <img src="./images/cassowary-01.jpg" style="width:100%">
+    </div>
+  
+    <div class="mySlides">
+      <div class="numbertext">4 / 5</div>
+        <img src="./images/cassowary-bird-gilles-rolland-monnet.jpg" style="width:100%">
+    </div>
+  
+    <div class="mySlides">
+      <div class="numbertext">5 / 5</div>
+        <img src="./images/cassowary-southern.jpg" style="width:100%">
+    </div>
+  
+    <!-- Next and previous buttons -->
+    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+
+          <!-- Audio Section -->
+          <div class="audio-controls">
+            <button class="play-sound" data-audio-id="cassowary-audio" role="button">Play Sound</button>
+          </div>
+          <audio id="cassowary-audio" src="./sounds/Cassowary.mp3"></audio>
+        </section>
+        
+
+        <section class="bird-profile">
+          <h1>Kookaburra</h1>
+          <img src="images/Kookaburra.png" alt="Kookaburra" class="bird-image" />
+          <div class="audio-controls">
+            <button class="play-sound" data-audio-id="kookaburra-audio">Play </button>
+          </div>
+          <audio id="kookaburra-audio" src="sounds/Kookaburra-sound.mp3"></audio>
+        </section>
+        
+        <section class="bird-profile">
+          <h1>Cockatoo</h1>
+          <img src="images/Cockatoo.png" alt="Cockatoo" class="bird-image" />
+          <div class="audio-controls">
+            <button class="play-sound" data-audio-id="cockatoo-audio"> play</button>
+          </div>
+          <audio id="cockatoo-audio" src="./sounds/Yellow-tailed Black Cockatoo - Zanda funerea.mp3"></audio>
+        </section>
+        
+      </main>
+    </div>
+
+    
+  </body>
+</html>
