@@ -15,7 +15,6 @@
     />
     <script src="./js/header.js" defer></script>
     <script src="./js/sidebar_home.js" defer></script>
-    <script src="./js/insects.js" defer></script>
     <script src="./js/load-footer.js" defer></script>
     <script src="./js/birds.js" defer></script>
   </head>
@@ -27,19 +26,35 @@
       </a>
       <div class="hamburger-container"></div>
       <nav id="navbar"></nav>
-    </header>  
+    </header>
 
-    <main>
+    <main class="main-content">
+      <div class="sidebar-content-container">
+        <div class="sidebar-toggle-container">
+          <button class="toggle-btn" aria-label="Toggle Sidebar">
+            <i class="fa-solid fa-angles-right"></i>
+          </button>
+          <aside class="sidebar"></aside>
+        </div>
+        <div class="container">
+          <div class="animal-description" id="animal-description"></div>
+          <div class="sidebar-next-content">
+            <h1>Welcome to Nature's ZooBirds</h1>
+            <p>Discover the fascinating world of Australian birds! From the iconic laughing Kookaburra to the majestic Southern Cassowary, Australia is home to some of the most unique and diverse bird species on Earth. Our collection features these remarkable native birds, showcasing their distinctive behaviors, habitats, and the important roles they play in Australia's rich ecosystem. Join us on an exciting journey to learn about these extraordinary feathered creatures that make Australia's wildlife so special.</p>
+          </div>
+        </div>
+      </div>
       <!-- Cassowary Section -->
       <div class="bird-profile-container" id="cassowary">
         <section class="bird-profile">
-          <h1>Cassowary</h1>
+          <h2>Cassowary</h2>
           <div class="slider-container">
             <div class="mySlides cassowary-slides">
               <img src="images/cassowary-01.jpg" alt="Cassowary 1" />
-              <img src="images/cassowary-01.jpg" alt="Cassowary 1" />
-              <img src="images/cassowary-01.jpg" alt="Cassowary 1" />
-              <img src="images/cassowary-01.jpg" alt="Cassowary 1" />
+            </div>
+            <div class="slider-controls">
+              <button class="prev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+              <button class="next" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
             </div>
             <!-- Other slides ... -->
           </div>
@@ -74,10 +89,14 @@
       <!-- Kookaburra Section -->
       <div class="bird-profile-container" id="kookaburra">
         <section class="bird-profile">
-          <h1>Kookaburra</h1>
+          <h2>Kookaburra</h2>
           <div class="slider-container">
             <div class="mySlides kookaburra-slides">
-              <img src="images/kookaburra-01.jpg" alt="Kookaburra 1" />
+              <img src="images/kookaburra.jpg.webp" alt="Kookaburra 1" />
+            </div>
+            <div class="slider-controls">
+              <button class="prev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+              <button class="next" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
             </div>
             <!-- Other slides ... -->
           </div>
@@ -97,7 +116,7 @@
             <p>In eastern Australia, the raucous cackle of the Laughing Kookaburra is an essential feature of the dawn chorus. They can be heard laughing from the tip of Cape York south to Wilsons Promontory.
 
               The species occurrence in other parts of Australia, however, is no laughing matter. Kookaburras were widely introduced into Tasmania and Western Australia where they breed in tree hollows that would usually be used by parrots and owls, and they prey on small reptiles, mammals and nestlings, thus placing undue pressure on those creatures.
-              
+
               The Laughing Kookaburra is not really laughing when it makes its familiar call. The cackle of the Laughing Kookaburra is actually a territorial call to warn other birds to stay away.</p>
           </div>
           <div id="kookaburra-feeding" class="tabcontent">
@@ -119,10 +138,14 @@
       <!-- Cockatoo Section -->
       <div class="bird-profile-container" id="cockatoo">
         <section class="bird-profile">
-          <h1>Cockatoo</h1>
+          <h2>Cockatoo</h2>
           <div class="slider-container">
             <div class="mySlides cockatoo-slides">
-              <img src="images/cockatoo-01.jpg" alt="Cockatoo1" />
+              <img src="images/cockatoo.png" alt="Cockatoo1" />
+            </div>
+            <div class="slider-controls">
+              <button class="prev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
+              <button class="next" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
             </div>
             <!-- Other slides ... -->
           </div>
@@ -134,7 +157,7 @@
           <div id="cockatoo-habitat" class="tabcontent">
             <h3>Habitat</h3>
             <p> Woodland, Forest
-              
+
               The Yellow-tailed Black-Cockatoo inhabits a variety of habitat types, but favours eucalypt woodland and pine plantations. Small to large flocks can be seen in these areas, either perched or flying on slowly flapping wings..</p>
           </div>
           <div id="cockatoo-behaviour" class="tabcontent">
