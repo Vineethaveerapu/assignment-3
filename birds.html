@@ -16,9 +16,10 @@
     <script src="./js/header.js" defer></script>
     <script src="./js/sidebar_home.js" defer></script>
     <script src="./js/load-footer.js" defer></script>
-    <script src="./js/birds.js" defer></script>
+    <script src="./js/birds.js" defer> </script>
   </head>
   <body>
+  
     <!-- header starts -->
     <header>
       <a href="index.html">
@@ -27,7 +28,18 @@
       <div class="hamburger-container"></div>
       <nav id="navbar"></nav>
     </header>
+       <!-- video starts -->
+       <body>
+        <div class="background-video-container">
+          <video autoplay muted loop playsinline>
+            <source src="./videos/felamingo3.mp4" type="video/mp4" />
 
+          </video>
+        </div>
+      </body>
+      <!-- video Ends -->
+
+     <!--slidebar -->
     <main class="main-content">
       <div class="sidebar-content-container">
         <div class="sidebar-toggle-container">
@@ -45,19 +57,28 @@
         </div>
       </div>
       <!-- Cassowary Section -->
+       
       <div class="bird-profile-container" id="cassowary">
         <section class="bird-profile">
           <h2>Cassowary</h2>
           <div class="slider-container">
-            <div class="mySlides cassowary-slides">
-              <img src="images/cassowary-01.jpg" alt="Cassowary 1" />
+            <div class="mySlides">
+              <img src="images/cassowary-01.jpg" alt="Slide 1" />
             </div>
-            <div class="slider-controls">
-              <button class="prev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
-              <button class="next" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+            <div class="mySlides">
+              <img src="./images/cassowary-02_0.jpg" alt="Slide 2" />
             </div>
+            <div class="mySlides">
+              <img src="./images/cassowary-southern.jpg" alt="Slide 2" />
+            </div>
+            <div class="mySlides">
+              <img src="./images/cassowary-02_0.jpg" alt="Slide 2" />
+            </div>
+            <button class="prev"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="next"><i class="fa-solid fa-chevron-right"></i></button> 
+            
             <!-- Other slides ... -->
-          </div>
+            </div>
           <div class="tab">
             <button onclick="openBirdTab(event,'cassowary-habitat')">Habitat</button>
             <button onclick="openBirdTab(event,'cassowary-behaviour')">Behaviour</button>
@@ -84,20 +105,27 @@
             <audio id="cassowary-audio" src="./sounds/Cassowary.mp3"></audio>
           </div>
         </section>
-      </div>
-
+        </div>
       <!-- Kookaburra Section -->
       <div class="bird-profile-container" id="kookaburra">
         <section class="bird-profile">
           <h2>Kookaburra</h2>
           <div class="slider-container">
-            <div class="mySlides kookaburra-slides">
-              <img src="images/kookaburra.jpg.webp" alt="Kookaburra 1" />
+            <div class="mySlides">
+              <img src="./images/kookaburra.jpg.webp" alt="Slide 1" />
             </div>
-            <div class="slider-controls">
-              <button class="prev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
-              <button class="next" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+            <div class="mySlides">
+              <img src="./images/1000_F_870145313_Lk6Bo2ubOCEWSgWKHVONfnzQN5wrwVO3.jpg" alt="Slide 2" />
             </div>
+            <div class="mySlides">
+              <img src="./images/1000_F_190503043_607R08WZ00KdV6GPziw2SXVvVBJLoHEk.jpg" alt="Slide 2" />
+            </div>
+            <div class="mySlides">
+              <img src="./images/1000_F_295578077_DyUN84ITB4lkCTXN8IIeN7QTMotH4aW7.jpg" alt="Slide 2" />
+            </div>
+            <button class="prev"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="next"><i class="fa-solid fa-chevron-right"></i></button> 
+            
             <!-- Other slides ... -->
           </div>
           <div class="tab">
@@ -134,19 +162,28 @@
           </div>
         </section>
       </div>
+    </div>
 
       <!-- Cockatoo Section -->
       <div class="bird-profile-container" id="cockatoo">
         <section class="bird-profile">
           <h2>Cockatoo</h2>
           <div class="slider-container">
-            <div class="mySlides cockatoo-slides">
-              <img src="images/cockatoo.png" alt="Cockatoo1" />
+            <div class="mySlides">
+              <img src="./images/yellow-tailed-black-cockatoo-Andrew-Silcocks-listing-1.jpg.webp" alt="Slide 1" />
             </div>
-            <div class="slider-controls">
-              <button class="prev" aria-label="Previous"><i class="fa-solid fa-chevron-left"></i></button>
-              <button class="next" aria-label="Next"><i class="fa-solid fa-chevron-right"></i></button>
+            <div class="mySlides">
+              <img src="./images/yellow-tailed-black-cockatoo-Andrew-Silcocks-listing-2.jpg.webp" alt="Slide 2" />
             </div>
+            <div class="mySlides">
+              <img src="./images/yellow-tailed-black-cockatoo-fran-solly-listing.jpg.webp" alt="Slide 2" />
+            </div>
+            <div class="mySlides">
+              <img src="./images/Yellow-tailed-Black-Cockatoo_Woodlands_Sept16_IMG_4391.jpg.webp" alt="Slide 2" />
+            </div>
+            <button class="prev"><i class="fa-solid fa-chevron-left"></i></button>
+            <button class="next"><i class="fa-solid fa-chevron-right"></i></button> 
+            
             <!-- Other slides ... -->
           </div>
           <div class="tab">

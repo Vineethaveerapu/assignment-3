@@ -12,7 +12,7 @@ body {
   position: relative;
   min-height: 100vh;
   width: 100%;
-  color: #fff;
+  color: white;
   background-color: #000;
 }
 
@@ -41,39 +41,42 @@ header {
   width: auto;
   height: 100px;
 }
-/* Style the video: 100% width and height to cover the entire window */
-#myVideo {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-}
 
-/* Add some content at the bottom of the video/page */
-.content {
+/* Style the video */
+
+.background-video-container {
   position: fixed;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  color: #f1f1f1;
+  top: 0;
+  left: 0;
   width: 100%;
-  padding: 20px;
+  height: 100%;
+  z-index: -1; 
+  overflow: hidden;
 }
 
-/* Style the button used to pause/play the video */
-#myBtn {
-  width: 200px;
-  font-size: 18px;
-  padding: 10px;
-  border: none;
-  background: #000;
-  color: #fff;
-  cursor: pointer;
+.background-video-container video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  transform: translate(-50%, -50%);
 }
 
-#myBtn:hover {
-  background: #ddd;
-  color: black;
+
+.content {
+  position: relative;
+  z-index: 1;
+  color: white;
+  text-align: center;
+  margin: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.content h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
 }
 
 nav ul {
@@ -214,4 +217,18 @@ footer {
   padding: 20px;
   text-align: center;
   font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  button {
+    padding: 8px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  button {
+    padding: 6px;
+    font-size: 12px;
+  }
 }
