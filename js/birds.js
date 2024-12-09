@@ -113,7 +113,7 @@ function openBirdTab(evt, tabId) {
 }
 
 // Open the first tab by default
-document.querySelector(".tablinks").click();
+// document.querySelector(".tablinks").click();
 
 document.addEventListener("DOMContentLoaded", function () {
   updateAnimalDescription();
