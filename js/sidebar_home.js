@@ -337,7 +337,7 @@ document.addEventListener("DOMContentLoaded", function () {
       <h3>${animal.name}</h3>
       <img class="animate-image" src="${animal.src}" alt="${
           animal.alt
-        }" style="width:auto; height: 200px;">
+        }" style="width:auto; height: 200px; max-width: 80%;">
       <p class="animal-description-short">${
         animal.description.length > 200
           ? animal.description.slice(0, 200) + "..."
